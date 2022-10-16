@@ -32,7 +32,7 @@
     float:left;
     border-radius:20px;
 }
-.login input{
+.login button{
     height: 30px;
     width:120px;
     margin:30px 0px 0 20px;
