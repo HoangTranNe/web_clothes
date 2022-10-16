@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+}
+.tab{
+    background-color: black;
+    height: 100px;
+    width: 100%;
+}
+.logo{
+    background-color: black;
+    height:280px;
+    width:100%;
+}
+
+.logo img{
+    width: 450px;
+    height: 200px;
+    margin:0 0 0 500px; 
+}
+.search input{
+    height: 30px;
+    width:450px;
+    margin:20px 20px 0 500px;
+    float:left;
+}
+.login input{
+    height: 30px;
+    width:120px;
+    margin:20px 0px 0 20px;
+    float:right;
+    border-radius:20px;
+}
+.register input{
+    height: 30px;
+    width:130px;
+    margin:20px 0 0 20px;
+    float:right;
+    border-radius:20px;
+}
+.buy input{
+    height: 30px;
+    width:130px;
+    margin:20px 20px 0 20px;
+    float:right; 
+    border-radius:20px;
+}
