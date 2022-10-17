@@ -39,6 +39,10 @@
     float:right;
     border-radius:20px;
 }
+.login a{
+    color:black;
+    text-decoration: none;
+}
 .register input{
     height: 30px;
     width:130px;
@@ -99,4 +103,25 @@
     color: black;
     font-size: 20px;
     font-weight: bold;
+}
+.tab2{
+    height:100%;
+    width:100%;
+    margin-left: 100px;
+    margin-top:50px;
+    float:left;
+}
+.product{
+    height: 200px;
+    width:100px;
+}
+.image img{
+    width: 200px;
+    height: 200px;  
+}
+.name p{
+    width: 150px;
+    font-size: 25px;
+    font-weight: bold;  
+    margin-left:20px;
 }
