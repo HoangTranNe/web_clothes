@@ -171,8 +171,10 @@ body {
     align-items: center;
     justify-content: center;
 }
-.product-item > img{
+.product-item > img {
     border-radius: 20px;
+    height: 100px;
+    width:200px;
 }
 .product-item > .product-item-info > button{
     background-color:yellow;
