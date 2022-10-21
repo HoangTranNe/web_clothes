@@ -241,3 +241,10 @@ body {
 .contact_us > h2{
     color:white;
 }
+.reserved {
+    display: flex;
+
+}
+    .reserved > h4 {
+        color: white;
+    }
