@@ -30,5 +30,9 @@ namespace do_an_web.Controllers
         {
             return View();
         }
+        public ActionResult dieu_khoan()
+        {
+            return View();
+        }
     }
 }
