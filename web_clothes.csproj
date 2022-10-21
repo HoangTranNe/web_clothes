@@ -214,7 +214,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\web-clothes.cshtml" />
+    <Content Include="Views\Home\web-clothes.cshtml" />
+    <Content Include="Views\Shared\web_clothes_view.cshtml" />
     <Content Include="Views\Home\web_clothes.cshtml" />
   </ItemGroup>
   <ItemGroup>
