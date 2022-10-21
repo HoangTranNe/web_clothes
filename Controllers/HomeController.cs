@@ -26,7 +26,7 @@ namespace do_an_web.Controllers
 
             return View();
         }
-        public ActionResult web_clothes()
+        public ActionResult web_clothes_view()
         {
             return View();
         }

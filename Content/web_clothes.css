@@ -64,7 +64,7 @@ body {
 .nav-link > li > a {
     text-decoration: none;
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 5px 40px;
 }
 
 .search-box {
@@ -159,11 +159,12 @@ body {
 }
 .product-list{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 2fr);
+    justify-items:center;
 }
 .product-item{
     width: 240px;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 .product-item-info{
     display: flex;
@@ -173,8 +174,8 @@ body {
 }
 .product-item > img {
     border-radius: 20px;
-    height: 100px;
-    width:200px;
+    height: 240px;
+    width: 240px;
 }
 .product-item > .product-item-info > button{
     background-color:yellow;
@@ -233,4 +234,8 @@ body {
 }
 .contact_us > h2{
     color:white;
+}
+.icon > a >i{
+    height:50px;
+    width:100%;
 }
