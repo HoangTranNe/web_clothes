@@ -159,7 +159,7 @@ body {
 }
 .product-list{
     display: grid;
-    grid-template-columns: repeat(4, 2fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-items:center;
 }
 .product-item{

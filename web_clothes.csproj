@@ -215,6 +215,8 @@
     <Content Include="Views\Home\web_clothes_view.cshtml" />
     <Content Include="Views\Home\dieu_khoan.cshtml" />
     <Content Include="Views\Home\dieu_khoan_view.cshtml" />
+    <Content Include="Views\Home\huong_dan_mua_hang.cshtml" />
+    <Content Include="Views\Home\huong_dan_mua_hang_view.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

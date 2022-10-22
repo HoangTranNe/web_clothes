@@ -30,7 +30,11 @@ namespace do_an_web.Controllers
         {
             return View();
         }
-        public ActionResult dieu_khoan()
+        public ActionResult dieu_khoan_view()
+        {
+            return View();
+        }
+        public ActionResult huong_dan_mua_hang_view()
         {
             return View();
         }
