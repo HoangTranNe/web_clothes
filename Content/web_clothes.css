@@ -248,3 +248,14 @@ body {
     .reserved > h4 {
         color: white;
     }
+.title-dieu-khoan{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.dieu-khoan-tag{
+    display:flex;
+}
+.dieu-khoan-tag > .dieukhoan{
+    color:black;
+}
