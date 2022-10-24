@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "do_an_web", "do_an_web.csproj", "{36E7E8B5-0C1A-4EA4-89AE-BFAE02D0BDFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web_clothes", "web_clothes.csproj", "{36E7E8B5-0C1A-4EA4-89AE-BFAE02D0BDFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

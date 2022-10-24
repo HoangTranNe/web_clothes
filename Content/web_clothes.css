@@ -64,7 +64,7 @@ body {
 .nav-link > li > a {
     text-decoration: none;
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 5px 40px;
 }
 
 .search-box {
@@ -159,11 +159,12 @@ body {
 }
 .product-list{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    justify-items:center;
 }
 .product-item{
     width: 240px;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 .product-item-info{
     display: flex;
@@ -171,8 +172,10 @@ body {
     align-items: center;
     justify-content: center;
 }
-.product-item > img{
+.product-item > img {
     border-radius: 20px;
+    height: 240px;
+    width: 240px;
 }
 .product-item > .product-item-info > button{
     background-color:yellow;
@@ -214,8 +217,14 @@ body {
 .social > h2{
     color:white;
 }
-.icon > a > i{
-    color:white;
+.footer-title {
+    display:plex;
+    align-items:baseline;
+    justify-content:space-evenly;
+}
+.icon > a > i {
+    color: white;
+    font-size: 40px;
 }
 .help > h2{
     color:white;
@@ -232,3 +241,28 @@ body {
 .contact_us > h2{
     color:white;
 }
+.reserved {
+    display: flex;
+
+}
+    .reserved > h4 {
+        color: white;
+    }
+.title-dieu-khoan{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.dieu-khoan-tag {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+    .dieu-khoan-tag .dieukhoan {
+        width: 200px;
+        font-weight:bold; 
+        font-size:30px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+    }

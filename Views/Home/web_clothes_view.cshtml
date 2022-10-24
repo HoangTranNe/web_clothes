@@ -1,13 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "web_clothes";
-    Layout = "~/Views/Shared/web-clothes.cshtml";
+    ViewBag.Title = "web_clothes_view";
+    Layout = "~/Views/Home/web-clothes.cshtml";
 }
 
-<link rel="stylesheet" href="~/Content/web_clothes.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-<script src="https://kit.fontawesome.com/0ab0c4b239.js" crossorigin="anonymous"></script>
-<script src="./web-clothes.js"></script>
 
 <nav class="nav">
     <a href="./web-clothes.html"><img src="~/Content/hinh-pro/logo.jpg" width="128" /></a>
@@ -33,7 +29,7 @@
     <div class="tab2-title">
         <ul class="title">
             <li class="home">
-                <a href="#">Home</a>
+                @Html.ActionLink("Home", "web_clothes_view","Home",null, new {@class= "linkbtnfull" })
             </li>
             <li class="list">
                 <h2>Clothings</h2>
@@ -65,7 +61,7 @@
 <nav class="product">
     <div class="product-list">
         <div class="product-item">
-            <img src="~/Content/hinh-pro/logo.jpg" />
+            <img src="~/Content/hinh-pro/pro_1.jpg" />
             <div class="product-item-info">
                 <h3>Product 1</h3>
                 <p>Price: 100$</p>
@@ -73,7 +69,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_2.jpg" />
+            <img src="~/Content/hinh-pro/pro_2.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 2</h3>
                 <p>Price: 100$</p>
@@ -81,7 +77,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_3.jpg" />
+            <img src="~/Content/hinh-pro/pro_3.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 3</h3>
                 <p>Price: 100$</p>
@@ -89,7 +85,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_4.jpg" />
+            <img src="~/Content/hinh-pro/pro_4.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 4</h3>
                 <p>Price: 100$</p>
@@ -97,7 +93,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_5.jpg" />
+            <img src="~/Content/hinh-pro/pro_5.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 5</h3>
                 <p>Price: 100$</p>
@@ -105,7 +101,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_6.jpg" />
+            <img src="~/Content/hinh-pro/pro_6.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 6</h3>
                 <p>Price: 100$</p>
@@ -113,7 +109,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_7.jpg" />
+            <img src="~/Content/hinh-pro/pro_7.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 7</h3>
                 <p>Price: 100$</p>
@@ -121,7 +117,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_8.jpg" />
+            <img src="~/Content/hinh-pro/pro_8.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -129,7 +125,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_9.jpg" />
+            <img src="~/Content/hinh-pro/pro_9.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -137,7 +133,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_10.jpg" />
+            <img src="~/Content/hinh-pro/pro_10.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -145,7 +141,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_11.jpg" />
+            <img src="~/Content/hinh-pro/pro_11.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -153,7 +149,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_12.jpg" />
+            <img src="~/Content/hinh-pro/pro_12.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -161,7 +157,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_13.jpg" />
+            <img src="~/Content/hinh-pro/pro_13.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -169,7 +165,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_14.jpg" />
+            <img src="~/Content/hinh-pro/pro_14.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -177,7 +173,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_15.jpg" />
+            <img src="~/Content/hinh-pro/pro_15.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -185,7 +181,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_16.jpg" />
+            <img src="~/Content/hinh-pro/pro_16.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -193,7 +189,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_17.jpg" />
+            <img src="~/Content/hinh-pro/pro_17.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -201,7 +197,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_18.jpg" />
+            <img src="~/Content/hinh-pro/pro_18.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -209,7 +205,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_19.jpg" />
+            <img src="~/Content/hinh-pro/pro_19.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -217,7 +213,7 @@
             </div>
         </div>
         <div class="product-item">
-            <img src="./hinh-pro/pro_20.jpg" />
+            <img src="~/Content/hinh-pro/pro_20.jpg" width="100" />
             <div class="product-item-info">
                 <h3>Product 8</h3>
                 <p>Price: 100$</p>
@@ -227,15 +223,15 @@
     </div>
 </nav>
 <nav class="see-all">
-    <input type="submit"><a href="#">See All</a>
+    <button type="submit"><a href="#">See All</a></button>
 </nav>
 <nav class="footer">
     <div class="footer-title">
         <div class="social">
-            <h2>Theo Dõi Chúng Tôi</h2>
+            <h2>Liên Hệ</h2>
             <div class="icon">
-                <a href="ti-facebook"></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/hoangtran1609"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/lol_bruzzzz/"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
         <div class="help"></div>
@@ -244,7 +240,7 @@
         <div class="help">
             <h2>Hướng Dẫn</h2>
             <ul class="de-muc">
-                <li><a href="">Điều Khoản</a></li>
+                <li>@Html.ActionLink("Điều Khoản", "dieu_khoan_view","Home")</li>
                 <li><a href="">Hướng Dẫn Mua Hàng</a></li>
                 <li><a href="">Chính Sách Đổi Trả Hàng</a></li>
                 <li><a href="">Bảo Mật Thông Tin Khách Hàng</a></li>
@@ -252,13 +248,17 @@
             </ul>
         </div>
         <div class="contact_us">
-            <h2>Liên Hệ</h2>
+            <h2>Địa Chỉ</h2>
             <ul class="de-muc">
                 <li><a href="">Địa Chỉ: <span style="font-weight: bold;">123 Nguyễn Văn Linh, Quận 7, TP.HCM</span></a></li>
                 <li><a href="">Điện Thoại: <span style="font-weight: bold;">0946253769</span></a></li>
                 <li><a href="">Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></a></li>
             </ul>
         </div>
+        <div class="reserved">
+            <h4>Co_Chay® All Right Reserved</h4>
+        </div>
     </div>
 </nav>
+
 
