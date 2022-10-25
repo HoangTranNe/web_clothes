@@ -1,9 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "web_clothes_view";
-    Layout = "~/Views/Home/web-clothes.cshtml";
+    ViewBag.Title = "see_all_view";
+    Layout = "~/Views/Home/see_all.cshtml";
 }
-
 
 <nav class="nav">
     <a href="./web-clothes.html"><img src="~/Content/hinh-pro/logo.jpg" width="128" /></a>
@@ -29,7 +28,7 @@
     <div class="tab2-title">
         <ul class="title">
             <li class="home">
-                @Html.ActionLink("Home", "web_clothes_view","Home",null, new {@class= "linkbtnfull" })
+                @Html.ActionLink("Home", "web_clothes_view", "Home", null, new { @class = "linkbtnfull" })
             </li>
             <li class="list">
                 <h2>Clothings</h2>
@@ -223,6 +222,14 @@
     </div>
 </nav>
 <nav class="see-all">
+
+</nav>  
+<nav class="page">
+    <div class="page1"></div>
+    <div class="page2"></div>
+    <div class="page3"></div>
+    <div class="page4"></div>
+    <div class="page5"></div>
 </nav>
 <nav class="footer">
     <div class="footer-title">
@@ -239,7 +246,7 @@
         <div class="help">
             <h2>Hướng Dẫn</h2>
             <ul class="de-muc">
-                <li>@Html.ActionLink("Điều Khoản", "dieu_khoan_view","Home")</li>
+                <li>@Html.ActionLink("Điều Khoản", "dieu_khoan_view", "Home")</li>
                 <li><a href="">Hướng Dẫn Mua Hàng</a></li>
                 <li><a href="">Chính Sách Đổi Trả Hàng</a></li>
                 <li><a href="">Bảo Mật Thông Tin Khách Hàng</a></li>
@@ -259,5 +266,4 @@
         </div>
     </div>
 </nav>
-
 
