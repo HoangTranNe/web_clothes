@@ -77,3 +77,7 @@ C:\CTDL\do_an_web\obj\Debug\web_clothes.csproj.CoreCompileInputs.cache
 C:\CTDL\do_an_web\obj\Debug\web_clothes.csproj.CopyComplete
 C:\CTDL\do_an_web\obj\Debug\do_an_web.dll
 C:\CTDL\do_an_web\obj\Debug\do_an_web.pdb
+C:\CTDL\do_an_web\bin\EntityFramework.dll
+C:\CTDL\do_an_web\bin\EntityFramework.SqlServer.dll
+C:\CTDL\do_an_web\bin\EntityFramework.xml
+C:\CTDL\do_an_web\bin\EntityFramework.SqlServer.xml
