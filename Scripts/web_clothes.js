@@ -1,4 +1,4 @@
-$(see_all_view.cshtml).ready(function () {
+$(see_all_view).ready(function () {
     $(document).slick({
         infinite: true,
         slidesToShow: 3,
