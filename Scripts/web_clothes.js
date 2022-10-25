@@ -1,7 +1,7 @@
-$(see_all_view.html).ready(function () {
-    $(page).slick({
+$(see_all_view.cshtml).ready(function () {
+    $(document).slick({
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 3;
+        slidesToScroll: 3
   });
 });

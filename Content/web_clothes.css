@@ -91,9 +91,6 @@ body {
     display: flex;
     padding: 1rem;
 }
-.home > a{
-    color:blue;
-}
 .dropdown {
     position:relative;
     display: inline-block
@@ -266,3 +263,15 @@ body {
         text-decoration: none;
         text-align: center;
     }
+.paging{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem 0;
+}
+.paging > li > .p1{
+    display:flex;
+    background-color:black;
+    height:100px;
+    width:100%;
+}

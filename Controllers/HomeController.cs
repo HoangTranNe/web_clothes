@@ -38,7 +38,7 @@ namespace do_an_web.Controllers
         {
             return View();
         }
-        public ActionResult see_all()
+        public ActionResult see_all_view()
         {
             return View();
         }

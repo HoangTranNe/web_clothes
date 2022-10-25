@@ -220,16 +220,26 @@
             </div>
         </div>
     </div>
-</nav>
-<nav class="see-all">
-
 </nav>  
 <nav class="page">
-    <div class="page1"></div>
-    <div class="page2"></div>
-    <div class="page3"></div>
-    <div class="page4"></div>
-    <div class="page5"></div>
+    <ul class="paging">
+        <li>
+            @Html.ActionLink("1","web_clothes_view","Home"
+           ,null, new { @class = "p1" })
+        </li>
+        <li class="page2">
+            @Html.ActionLink("2", "web_clothes_view", "Home")
+        </li>
+        <li class="page3">
+            @Html.ActionLink("3", "web_clothes_view", "Home")
+        </li>
+        <li class="page4">
+            @Html.ActionLink("4", "web_clothes_view", "Home")
+        </li>
+        <li class="page5">
+            @Html.ActionLink("5", "web_clothes_view", "Home")
+        </li>
+    </ul>
 </nav>
 <nav class="footer">
     <div class="footer-title">
