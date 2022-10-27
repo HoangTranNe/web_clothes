@@ -263,3 +263,11 @@ body {
         text-decoration: none;
         text-align: center;
     }
+.help-tag {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+    .help-tag > .help-title > .help{
+        text-decoration:none;
+    }
