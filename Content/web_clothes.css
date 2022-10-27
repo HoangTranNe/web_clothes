@@ -264,10 +264,23 @@ body {
         text-align: center;
     }
 .help-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .help-tag > .help {
+        width: 400px;
+        font-weight: bold;
+        font-size: 30px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+    }
+.title-help{
     display:flex;
     justify-content:center;
     align-items:center;
 }
-    .help-tag > .help-title > .help{
-        text-decoration:none;
-    }
+.title-help>.main-help>p{
+    font-size:20px;
+}
