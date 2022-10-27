@@ -1,12 +1,11 @@
 ﻿
 @{
-    ViewBag.Title = "huong_dan_mua_hang_view";
-    Layout = "~/Views/Home/huong_dan_mua_hang.cshtml";
+    ViewBag.Title = "chinh_sach_doi_tra_view";
+    Layout = "~/Views/Home/chinh_sach_doi_tra.cshtml";
 }
 
 <nav class="nav">
-    <a href="@Url.Action("web_clothes_view","Views")%>"><img src="~/Content/hinh-pro/logo.jpg" width="128" /></a>
-    
+    <img src="~/Content/hinh-pro/logo.jpg" width="128" />
     <div class="search-box">
         <input type="text" name="search" class="input-search" placeholder="Search" />
         <button>
@@ -55,36 +54,36 @@
         </ul>
     </div>
 </nav>
-<nav class="help-tag">    
-     @Html.ActionLink("Hướng Dẫn Mua Hàng", "huong_dan_mua_hang_view", "Home", new { @class = "help" })
-</nav>
-<nav class="title-help">
-    <div class="main-help">        
-        <p>Bước 1: Truy cập website và lựa chọn sản phẩm cần mua để mua hàng</p>
+<nav class="trading">
+    <div class="trade-title">
+        @Html.ActionLink("Chính Sách Đổi Trả Hàng", "chinh_sach_doi_tra","Home",null, new {@class="title1"})
+    </div>
+    <div class=" trade-main">
+        <p>
+            • Sản phẩm đã mua được đổi trong vòng 7 ngày (Tính từ ngày in trên hoá đơn).<br /><br />
 
-        <p>Bước 2: Click và sản phẩm muốn mua, màn hình hiển thị ra pop up với các lựa chọn sau</p>
+            • Sản phẩm phải trong tình trạng mới, chưa giặt, chưa cắt tag và còn giữ hoá đơn thanh toán.<br /><br />
 
-        <p> Nếu bạn muốn tiếp tục mua hàng: Bấm vào phần tiếp tục mua hàng để lựa chọn thêm sản phẩm vào giỏ hàng
+            • Sản phẩm nhận được bị lỗi do sản xuất.<br /><br />
 
-            Nếu bạn muốn xem giỏ hàng để cập nhật sản phẩm: Bấm vào xem giỏ hàng
+            • Khi sản phẩm nhận được không đúng với sản phẩm đặt hàng.<br /><br />
 
-            Nếu bạn muốn đặt hàng và thanh toán cho sản phẩm này vui lòng bấm vào: Đặt hàng và thanh toán</p>
+            • Đối với mỗi hóa đơn, khách hàng được đổi hàng duy nhất 1 lần.<br /><br />
 
-            <p>Bước 3: Lựa chọn thông tin tài khoản thanh toán </p>
+            • Không hỗ trợ đổi, trả các sản phẩm được khuyến mãi, giảm giá.<br /><br />
+            
+            • Sản phẩm đã mua được đổi trong vòng 7 ngày (Tính từ ngày in trên hoá đơn).<br /><br />
 
-            <p>Nếu bạn đã có tài khoản vui lòng nhập thông tin tên đăng nhập là email và mật khẩu vào mục đã có tài khoản trên hệ thống
+            • Sản phẩm phải trong tình trạng mới, chưa giặt, chưa cắt tag và còn giữ hoá đơn thanh toán.<br /><br />
 
-            Nếu bạn chưa có tài khoản và muốn đăng ký tài khoản vui lòng điền các thông tin cá nhân để tiếp tục đăng ký tài khoản. Khi có tài khoản bạn sẽ dễ dàng theo dõi được đơn hàng của mình
+            • Sản phẩm nhận được bị lỗi do sản xuất.<br /><br />
 
-            Nếu bạn muốn mua hàng mà không cần tài khoản vui lòng nhấp chuột vào mục đặt hàng không cần tài khoản</p>
+            • Khi sản phẩm nhận được không đúng với sản phẩm đặt hàng.<br /><br />
 
-            <p>Bước 4: Điền các thông tin của bạn để nhận đơn hàng, lựa chọn hình thức thanh toán và vận chuyển cho đơn hàng của mình</p>
+            • Đối với mỗi hóa đơn, khách hàng được đổi hàng duy nhất 1 lần.<br /><br />
 
-            <p>Bước 5: Xem lại thông tin đặt hàng, điền chú thích và gửi đơn hàng
-
-            Sau khi nhận được đơn hàng bạn gửi chúng tôi sẽ liên hệ bằng cách gọi điện lại để xác nhận lại đơn hàng và địa chỉ của bạn.
-
-            Trân trọng cảm ơn.<p>        
+            • Không hỗ trợ đổi, trả các sản phẩm được khuyến mãi, giảm giá.<br /><br />
+        </p>
     </div>
 </nav>
 <nav class="footer">
@@ -122,4 +121,5 @@
         </div>
     </div>
 </nav>
+
 

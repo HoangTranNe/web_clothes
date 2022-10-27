@@ -42,5 +42,9 @@ namespace do_an_web.Controllers
         {
             return View();
         }
+        public ActionResult chinh_sach_doi_tra_view()
+        {
+            return View();
+        }
     }
 }

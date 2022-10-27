@@ -284,3 +284,20 @@ body {
 .title-help>.main-help>p{
     font-size:20px;
 }
+
+.trading{
+    justify-content:center;
+    align-items:center;  
+    display:flex;
+}
+    .title1{        
+        text-decoration:none;
+        color:black;
+        font-size:30px;
+        padding:0 2rem;
+        font-weight:bold;
+    }
+    .trade-main{
+        font-size:20px;
+        padding:1rem 0;
+    }
