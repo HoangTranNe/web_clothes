@@ -42,6 +42,8 @@ ul {
 
 body {
     margin: 0;
+    font-family: monospace;
+    background-image: url(img/bglogin.jpg);
 }
 
 .nav {
@@ -265,7 +267,7 @@ body {
     color: #fff;
     padding: 0.5rem 1rem;
 }
-.logins{
+.logins {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,41 +278,37 @@ body {
 .contact_us>h2 {
     color: white;
 }
-.login_account{
+body{
+    background-image: url(img/backgrlogin.jpg);
     font-family: monospace;
-    color: black;  
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    text-align: center;
 }
-.button {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
+.login {
+    background-color: #f9f9f9;
+    width: 400px;
+    height: 350px;
+    border-radius: 12px;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+.login_account label{
+    font-family: monospace;
+    text-align: center;
+    display: inline-block;
+}
+.buttlogin button{
+    background-color: yellow;
+    color:#000;
+    border-radius: 12px;
+    border: black 3px solid;
+    width: 250px;
+    height: 50px;
+    font-size: 14px;
+    font-family: monospace;
 }
 
-.loginbutton{
-    
-        display: flex;
-        list-style: none;
-        cursor: pointer;
-        width: 170px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        background-color: yellow;
-        font-size: 14px;
-        font-family: monospace;
-        align-self: center;
-        border-radius: 20px;
-        padding:0px;
-    }
-.regbutton{
-    text-decoration: none;
-    color:black;
-}
-.bgimg{
-    background-image: url(img/bglogin.jpg);
-    width: 100%;
-    height: 100%;   
-    background-size: cover;
-}
