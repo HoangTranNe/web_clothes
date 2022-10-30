@@ -1,0 +1,304 @@
+@media only screen and (max-width: 768px) {
+
+    .nav {
+        flex-direction: column;
+    }
+    .nav-link {
+        flex-direction: column;
+    }
+    .title{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 390px ){
+    .nav{
+        flex-direction: column;
+    }
+    .nav-link{
+        flex-direction: column;
+    }
+    .title{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+:root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.nav { 
+    display: flex;
+    background-color: #000;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+}
+
+.nav-link {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link > li {
+    margin: .5rem;
+}
+
+.nav-link > li > a:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+.nav-link > li > a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 40px;
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box > button {
+    padding: 0 1rem;
+}
+
+.input-search {
+    padding: 0.5rem 1rem;
+    border-radius: .25rem;
+    font-size: 1.5rem;
+    margin: 0 0.25rem ;
+}
+.tab2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+}
+.tab2-title{
+    display: flex;
+    padding: 1rem;
+}
+.dropdown {
+    position:relative;
+    display: inline-block
+}
+.dropdown{
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+.list-dropdown{
+    display:none
+    
+}
+.list:hover .dropdown {
+    display: block;
+}
+.dropdown > li > a{
+    text-decoration: none;
+    color: #000;
+    padding: 0.5rem 1rem;
+}
+.dropdown>li{
+    list-style: none;
+    padding: 1rem 0;
+}
+.dropdown > li > a:hover{
+    color: #fff;
+    background-color: #000;
+}
+.title{
+    display: flex;
+    align-items: baseline;
+}
+.title > li{
+    list-style: none;
+    margin: 0 7rem;
+}
+.title > li > a{
+    text-decoration: none;
+    color: #000;
+    padding: 1rem 0;
+    font-weight: 700;
+    font-size:25px;
+}
+.clearance{
+    background-color: yellow;
+    border-radius: 10px;
+}
+.tab3{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+}
+.tab3>h2{
+    background-color:yellow;
+    height:5px;
+    width: 500px;
+}
+.product-list{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items:center;
+}
+.product-item{
+    width: 240px;
+    padding: 1rem 0;
+}
+.product-item-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.product-item > img {
+    border-radius: 20px;
+    height: 240px;
+    width: 240px;
+}
+.product-item > .product-item-info > button{
+    background-color:yellow;
+    border:1px solid #000;
+    cursor:pointer;
+    width: 100px;
+    border-radius: 20px;
+}
+
+.see-all{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.see-all > button{
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    margin: 4rem 0.25rem ;
+    border-radius: 10px;
+}
+.see-all > button > a{
+    text-decoration: none;
+    color: #000;
+}
+.footer{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+.footer-title{
+    height: 300px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.social > h2{
+    color:white;
+}
+.footer-title {
+    display:plex;
+    align-items:baseline;
+    justify-content:space-evenly;
+}
+.icon > a > i {
+    color: white;
+    font-size: 40px;
+}
+.help > h2{
+    color:white;
+}
+.de-muc>li{
+    list-style: none;
+    padding: 0.5rem 0;
+}
+.de-muc > li > a{
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+.contact_us > h2{
+    color:white;
+}
+.reserved {
+    display: flex;
+
+}
+    .reserved > h4 {
+        color: white;
+    }
+.title-dieu-khoan{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.dieu-khoan-tag {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+    .dieu-khoan-tag .dieukhoan {
+        width: 200px;
+        font-weight:bold; 
+        font-size:30px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+    }
+.help-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .help-tag > .help {
+        width: 400px;
+        font-weight: bold;
+        font-size: 30px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+    }
+.title-help{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.title-help>.main-help>p{
+    font-size:20px;
+}
+
+.trading{
+    justify-content:center;
+    align-items:center;  
+    display:flex;
+}
+    .title1{        
+        text-decoration:none;
+        color:black;
+        font-size:30px;
+        padding:0 2rem;
+        font-weight:bold;
+    }
+    .trade-main{
+        font-size:20px;
+        padding:1rem 0;
+    }
+
