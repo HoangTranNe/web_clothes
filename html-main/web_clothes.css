@@ -45,6 +45,11 @@ body {
     justify-content: space-evenly;
     padding: 1rem 0;
 }
+.nav > a > img{
+    height: 100px;
+    width: 100px;
+}
+
 
 .nav-link {
     list-style-type: none;
