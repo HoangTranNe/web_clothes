@@ -1,10 +1,17 @@
-﻿
-@{
-    ViewBag.Title = "see_all_view";
-    Layout = "~/Views/Home/see_all.cshtml";
-}
+﻿<!DOCTYPE html>
 
-<nav class="nav">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/web_clothes.css")
+    @Scripts.Render("~/Scripts/web_clothes.js")
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://kit.fontawesome.com/0ab0c4b239.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <nav class="nav">
     <a href="./web-clothes.html"><img src="~/Content/hinh-pro/logo.jpg" width="128" /></a>
     <div class="search-box">
         <input type="text" name="search" class="input-search" placeholder="Search" />
@@ -256,4 +263,9 @@
         </div>
     </div>
 </nav>
-
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js%22%3E"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js%22%3E"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js%22%3E"></script>
+</body>
+</html>
