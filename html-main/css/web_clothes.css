@@ -45,6 +45,11 @@ body {
     justify-content: space-evenly;
     padding: 1rem 0;
 }
+.nav > a > img{
+    height: 100px;
+    width: 100px;
+}
+
 
 .nav-link {
     list-style-type: none;
@@ -214,11 +219,6 @@ body {
 }
 .social > h2{
     color:white;
-}
-.footer-title {
-    display:plex;
-    align-items:baseline;
-    justify-content:space-evenly;
 }
 .icon > a > i {
     color: white;
