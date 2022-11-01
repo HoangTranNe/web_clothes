@@ -63,7 +63,7 @@ ul {
 
 body {
     font-family: monospace;
-    background-image: url(./background.jpg);
+    background-image: url(hinh-pro/background.jpg);
     font-size: 14px;
     color: #333;
     text-align: center;
@@ -140,7 +140,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     background-color: black;
-    height: 350px;
+    height: 450px;
     width: 100%;
     margin-top: 30px;
 }
@@ -174,7 +174,13 @@ body {
     .de-muc > li > a {
         text-decoration: none;
         color: #fff;
-        padding: 0rem 1rem;
+        padding: 3rem 0;
+    }
+    .de-muc > li > h4{
+        margin-top:30px;
+        font-size:20px;
+        padding:3rem 0;
+        color:white;
     }
 
 .contact_us > h2 {

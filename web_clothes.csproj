@@ -154,6 +154,7 @@
     <Content Include="Content\Content_Main\bootstrap-theme.min.css" />
     <Content Include="Content\Content_Main\bootstrap.css" />
     <Content Include="Content\Content_Main\bootstrap.min.css" />
+    <Content Include="Content\hinh-pro\background.jpg" />
     <Content Include="Content\hinh-pro\logo.jpg" />
     <Content Include="Content\hinh-pro\pro_1.jpg" />
     <Content Include="Content\hinh-pro\pro_10.jpg" />
