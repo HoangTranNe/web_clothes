@@ -5,7 +5,9 @@
 }
 
 <nav class="nav">
-    <img src="~/Content/hinh-pro/logo.jpg" width="128" />
+    <div class="logo">
+        <a href="https://localhost:44373/Home/web_clothes_view"><img src="~/hinh-pro/logo.jpg" /></a>
+    </div>
     <div class="search-box">
         <input type="text" name="search" class="input-search" placeholder="Search" />
         <button>
@@ -14,7 +16,7 @@
     </div>
     <ul class="nav-link">
         <li>
-            <a href="#">Login</a>
+            <a href="https://localhost:44373/Home/login_view">Login</a>
         </li>
         <li>
             <a href="#">Register</a>
@@ -28,7 +30,7 @@
     <div class="tab2-title">
         <ul class="title">
             <li class="home">
-                <a href="#">Home</a>
+                <a href="https://localhost:44373/Home/web_clothes_view">Home</a>
             </li>
             <li class="list">
                 <h2>Clothings</h2>
@@ -120,17 +122,15 @@
                 <a href="https://www.instagram.com/lol_bruzzzz/"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
-        <div class="help"></div>
-        <div class="contact_us"></div>
-
         <div class="help">
             <h2>Hướng Dẫn</h2>
             <ul class="de-muc">
-                <li>@Html.ActionLink("Điều Khoản", "dieu_khoan_view", "Home")</li>
-                <li>@Html.ActionLink("Hướng Dẫn Mua Hàng", "huong_dan_mua_hang_view", "Home")</li>
-                <li>@Html.ActionLink("Chính Sách Đổi Trả Hàng", "chinh_sach_doi_tra_view", "Home")</li>
+                <li><a href="https://localhost:44373/Home/dieu_khoan_view">Điều Khoản</a></li>
+                <li><a href="https://localhost:44373/Home/huong_dan_mua_hang_view">Hướng Dẫn Mua Hàng</a></li>
+                <li><a href="https://localhost:44373/Home/chinh_sach_doi_tra_view">Chính Sách Đổi Trả</a></li>
                 <li><a href="">Bảo Mật Thông Tin Khách Hàng</a></li>
                 <li><a href="">Chính Sách Thanh Toán</a></li>
+                <li class="reversed"><p>Co_Chay® All Right Reserved</p></li>
             </ul>
         </div>
         <div class="contact_us">
@@ -141,9 +141,7 @@
                 <li><a href="">Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></a></li>
             </ul>
         </div>
-        <div class="reserved">
-            <h4>Co_Chay® All Right Reserved</h4>
-        </div>
+
     </div>
 </nav>
 

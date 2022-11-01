@@ -33,7 +33,7 @@ body {
     background-image: url(hinh-pro/background.jpg);
     background-size:cover;
     font-size: 14px;
-    color: #333;
+    color: black;
     text-align: center;
     align-items: center;
     justify-content: space-between;
@@ -105,7 +105,7 @@ body {
     padding: 1rem;
 }
 .dropdown {
-    position:relative;
+    position: relative;
     display: inline-block
 }
 .dropdown{
@@ -167,6 +167,9 @@ body {
     height:5px;
     width: 500px;
 }
+.product{
+    font-size:20px;
+}
 .product-list{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -190,8 +193,10 @@ body {
 .product-item > .product-item-info > button{
     background-color:yellow;
     border:1px solid #000;
+    font-size:20px;
     cursor:pointer;
-    width: 100px;
+    height:50px;
+    width: 200px;
     border-radius: 20px;
 }
 
@@ -227,9 +232,13 @@ body {
     align-items:baseline;
     justify-content:space-evenly;
 }
+.icon > a{
+    margin:0 5px 0 5px;
+}
 .icon > a > i {
     color: white;
-    font-size: 40px;
+    font-size: 50px;
+    margin: 0 10px 0 10px;
 }
 .help > h2{
     color:white;
@@ -242,6 +251,7 @@ body {
     text-decoration: none;
     color: #fff;
     padding: 0.5rem 1rem;
+    font-size:17px;
 }
 .reversed > p{
     font-weight:bold;
