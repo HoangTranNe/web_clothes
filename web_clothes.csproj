@@ -56,6 +56,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -130,6 +132,54 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\brand.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cart.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\category.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\constract.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\customer.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\customer_order.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\partner.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\product.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\report.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\warehouse.cs">
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webClothesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>webClothesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webClothesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>webClothesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webClothesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>webClothesModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -212,6 +262,16 @@
     <Content Include="hinh-pro\pro_7.jpg" />
     <Content Include="hinh-pro\pro_8.jpg" />
     <Content Include="hinh-pro\pro_9.jpg" />
+    <Content Include="Models\webClothesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>webClothesModel.edmx</DependentUpon>
+      <LastGenOutput>webClothesModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\webClothesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>webClothesModel.edmx</DependentUpon>
+      <LastGenOutput>webClothesModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\Scripts_Main\bootstrap.js" />
     <Content Include="Scripts\Scripts_Main\bootstrap.min.js" />
     <Content Include="Content\Content_Boostrap\bootstrap-grid.css.map" />
@@ -230,6 +290,13 @@
     <Content Include="Content\Content_Boostrap\bootstrap.min.css.map" />
     <Content Include="Content\Content_Boostrap\bootstrap.rtl.css.map" />
     <Content Include="Content\Content_Boostrap\bootstrap.rtl.min.css.map" />
+    <EntityDeploy Include="Models\webClothesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>webClothesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\webClothesModel.edmx.diagram">
+      <DependentUpon>webClothesModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\Scripts_Main\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.min.js" />
@@ -280,7 +347,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -294,6 +360,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
