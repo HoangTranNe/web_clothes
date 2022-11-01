@@ -46,5 +46,9 @@ namespace do_an_web.Controllers
         {
             return View();
         }
+        public ActionResult login_view()
+        {
+            return View();
+        }
     }
 }

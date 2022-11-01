@@ -179,6 +179,8 @@
     <Content Include="Content\hinh-pro\pro_7.jpg" />
     <Content Include="Content\hinh-pro\pro_8.jpg" />
     <Content Include="Content\hinh-pro\pro_9.jpg" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\regist.css" />
     <Content Include="Content\web_clothes.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -272,6 +274,8 @@
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.min.js.map" />
     <Content Include="Views\Home\chinh_sach_doi_tra.cshtml" />
     <Content Include="Views\Home\chinh_sach_doi_tra_view.cshtml" />
+    <Content Include="Views\Home\login.cshtml" />
+    <Content Include="Views\Home\login_view.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

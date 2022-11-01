@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "login_view";
+    Layout = "~/Views/Home/login.cshtml";
+}
+
+<nav class="nav">
+    <a href="https://localhost:44373/Home/web_clothes_view"><img src="~/Content/hinh-pro/logo.jpg" width="128" /></a>
+</nav>
+<nav class="logins">
+    <form action="https://localhost:44373/Home/web_clothes_view">
+        <label class="login_account" for="account">Tên Tài Khoản: </label><br>
+
+        <input class="login_account" type="text" id="account" name="account"><br>
+
+        <label class="password" for="password">Mật Khẩu: </label><br>
+
+        <input type="password" class="password" name="password" id="psw"><br>
+
+        <button class="login_button" href="web-clothes.html" type="submit">Đăng Nhập</button>
+
+        <button class="login_button" type="submit"><a href="#">Đăng Kí</a></button>
+
+        <button class="login_button" type="submit">Quên Mật Khẩu</button>
+    </form>    
+</nav>
+<nav class="footer">
+    <div class="footer-title">
+        <div class="social">
+            <h2>Theo Dõi Chúng Tôi</h2>
+            <div class="icon">
+                <a href="https://www.facebook.com/hoangtran1609"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="help">
+            <h2>Hướng Dẫn</h2>
+            <ul class="de-muc">
+                <li><a href="">Điều Khoản</a></li>
+                <li><a href="">Hướng Dẫn Mua Hàng</a></li>
+                <li><a href="">Chính Sách Đổi Trả Hàng</a></li>
+                <li><a href="">Bảo Mật Thông Tin Khách Hàng</a></li>
+                <li><a href="">Chính Sách Thanh Toán</a></li>
+            </ul>
+            <h4>Co_Chay® All Right Reserved</h4>
+        </div>
+        <div class="contact_us">
+            <h2>Liên Hệ</h2>
+            <ul class="de-muc">
+                <li><a href="">Địa Chỉ: <span style="font-weight: bold;">123 Nguyễn Văn Linh, Quận 7, TP.HCM</span></a></li>
+                <li><a href="">Điện Thoại: <span style="font-weight: bold;">0946253769</span></a></li>
+                <li><a href="">Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
