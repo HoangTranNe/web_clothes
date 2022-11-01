@@ -279,7 +279,7 @@ body {
     color: white;
 }
 body{
-    background-image: url(img/backgrlogin.jpg);
+    background-image: url(./background.jpg);
     color: #333;
     text-align: center;
 }
@@ -317,3 +317,4 @@ body{
     border:#000 solid   1px;
 
 }
+

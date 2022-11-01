@@ -58,27 +58,32 @@ body{
     font-family: monospace;
     background-image: url(./background.jpg);
     font-size: 14px;    
-    line-height: 1.8;
     color: #333;
     text-align: center;
     align-items: center;
     justify-content: space-between;
 }
-
-.login {
+.footer{
+    margin-top:110px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    line-height: 2.35;    
+}
+.logins {
     background-color: #f9f9f9;
     width: 400px;
     height: 350px;
     border-radius: 12px;
-    margin: 0 auto;
-    padding: 20px;
-
+    margin: 20px auto;
+    padding: 5px;
 }
 .login_account{
     font-family: monospace;
     text-align: center;
     display: inline-block;
     border-radius: 10px;
+    height: 30px;
     width:200px;
 }
 .password{
@@ -86,6 +91,7 @@ body{
     text-align: center;
     display: inline-block;
     border-radius: 10px;
+    height: 30px;
     width:200px;
 }
 #account{
@@ -103,6 +109,11 @@ body{
     margin-top:10px;
     margin-bottom:10px;    
 }
+.login_button > a{
+    color: #333;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, monospace;
+}
 .footer{
     display: flex;
     justify-content: space-evenly;
@@ -113,8 +124,9 @@ body{
     justify-content: space-evenly;
     align-items: center;
     background-color: black;
-    height: 250px;
+    height: 350px;
     width:100%;
+    margin-top:30px;
 }
 .social > h2{
     color:white;
@@ -124,22 +136,23 @@ body{
 }
 .icon > a > i {
     color: white;
-    font-size: 40px;
+    font-size: 50px;
 }
 .help > h2{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    color:white;
+}
+.help>h4{
+    margin-top:50px;
+    font-size:20px;
     color:white;
 }
 .de-muc>li{
     list-style: none;
-    padding: 0.5rem 0;
 }
 .de-muc > li > a{
     text-decoration: none;
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
 }
 .contact_us > h2{
     display: flex;
@@ -147,10 +160,3 @@ body{
     align-items: center;
     color:white;
 }
-.reserved {
-    display: flex;
-
-}
-    .reserved > h4 {
-        color: white;
-    }
