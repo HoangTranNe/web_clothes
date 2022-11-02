@@ -54,5 +54,9 @@ namespace do_an_web.Controllers
         {
             return View();
         }
+        public ActionResult chinh_sach_thanh_toan_view()
+        {
+            return View();
+        }
     }
 }
