@@ -50,5 +50,9 @@ namespace do_an_web.Controllers
         {
             return View();
         }
+        public ActionResult chinh_sach_bao_mat_thong_tin_view()
+        {
+            return View();
+        }
     }
 }

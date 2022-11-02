@@ -344,6 +344,8 @@
     <Content Include="Views\Home\chinh_sach_doi_tra_view.cshtml" />
     <Content Include="Views\Home\login.cshtml" />
     <Content Include="Views\Home\login_view.cshtml" />
+    <Content Include="Views\Home\chinh_sach_bao_mat_thong_tin.cshtml" />
+    <Content Include="Views\Home\chinh_sach_bao_mat_thong_tin_view.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
