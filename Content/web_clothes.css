@@ -38,7 +38,16 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-
+.image-hover {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
 ul {
     padding: 0;
     margin: 0;
@@ -116,10 +125,13 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
+    border-radius:10px;
+}
+.title > .list > h2{
+    font-weight:bold;
 }
 .list-dropdown{
     display:none
-    
 }
 .list:hover .dropdown {
     display: block;
@@ -136,6 +148,7 @@ body {
 .dropdown > li > a:hover{
     color: #fff;
     background-color: #000;
+    border-radius:10px;
 }
 .title{
     display: flex;
@@ -152,6 +165,12 @@ body {
     font-weight: 700;
     font-size:25px;
 }
+    .title > li > a:hover {
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        width:200px;
+    }
 .clearance{
     background-color: yellow;
     border-radius: 10px;
@@ -170,25 +189,51 @@ body {
 .product{
     font-size:20px;
 }
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
 .product-list{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-items:center;
 }
-.product-item{
+.optional {
+    margin: 5px 5px;
+    font-size: 15px;
+    border-radius: 20px;
+}
+    .optional > a {
+        color:black;
+        text-decoration: none;
+        font-weight:bold;
+        font-family:monospace;
+    }
+.product-item {
+    position: relative;
     width: 240px;
     padding: 1rem 0;
 }
-.product-item-info{
+.product-item:hover .image{
+    opacity:0.3;
+}
+.product-item:hover .image-hover {
+    opacity: 1;
+}
+.product-item-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.product-item > img {
+.product-item > .image > img {
     border-radius: 20px;
-    height: 240px;
-    width: 240px;
+    height: 220px;
+    width: 220px;
 }
 .product-item > .product-item-info > button{
     background-color:yellow;
@@ -253,12 +298,17 @@ body {
     padding: 0.5rem 1rem;
     font-size:17px;
 }
-.reversed > p{
-    font-weight:bold;
-    font-size:23px;
-    padding:2rem 0;
-    color:white;
-}
+    .de-muc > li > a:hover{
+        background-color:white;
+        color:black;
+        border-radius:10px;
+    }
+    .reversed > p {
+        font-weight: bold;
+        font-size: 23px;
+        padding: 2rem 0;
+        color: white;
+    }
 .contact_us > h2{
     color:white;
 }
