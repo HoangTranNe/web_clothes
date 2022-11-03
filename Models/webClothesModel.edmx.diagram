@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0811ad52275742c48f0f562c3e9c76ce" Name="Diagram1" ZoomLevel="93">
+      <Diagram DiagramId="0811ad52275742c48f0f562c3e9c76ce" Name="Diagram1" ZoomLevel="90">
         <EntityTypeShape EntityType="webClothesModel.brand" Width="1.5" PointX="11.5" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.cart" Width="1.5" PointX="5.125" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.category" Width="1.5" PointX="8.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.category" Width="1.5" PointX="8.375" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.constract" Width="1.5" PointX="9.875" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.customer" Width="1.5" PointX="1" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.customer_order" Width="1.5" PointX="4" PointY="3.75" IsExpanded="true" />

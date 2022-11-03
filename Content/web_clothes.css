@@ -368,4 +368,43 @@ body {
         font-size:20px;
         padding:1rem 0;
     }
+.product-details{
+    display:flex;
+    justify-content:center;
+    align-items:baseline;
+    font-size:20px;
+}
+    .product-details > .details > img {
+        height: 450px;
+        width: 450px;
+        float: left;
+    }
+    .product-details > .details > .details-pro {
+        margin-top:50px;
+        padding:0 2rem;
+        margin-left: 10px;
+        background-color: white;
+        float:right;
+        border-radius: 10px;
+    }
+    .product-details > .details > .details-pro > .pro_1{
+        font-weight:bold;
+        font-size:30px;
+    }
+.cart {
+    margin-top:20px;
+    margin-left:10px;
+    background-color: yellow;
+    padding: 1rem 0;
+    font-size:20px;
+    border-radius:10px;
+    font-weight:bold;
+}
+.decribe {
+    display:flex;
+}
+.decribe-details{
+
+}
+
 

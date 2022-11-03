@@ -58,5 +58,9 @@ namespace do_an_web.Controllers
         {
             return View();
         }
+        public ActionResult product_details_view()
+        {
+            return View();
+        }
     }
 }
