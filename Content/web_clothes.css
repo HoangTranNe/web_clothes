@@ -303,12 +303,12 @@ body {
         color:black;
         border-radius:10px;
     }
-    .reversed > p {
-        font-weight: bold;
-        font-size: 23px;
-        padding: 2rem 0;
-        color: white;
-    }
+.reversed > p {
+    font-weight: bold;
+    font-size: 23px;
+    margin-top:10px;
+    color: white;
+}
 .contact_us > h2{
     color:white;
 }
@@ -377,7 +377,7 @@ body {
     .product-details > .details > img {
         height: 450px;
         width: 450px;
-        float: left;
+        float: left;        
     }
     .product-details > .details > .details-pro {
         margin-top:50px;
