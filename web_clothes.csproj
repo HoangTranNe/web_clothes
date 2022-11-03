@@ -297,6 +297,7 @@
     <Content Include="Models\webClothesModel.edmx.diagram">
       <DependentUpon>webClothesModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\hinh-size\pro_1_size.jpg" />
     <None Include="Scripts\Scripts_Main\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.min.js" />
