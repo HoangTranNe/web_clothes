@@ -8,20 +8,20 @@ using System.Web;
 using System.Web.Mvc;
 using do_an_web.Models;
 
-namespace do_an_web.Controllers
+namespace do_an_web.Areas.Areas.Controllers
 {
     public class reportsController : Controller
     {
         private webClothesEntities db = new webClothesEntities();
 
-        // GET: reports
+        // GET: Areas/reports
         public ActionResult Index()
         {
             var reports = db.reports.Include(r => r.customer);
             return View(reports.ToList());
         }
 
-        // GET: reports/Details/5
+        // GET: Areas/reports/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,14 +36,14 @@ namespace do_an_web.Controllers
             return View(report);
         }
 
-        // GET: reports/Create
+        // GET: Areas/reports/Create
         public ActionResult Create()
         {
             ViewBag.id_customer = new SelectList(db.customers, "id_customer", "name_customer");
             return View();
         }
 
-        // POST: reports/Create
+        // POST: Areas/reports/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -61,7 +61,7 @@ namespace do_an_web.Controllers
             return View(report);
         }
 
-        // GET: reports/Edit/5
+        // GET: Areas/reports/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,7 +77,7 @@ namespace do_an_web.Controllers
             return View(report);
         }
 
-        // POST: reports/Edit/5
+        // POST: Areas/reports/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -94,7 +94,7 @@ namespace do_an_web.Controllers
             return View(report);
         }
 
-        // GET: reports/Delete/5
+        // GET: Areas/reports/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,7 +109,7 @@ namespace do_an_web.Controllers
             return View(report);
         }
 
-        // POST: reports/Delete/5
+        // POST: Areas/reports/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -8,19 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using do_an_web.Models;
 
-namespace do_an_web.Controllers
+namespace do_an_web.Areas.Areas.Controllers
 {
     public class cartsController : Controller
     {
         private webClothesEntities db = new webClothesEntities();
 
-        // GET: carts
+        // GET: Areas/carts
         public ActionResult Index()
         {
             return View(db.carts.ToList());
         }
 
-        // GET: carts/Details/5
+        // GET: Areas/carts/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace do_an_web.Controllers
             return View(cart);
         }
 
-        // GET: carts/Create
+        // GET: Areas/carts/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: carts/Create
+        // POST: Areas/carts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace do_an_web.Controllers
             return View(cart);
         }
 
-        // GET: carts/Edit/5
+        // GET: Areas/carts/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace do_an_web.Controllers
             return View(cart);
         }
 
-        // POST: carts/Edit/5
+        // POST: Areas/carts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace do_an_web.Controllers
             return View(cart);
         }
 
-        // GET: carts/Delete/5
+        // GET: Areas/carts/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace do_an_web.Controllers
             return View(cart);
         }
 
-        // POST: carts/Delete/5
+        // POST: Areas/carts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

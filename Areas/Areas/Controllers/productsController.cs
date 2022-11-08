@@ -8,20 +8,20 @@ using System.Web;
 using System.Web.Mvc;
 using do_an_web.Models;
 
-namespace do_an_web.Controllers
+namespace do_an_web.Areas.Areas.Controllers
 {
     public class productsController : Controller
     {
         private webClothesEntities db = new webClothesEntities();
 
-        // GET: products
+        // GET: Areas/products
         public ActionResult Index()
         {
             var products = db.products.Include(p => p.brand).Include(p => p.category).Include(p => p.warehouse);
             return View(products.ToList());
         }
 
-        // GET: products/Details/5
+        // GET: Areas/products/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -29,8 +29,6 @@ namespace do_an_web.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             product product = db.products.Find(id);
-            List<category> categories = db.categories.ToList();
-            ViewBag.Categories = categories;
             if (product == null)
             {
                 return HttpNotFound();
@@ -38,7 +36,7 @@ namespace do_an_web.Controllers
             return View(product);
         }
 
-        // GET: products/Create
+        // GET: Areas/products/Create
         public ActionResult Create()
         {
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand");
@@ -47,7 +45,7 @@ namespace do_an_web.Controllers
             return View();
         }
 
-        // POST: products/Create
+        // POST: Areas/products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,7 +65,7 @@ namespace do_an_web.Controllers
             return View(product);
         }
 
-        // GET: products/Edit/5
+        // GET: Areas/products/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,7 +83,7 @@ namespace do_an_web.Controllers
             return View(product);
         }
 
-        // POST: products/Edit/5
+        // POST: Areas/products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -104,7 +102,7 @@ namespace do_an_web.Controllers
             return View(product);
         }
 
-        // GET: products/Delete/5
+        // GET: Areas/products/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -119,7 +117,7 @@ namespace do_an_web.Controllers
             return View(product);
         }
 
-        // POST: products/Delete/5
+        // POST: Areas/products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -8,20 +8,20 @@ using System.Web;
 using System.Web.Mvc;
 using do_an_web.Models;
 
-namespace do_an_web.Controllers
+namespace do_an_web.Areas.Areas.Controllers
 {
     public class customer_orderController : Controller
     {
         private webClothesEntities db = new webClothesEntities();
 
-        // GET: customer_order
+        // GET: Areas/customer_order
         public ActionResult Index()
         {
             var customer_order = db.customer_order.Include(c => c.cart).Include(c => c.customer).Include(c => c.product);
             return View(customer_order.ToList());
         }
 
-        // GET: customer_order/Details/5
+        // GET: Areas/customer_order/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,7 +36,7 @@ namespace do_an_web.Controllers
             return View(customer_order);
         }
 
-        // GET: customer_order/Create
+        // GET: Areas/customer_order/Create
         public ActionResult Create()
         {
             ViewBag.id_cart = new SelectList(db.carts, "id_cart", "price");
@@ -45,7 +45,7 @@ namespace do_an_web.Controllers
             return View();
         }
 
-        // POST: customer_order/Create
+        // POST: Areas/customer_order/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +65,7 @@ namespace do_an_web.Controllers
             return View(customer_order);
         }
 
-        // GET: customer_order/Edit/5
+        // GET: Areas/customer_order/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,7 +83,7 @@ namespace do_an_web.Controllers
             return View(customer_order);
         }
 
-        // POST: customer_order/Edit/5
+        // POST: Areas/customer_order/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -102,7 +102,7 @@ namespace do_an_web.Controllers
             return View(customer_order);
         }
 
-        // GET: customer_order/Delete/5
+        // GET: Areas/customer_order/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -117,7 +117,7 @@ namespace do_an_web.Controllers
             return View(customer_order);
         }
 
-        // POST: customer_order/Delete/5
+        // POST: Areas/customer_order/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -1,0 +1,27 @@
+﻿@model do_an_web.Models.brand
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>brand</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name_brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name_brand)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_brand }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

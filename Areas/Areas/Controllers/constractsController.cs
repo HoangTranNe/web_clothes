@@ -8,20 +8,20 @@ using System.Web;
 using System.Web.Mvc;
 using do_an_web.Models;
 
-namespace do_an_web.Controllers
+namespace do_an_web.Areas.Areas.Controllers
 {
     public class constractsController : Controller
     {
         private webClothesEntities db = new webClothesEntities();
 
-        // GET: constracts
+        // GET: Areas/constracts
         public ActionResult Index()
         {
             var constracts = db.constracts.Include(c => c.partner).Include(c => c.product);
             return View(constracts.ToList());
         }
 
-        // GET: constracts/Details/5
+        // GET: Areas/constracts/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,7 +36,7 @@ namespace do_an_web.Controllers
             return View(constract);
         }
 
-        // GET: constracts/Create
+        // GET: Areas/constracts/Create
         public ActionResult Create()
         {
             ViewBag.id_partners = new SelectList(db.partners, "id_partners", "name_partners");
@@ -44,7 +44,7 @@ namespace do_an_web.Controllers
             return View();
         }
 
-        // POST: constracts/Create
+        // POST: Areas/constracts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -63,7 +63,7 @@ namespace do_an_web.Controllers
             return View(constract);
         }
 
-        // GET: constracts/Edit/5
+        // GET: Areas/constracts/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,7 +80,7 @@ namespace do_an_web.Controllers
             return View(constract);
         }
 
-        // POST: constracts/Edit/5
+        // POST: Areas/constracts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -98,7 +98,7 @@ namespace do_an_web.Controllers
             return View(constract);
         }
 
-        // GET: constracts/Delete/5
+        // GET: Areas/constracts/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -113,7 +113,7 @@ namespace do_an_web.Controllers
             return View(constract);
         }
 
-        // POST: constracts/Delete/5
+        // POST: Areas/constracts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

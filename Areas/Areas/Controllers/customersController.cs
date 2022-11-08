@@ -8,19 +8,19 @@ using System.Web;
 using System.Web.Mvc;
 using do_an_web.Models;
 
-namespace do_an_web.Controllers
+namespace do_an_web.Areas.Areas.Controllers
 {
     public class customersController : Controller
     {
         private webClothesEntities db = new webClothesEntities();
 
-        // GET: customers
+        // GET: Areas/customers
         public ActionResult Index()
         {
             return View(db.customers.ToList());
         }
 
-        // GET: customers/Details/5
+        // GET: Areas/customers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace do_an_web.Controllers
             return View(customer);
         }
 
-        // GET: customers/Create
+        // GET: Areas/customers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: customers/Create
+        // POST: Areas/customers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace do_an_web.Controllers
             return View(customer);
         }
 
-        // GET: customers/Edit/5
+        // GET: Areas/customers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace do_an_web.Controllers
             return View(customer);
         }
 
-        // POST: customers/Edit/5
+        // POST: Areas/customers/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace do_an_web.Controllers
             return View(customer);
         }
 
-        // GET: customers/Delete/5
+        // GET: Areas/customers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace do_an_web.Controllers
             return View(customer);
         }
 
-        // POST: customers/Delete/5
+        // POST: Areas/customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

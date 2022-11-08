@@ -1,0 +1,59 @@
+﻿@model do_an_web.Models.customer_order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>customer_order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity_order)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity_order)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cart.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cart.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customer.name_customer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer.name_customer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.product.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.product.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_order }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
