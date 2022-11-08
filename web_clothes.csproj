@@ -129,17 +129,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Areas\AreasAreaRegistration.cs" />
+    <Compile Include="Areas\Areas\Controllers\brandsController.cs" />
+    <Compile Include="Areas\Areas\Controllers\cartsController.cs" />
+    <Compile Include="Areas\Areas\Controllers\categoriesController.cs" />
+    <Compile Include="Areas\Areas\Controllers\constractsController.cs" />
+    <Compile Include="Areas\Areas\Controllers\customersController.cs" />
+    <Compile Include="Areas\Areas\Controllers\customer_orderController.cs" />
+    <Compile Include="Areas\Areas\Controllers\partnersController.cs" />
+    <Compile Include="Areas\Areas\Controllers\productsController.cs" />
+    <Compile Include="Areas\Areas\Controllers\reportsController.cs" />
+    <Compile Include="Areas\Areas\Controllers\warehousesController.cs" />
     <Compile Include="Controllers\brandsController.cs" />
-    <Compile Include="Controllers\cartsController.cs" />
-    <Compile Include="Controllers\categoriesController.cs" />
-    <Compile Include="Controllers\constractsController.cs" />
-    <Compile Include="Controllers\customersController.cs" />
-    <Compile Include="Controllers\customer_orderController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\partnersController.cs" />
-    <Compile Include="Controllers\productsController.cs" />
-    <Compile Include="Controllers\reportsController.cs" />
-    <Compile Include="Controllers\warehousesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -305,6 +307,8 @@
     <Content Include="Models\webClothesModel.edmx.diagram">
       <DependentUpon>webClothesModel.edmx</DependentUpon>
     </Content>
+    <None Include=".editorconfig" />
+    <Content Include="Areas\Areas\Views\web.config" />
     <None Include="Scripts\Scripts_Main\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.min.js" />
@@ -342,59 +346,16 @@
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.min.js.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\web_clothes_view.cshtml" />
-    <Content Include="Views\categories\Create.cshtml" />
-    <Content Include="Views\categories\Delete.cshtml" />
-    <Content Include="Views\categories\Details.cshtml" />
-    <Content Include="Views\categories\Edit.cshtml" />
-    <Content Include="Views\categories\Index.cshtml" />
-    <Content Include="Views\customers\Create.cshtml" />
-    <Content Include="Views\customers\Delete.cshtml" />
-    <Content Include="Views\customers\Details.cshtml" />
-    <Content Include="Views\customers\Edit.cshtml" />
-    <Content Include="Views\customers\Index.cshtml" />
-    <Content Include="Views\warehouses\Create.cshtml" />
-    <Content Include="Views\warehouses\Delete.cshtml" />
-    <Content Include="Views\warehouses\Details.cshtml" />
-    <Content Include="Views\warehouses\Edit.cshtml" />
-    <Content Include="Views\warehouses\Index.cshtml" />
     <Content Include="Views\brands\Create.cshtml" />
     <Content Include="Views\brands\Delete.cshtml" />
     <Content Include="Views\brands\Details.cshtml" />
     <Content Include="Views\brands\Edit.cshtml" />
     <Content Include="Views\brands\Index.cshtml" />
-    <Content Include="Views\partners\Create.cshtml" />
-    <Content Include="Views\partners\Delete.cshtml" />
-    <Content Include="Views\partners\Details.cshtml" />
-    <Content Include="Views\partners\Edit.cshtml" />
-    <Content Include="Views\partners\Index.cshtml" />
-    <Content Include="Views\carts\Create.cshtml" />
-    <Content Include="Views\carts\Delete.cshtml" />
-    <Content Include="Views\carts\Details.cshtml" />
-    <Content Include="Views\carts\Edit.cshtml" />
-    <Content Include="Views\carts\Index.cshtml" />
-    <Content Include="Views\products\Create.cshtml" />
-    <Content Include="Views\products\Delete.cshtml" />
-    <Content Include="Views\products\Details.cshtml" />
-    <Content Include="Views\products\Edit.cshtml" />
-    <Content Include="Views\products\Index.cshtml" />
-    <Content Include="Views\constracts\Create.cshtml" />
-    <Content Include="Views\constracts\Delete.cshtml" />
-    <Content Include="Views\constracts\Details.cshtml" />
-    <Content Include="Views\constracts\Edit.cshtml" />
-    <Content Include="Views\constracts\Index.cshtml" />
-    <Content Include="Views\customer_order\Create.cshtml" />
-    <Content Include="Views\customer_order\Delete.cshtml" />
-    <Content Include="Views\customer_order\Details.cshtml" />
-    <Content Include="Views\customer_order\Edit.cshtml" />
-    <Content Include="Views\customer_order\Index.cshtml" />
-    <Content Include="Views\reports\Create.cshtml" />
-    <Content Include="Views\reports\Delete.cshtml" />
-    <Content Include="Views\reports\Details.cshtml" />
-    <Content Include="Views\reports\Edit.cshtml" />
-    <Content Include="Views\reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Areas\Data\" />
+    <Folder Include="Areas\Areas\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
