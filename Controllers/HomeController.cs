@@ -1,4 +1,5 @@
-﻿using System;
+﻿using do_an_web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace do_an_web.Controllers
 {
     public class HomeController : Controller
     {
+        private webClothesEntities db = new webClothesEntities();
         public ActionResult Index()
         {
             return View();
@@ -28,7 +30,7 @@ namespace do_an_web.Controllers
         }
         public ActionResult web_clothes_view()
         {
-            return View();
+            return View(db.categories.ToList());
         }
         public ActionResult dieu_khoan_view()
         {

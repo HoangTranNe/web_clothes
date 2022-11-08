@@ -17,7 +17,7 @@ namespace do_an_web.Models
         public int id_constracts { get; set; }
         public Nullable<int> id_partners { get; set; }
         public Nullable<int> id_products { get; set; }
-        public Nullable<int> price_constracts { get; set; }
+        public string price_constracts { get; set; }
         public Nullable<int> quantity { get; set; }
     
         public virtual partner partner { get; set; }

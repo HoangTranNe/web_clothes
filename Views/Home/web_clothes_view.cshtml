@@ -1,11 +1,11 @@
-﻿
+﻿@model IEnumerable<do_an_web.Models.category>
 @{
     ViewBag.Title = "web_clothes_view";
-    Layout = "~/Views/Home/web-clothes.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<nav class="nav">
+@*<nav class="nav">
     <div class="logo">
         <a href="https://localhost:44373/Home/web_clothes_view"><img src="~/hinh-pro/logo.jpg" /></a>
     </div>
@@ -26,7 +26,7 @@
             <a href="#">Contact</a>
         </li>
     </ul>
-</nav>
+</nav>*@
 <nav class="tab2">
     <div class="tab2-title">
         <ul class="title">
@@ -37,15 +37,12 @@
                 <h2>Clothings</h2>
                 <ul class="dropdown">
                     <li><a href="">All</a></li>
-                    <li><a href="">Tee</a></li>
-                    <li><a href="">Bottom</a></li>
-                    <li><a href="">Hoodie</a></li>
-                    <li><a href="">Sweater</a></li>
-                    <li><a href="">Jacket</a></li>
-                    <li><a href="">Cap</a></li>
-                    <li><a href="">Shirt</a></li>
-                    <li><a href="">Accessories</a></li>
-                    <li><a href="">Jacket</a></li>
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            @Html.ActionLink(item.name_category,"Index","products")
+                        </li>
+                    }
                 </ul>
             </li>
             <li>
@@ -419,7 +416,7 @@
                 <li><a href="">Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></a> <span style="color: white">|</span> <a href="">Email: <span style="font-weight: bold;">tranbaohoang2003@gmail.com</span></a></li>
             </ul>
         </div>
-        
+
     </div>
 </nav>
 

@@ -19,32 +19,92 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <nav class="nav">
+        <a href="./web-clothes.html"><img src="~/Content/hinh-pro/logo.jpg" width="128" /></a>
+        <div class="search-box">
+            <input type="text" name="search" class="input-search" placeholder="Search" />
+            <button>
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+        <ul class="nav-link">
+            <li>
+                <a href="#">Login</a>
+            </li>
+            <li>
+                <a href="#">Register</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    @*<nav class="tab2">
+        <div class="tab2-title">
+            <ul class="title">
+                <li class="home">
+                    @Html.ActionLink("Home", "web_clothes_view", "Home", null, new { @class = "linkbtnfull" })
+                </li>
+                <li class="list">
+                    <h2>Clothings</h2>
+                    <ul class="dropdown">
+                        <li><a href="">All</a></li>
+                        <li><a href="">Tee</a></li>
+                        <li><a href="">Bottom</a></li>
+                        <li><a href="">Hoodie</a></li>
+                        <li><a href="">Sweater</a></li>
+                        <li><a href="">Jacket</a></li>
+                        <li><a href="">Cap</a></li>
+                        <li><a href="">Shirt</a></li>
+                        <li><a href="">Accessories</a></li>
+                        <li><a href="">Jacket</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+                <li class="clearance">
+                    <a href="">Clearance_Sale</a>
+                </li>
+            </ul>
+        </div>
+    </nav>*@
+    @RenderBody()
+@*    <nav class="footer">
+        <div class="footer-title">
+            <div class="social">
+                <h2>Liên Hệ</h2>
+                <div class="icon">
+                    <a href="https://www.facebook.com/hoangtran1609"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/lol_bruzzzz/"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <div class="help"></div>
+            <div class="contact_us"></div>
+
+            <div class="help">
+                <h2>Hướng Dẫn</h2>
+                <ul class="de-muc">
+                    <li>@Html.ActionLink("Điều Khoản", "dieu_khoan_view", "Home")</li>
+                    <li>@Html.ActionLink("Hướng Dẫn Mua Hàng", "huong_dan_mua_hang_view", "Home")</li>
+                    <li>@Html.ActionLink("Chính Sách Đổi Trả Hàng", "chinh_sach_doi_tra_view", "Home")</li>
+                    <li><a href="">Bảo Mật Thông Tin Khách Hàng</a></li>
+                    <li><a href="">Chính Sách Thanh Toán</a></li>
                 </ul>
             </div>
+            <div class="contact_us">
+                <h2>Địa Chỉ</h2>
+                <ul class="de-muc">
+                    <li><a href="">Địa Chỉ: <span style="font-weight: bold;">123 Nguyễn Văn Linh, Quận 7, TP.HCM</span></a></li>
+                    <li><a href="">Điện Thoại: <span style="font-weight: bold;">0946253769</span></a></li>
+                    <li><a href="">Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></a></li>
+                </ul>
+            </div>
+            <div class="reserved">
+                <h4>Co_Chay® All Right Reserved</h4>
+            </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    </nav>*@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

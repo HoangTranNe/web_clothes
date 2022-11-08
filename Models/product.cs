@@ -24,15 +24,12 @@ namespace do_an_web.Models
         public int id_products { get; set; }
         public Nullable<int> id_warehouse { get; set; }
         public Nullable<int> id_category { get; set; }
-        public Nullable<int> id_order { get; set; }
         public Nullable<int> id_brand { get; set; }
-        public Nullable<int> id_cart { get; set; }
         public string name { get; set; }
-        public Nullable<int> price { get; set; }
+        public string price { get; set; }
         public Nullable<int> discount { get; set; }
     
         public virtual brand brand { get; set; }
-        public virtual cart cart { get; set; }
         public virtual category category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<constract> constracts { get; set; }

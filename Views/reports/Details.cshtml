@@ -1,0 +1,43 @@
+﻿@model do_an_web.Models.report
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>report</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.subject_customer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subject_customer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contents_customer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contents_customer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customer.name_customer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer.name_customer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_reports }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

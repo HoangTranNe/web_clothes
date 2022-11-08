@@ -18,17 +18,15 @@ namespace do_an_web.Models
         public cart()
         {
             this.customer_order = new HashSet<customer_order>();
-            this.products = new HashSet<product>();
         }
     
         public int id_cart { get; set; }
         public Nullable<int> id_products { get; set; }
-        public Nullable<int> price { get; set; }
+        public string price { get; set; }
         public Nullable<int> quantity { get; set; }
-    
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customer_order> customer_order { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<product> products { get; set; }
     }
 }

@@ -28,7 +28,7 @@ namespace do_an_web.Models
         public string password_customer { get; set; }
         public string gender_customer { get; set; }
         public Nullable<int> age_customer { get; set; }
-        public Nullable<int> address_customer { get; set; }
+        public string address_customer { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customer_order> customer_order { get; set; }
