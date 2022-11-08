@@ -6,7 +6,7 @@
 }
 
 <h2>Index</h2>
-
+@*
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -31,34 +31,45 @@
             @Html.DisplayNameFor(model => model.warehouse.id_warehouse)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.discount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.brand.name_brand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.category.name_category)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.warehouse.id_warehouse)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_products }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_products }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_products })
-        </td>
-    </tr>
-}
+<div class="news-details">
+    @foreach (var item in Model)
+    {
+        @*<tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.discount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.brand.name_brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.category.name_category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.warehouse.id_warehouse)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.id_products }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.id_products }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.id_products })
+                </td>
+            </tr>*@
+        <a href="@Url.Action("Details","products", new {id=item.id_products})" class="card" style="width:5rem;">
+            <img src="~/Content/Images/pro_1.jpg" class="card-img-top" alt="..." />
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.name)</h5>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.price)</p>
+        </div>
+    }
+</div>
 
-</table>
+
+@*</table>*@
