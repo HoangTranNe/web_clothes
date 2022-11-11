@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -88,12 +90,35 @@ namespace do_an_web.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,images")] product product)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,images")] product product, HttpPostedFileBase images, FormCollection form)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    if(images!=null)
+                    {
+                        string _FileName = Path.GetFileName(images.FileName);
+                        string _path = Path.Combine(Server.MapPath("~/bookimages"), _FileName);
+                        images.SaveAs(_path);
+                        product.images = _FileName;
+                        _path = Path.Combine(Server.MapPath("~/bookimages"), form["oldimage"]);
+                        if (System.IO.File.Exists(_path))
+                            System.IO.File.Delete(_path);
+                    }
+                    else
+                    {
+                        product.images = form["oldimage"];
+                        db.Entry(product).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
+                catch
+                {
+                    ViewBag.Message = "Không Thành Công";
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
