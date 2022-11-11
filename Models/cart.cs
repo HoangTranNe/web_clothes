@@ -22,10 +22,10 @@ namespace do_an_web.Models
     
         public int id_cart { get; set; }
         public Nullable<int> id_products { get; set; }
+        public string images { get; set; }
         public string price { get; set; }
         public Nullable<int> quantity { get; set; }
-
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customer_order> customer_order { get; set; }
     }

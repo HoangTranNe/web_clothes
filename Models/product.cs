@@ -28,6 +28,7 @@ namespace do_an_web.Models
         public string name { get; set; }
         public string price { get; set; }
         public Nullable<int> discount { get; set; }
+        public string images { get; set; }
     
         public virtual brand brand { get; set; }
         public virtual category category { get; set; }

@@ -13,6 +13,7 @@
     </Key>
     <Property Name="id_cart" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_products" Type="int" />
+    <Property Name="images" Type="nvarchar" MaxLength="255" />
     <Property Name="price" Type="nvarchar" MaxLength="255" />
     <Property Name="quantity" Type="int" />
   </EntityType>
@@ -30,7 +31,7 @@
     <Property Name="id_constracts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_partners" Type="int" />
     <Property Name="id_products" Type="int" />
-    <Property Name="price_constracts" Type="nvarchar" MaxLength="255" />
+    <Property Name="price_constracts" Type="varchar" MaxLength="255" />
     <Property Name="quantity" Type="int" />
   </EntityType>
   <EntityType Name="customer_order">
@@ -78,6 +79,7 @@
     <Property Name="name" Type="nvarchar" MaxLength="255" />
     <Property Name="price" Type="nvarchar" MaxLength="255" />
     <Property Name="discount" Type="int" />
+    <Property Name="images" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="reports">
     <Key>

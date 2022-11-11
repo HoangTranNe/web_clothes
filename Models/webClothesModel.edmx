@@ -18,6 +18,7 @@
           </Key>
           <Property Name="id_cart" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_products" Type="int" />
+          <Property Name="images" Type="nvarchar" MaxLength="255" />
           <Property Name="price" Type="nvarchar" MaxLength="255" />
           <Property Name="quantity" Type="int" />
         </EntityType>
@@ -35,7 +36,7 @@
           <Property Name="id_constracts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_partners" Type="int" />
           <Property Name="id_products" Type="int" />
-          <Property Name="price_constracts" Type="nvarchar" MaxLength="255" />
+          <Property Name="price_constracts" Type="varchar" MaxLength="255" />
           <Property Name="quantity" Type="int" />
         </EntityType>
         <EntityType Name="customer_order">
@@ -83,6 +84,7 @@
           <Property Name="name" Type="nvarchar" MaxLength="255" />
           <Property Name="price" Type="nvarchar" MaxLength="255" />
           <Property Name="discount" Type="int" />
+          <Property Name="images" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="reports">
           <Key>
@@ -276,6 +278,7 @@
           </Key>
           <Property Name="id_cart" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_products" Type="Int32" />
+          <Property Name="images" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="price" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="quantity" Type="Int32" />
           <NavigationProperty Name="customer_order" Relationship="Self.FK__customer___id_ca__3C69FB99" FromRole="carts" ToRole="customer_order" />
@@ -295,7 +298,7 @@
           <Property Name="id_constracts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_partners" Type="Int32" />
           <Property Name="id_products" Type="Int32" />
-          <Property Name="price_constracts" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="price_constracts" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="quantity" Type="Int32" />
           <NavigationProperty Name="partner" Relationship="Self.FK__constract__id_pa__38996AB5" FromRole="constracts" ToRole="partners" />
           <NavigationProperty Name="product" Relationship="Self.FK__constract__id_pr__398D8EEE" FromRole="constracts" ToRole="products" />
@@ -351,6 +354,7 @@
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="price" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="discount" Type="Int32" />
+          <Property Name="images" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="brand" Relationship="Self.FK__products__id_bra__37A5467C" FromRole="products" ToRole="brand" />
           <NavigationProperty Name="category" Relationship="Self.FK__products__id_cat__35BCFE0A" FromRole="products" ToRole="categories" />
           <NavigationProperty Name="constracts" Relationship="Self.FK__constract__id_pr__398D8EEE" FromRole="products" ToRole="constracts" />
@@ -551,6 +555,7 @@
               <MappingFragment StoreEntitySet="carts">
                 <ScalarProperty Name="id_cart" ColumnName="id_cart" />
                 <ScalarProperty Name="id_products" ColumnName="id_products" />
+                <ScalarProperty Name="images" ColumnName="images" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
               </MappingFragment>
@@ -622,6 +627,7 @@
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="images" ColumnName="images" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
