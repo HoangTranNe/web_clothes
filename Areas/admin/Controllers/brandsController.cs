@@ -6,7 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using do_an_web.Models;
+using PagedList;
 
 namespace do_an_web.Areas.admin.Controllers
 {
@@ -15,9 +17,13 @@ namespace do_an_web.Areas.admin.Controllers
         private webClothesEntities db = new webClothesEntities();
 
         // GET: admin/brands
-        public ActionResult Index()
+        public ActionResult Index(int?page)
         {
-            return View(db.brands.ToList());
+            if (page == null) page = 1;
+            var brands = db.brands.OrderBy(b => b.id_brand);
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(brands.ToPagedList(pageNumber,pageSize));
         }
 
         // GET: admin/brands/Details/5

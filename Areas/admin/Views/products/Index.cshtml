@@ -1,5 +1,5 @@
-﻿@model IEnumerable<do_an_web.Models.product>
-
+﻿@model PagedList.IPagedList<do_an_web.Models.product>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,61 +10,93 @@
 <p>
     @Html.ActionLink("Thêm Sản Phẩm", "Create", null, new { @class = "btn btn-warning" })
 </p>
+@using (Html.BeginForm("Index", "products", FormMethod.Get, new { @class = "form-inline" }))
+{
+    <div class="form-group">
+        <label>Tên Sản Phẩm: </label>@Html.DropDownList("id_category", null, htmlAttributes: new { @class = "form-control" })
+        <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên sản phẩm cần tìm">
+        <input type="button" class="btn btn-danger" value="Tìm Sản Phẩm">
+    </div>
+    <hr />
+}
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
+        <th style="width:200px;">
+            @Html.ActionLink("Tên Sản Phẩm", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.price)
+            @Html.ActionLink("Đơn giá", "Index", new { sortProperty = "price", sortOrder = ViewBag.SortOrder, searchString = ViewBag.Keyword, categoryID = ViewBag.Subject })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.discount)
+            @Html.ActionLink("Giảm Giá", "Index", new { sortProperty = "discount", sortOrder = ViewBag.SortOrder, searchString = ViewBag.Keyword, categoryID = ViewBag.Subject })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.images)
+            Hình Sản Phẩm
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.brand.name_brand)
+            @Html.ActionLink("Hãng", "Index", new { sortProperty = "id_brand", sortOrder = ViewBag.SortOrder, searchString = ViewBag.Keyword, categoryID = ViewBag.Subject })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.category.name_category)
+            @Html.ActionLink("Tên Hãng", "Index", new { sortProperty = "name_brand", sortOrder = ViewBag.SortOrder, searchString = ViewBag.Keyword, categoryID = ViewBag.Subject })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.warehouse.id_warehouse)
+            @Html.ActionLink("Kho", "Index", new { sortProperty = "id_warehouse", sortOrder = ViewBag.SortOrder, searchString = ViewBag.Keyword, categoryID = ViewBag.Subject })
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.discount)
-        </td>
-        <td>
-            <img src="~/Content/Images/@item.images" style="width:150px; height:150px;"/>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.brand.name_brand)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.category.name_category)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.warehouse.id_warehouse)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_products }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_products }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_products })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.discount)
+            </td>
+            <td>
+                <img src="~/Content/Images/@item.images" style="width:150px; height:150px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.brand.name_brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category.name_category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.warehouse.id_warehouse)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_products }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id_products }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_products })
+            </td>
+        </tr>
+    }
 
 </table>
+<br />
+<div class="row">
+    <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+        @using (Html.BeginForm("Index", "Book", FormMethod.Get))
+        {
+            <p>
+                Kích thước trang: @Html.DropDownList("size", (List<SelectListItem>)ViewBag.Size, new { @onchange = "this.form.submit();" })
+            </p>
+
+            @Html.Hidden("page", (object)ViewBag.Page)
+            @Html.Hidden("sortProperty", (object)ViewBag.SortProperty)
+            @Html.Hidden("sortOrder", (object)ViewBag.SortOrder)
+            @Html.Hidden("searchString", (object)ViewBag.Keyword)
+            @Html.Hidden("categoryID", (object)ViewBag.Subject)
+        }
+    </div>
+    <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6 text-right">
+        Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    </div>
+</div>
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, size = ViewBag.CurrentSize, sortProperty = ViewBag.SortProperty, sortOrder = ViewBag.SortOrder, searchString = ViewBag.Keyword }))

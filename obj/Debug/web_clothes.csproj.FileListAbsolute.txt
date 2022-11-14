@@ -164,3 +164,7 @@ D:\do_an_web\obj\Debug\web_clothes.csproj.CoreCompileInputs.cache
 D:\do_an_web\obj\Debug\web_clothes.csproj.CopyComplete
 D:\do_an_web\obj\Debug\do_an_web.dll
 D:\do_an_web\obj\Debug\do_an_web.pdb
+D:\do_an_web\bin\PagedList.dll
+D:\do_an_web\bin\PagedList.Mvc.dll
+D:\do_an_web\bin\PagedList.xml
+D:\do_an_web\bin\PagedList.Mvc.xml
