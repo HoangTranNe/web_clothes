@@ -13,7 +13,7 @@
 @using (Html.BeginForm("Index", "products", FormMethod.Get, new { @class = "form-inline" }))
 {
     <div class="form-group">
-        <label>Tên Sản Phẩm: </label>@Html.DropDownList("id_category", null, htmlAttributes: new { @class = "form-control" })
+        <label>Tên Sản Phẩm: </label>@*@Html.DropDownList("name_category", null, htmlAttributes: new { @class = "form-control" })*@
         <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên sản phẩm cần tìm">
         <input type="button" class="btn btn-danger" value="Tìm Sản Phẩm">
     </div>
@@ -81,7 +81,7 @@
 <br />
 <div class="row">
     <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
-        @using (Html.BeginForm("Index", "Book", FormMethod.Get))
+        @using (Html.BeginForm("Index", "products", FormMethod.Get))
         {
             <p>
                 Kích thước trang: @Html.DropDownList("size", (List<SelectListItem>)ViewBag.Size, new { @onchange = "this.form.submit();" })

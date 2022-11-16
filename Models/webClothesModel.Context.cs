@@ -12,6 +12,8 @@ namespace do_an_web.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Web;
+    using System.Data.Entity.ModelConfiguration.Conventions;
     
     public partial class webClothesEntities : DbContext
     {
@@ -19,10 +21,12 @@ namespace do_an_web.Models
             : base("name=webClothesEntities")
         {
         }
-    
+        public DbSet <customer> customers { get; set; }        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            modelBuilder.Entity<customer>().ToTable("customer");
+            modelBuilder.Conventions.Remove<PluralizingEntitySetNameConvention>();
+            base.OnModelCreating(modelBuilder);
         }
     
         public virtual DbSet<brand> brands { get; set; }
@@ -30,7 +34,7 @@ namespace do_an_web.Models
         public virtual DbSet<category> categories { get; set; }
         public virtual DbSet<constract> constracts { get; set; }
         public virtual DbSet<customer_order> customer_order { get; set; }
-        public virtual DbSet<customer> customers { get; set; }
+        public virtual DbSet<customer> customer { get; set; }
         public virtual DbSet<partner> partners { get; set; }
         public virtual DbSet<product> products { get; set; }
         public virtual DbSet<report> reports { get; set; }

@@ -1,0 +1,34 @@
+﻿@model do_an_web.Models.customer
+@{
+    ViewBag.Title = "Register_View";
+    Layout = "~/Views/Shared/Register.cshtml";
+}
+
+<div class="box-form">
+    <div class="content-form">
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <h2>Form Đăng Kí</h2>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.name_customer)
+                    @Html.TextBoxFor(m => m.name_customer, "", new { @class = "txt-input", @placeholder = "Tên" })
+                    @Html.ValidationMessageFor(m => m.name_customer)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.email_customer)
+                    @Html.TextBoxFor(m => m.email_customer, "", new {@class="txt-input", @placeholder ="Email"})
+                    @Html.ValidationMessageFor(m=>m.email_customer)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m=>m.password_customer)
+                    @Html.TextBoxFor(m=>m.password_customer,"", new {@class="txt-input", @placeholder="Password"})
+                    @Html.ValidationMessageFor(m=>m.password_customer)
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" name="Submit" class="txt-input" />
+                </div>
+            }
+    </div>
+</div>
+

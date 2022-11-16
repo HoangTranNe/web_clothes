@@ -45,6 +45,7 @@ namespace do_an_web.Areas.admin.Controllers
             if(String.IsNullOrEmpty(sortProperty)) sortProperty = "Title";
 
             ViewBag.Page=page;
+
             List<SelectListItem> items = new List<SelectListItem>();
             items.Add(new SelectListItem { Text = "5", Value = "5" });
             items.Add(new SelectListItem { Text = "10", Value = "10" });
@@ -60,8 +61,11 @@ namespace do_an_web.Areas.admin.Controllers
             ViewBag.Size = items;
             ViewBag.CurrentSize = size;
             page = page ?? 1;
+
             int checkTotal = (int)(products.ToList().Count / pageSize) + 1;
+
             if (pageNumber > checkTotal) pageNumber = checkTotal;
+
             ViewBag.pageSize = pageSize;
 
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
