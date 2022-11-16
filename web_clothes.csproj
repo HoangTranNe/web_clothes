@@ -385,6 +385,23 @@
     <Content Include="Views\products\Index.cshtml" />
     <Content Include="Views\Shared\Register.cshtml" />
     <Content Include="Views\Home\Register_View.cshtml" />
+    <Content Include="Views\Home\chinh_sach_bao_mat_thong_tin_view.cshtml" />
+    <Content Include="Views\Home\chinh_sach_doi_tra_view.cshtml" />
+    <Content Include="Views\Home\chinh_sach_thanh_toan_view.cshtml" />
+    <Content Include="Views\Home\dieu_khoan_view.cshtml" />
+    <Content Include="Views\Home\huong_dan_mua_hang_view.cshtml" />
+    <Content Include="Views\Home\product_details_view.cshtml" />
+    <Content Include="Views\Home\see_all_view.cshtml" />
+    <Content Include="Views\Shared\chinh_sach_bao_mat_thong_tin.cshtml" />
+    <Content Include="Views\Shared\chinh_sach_doi_tra.cshtml" />
+    <Content Include="Views\Shared\chinh_sach_thanh_toan.cshtml" />
+    <Content Include="Views\Shared\dieu_khoan.cshtml" />
+    <Content Include="Views\Shared\huong_dan_mua_hang.cshtml" />
+    <Content Include="Views\Shared\product_details.cshtml" />
+    <Content Include="Views\Shared\see_all.cshtml" />
+    <Content Include="Views\Shared\web-clothes.cshtml" />
+    <Content Include="Views\Shared\Login.cshtml" />
+    <Content Include="Views\Home\Login_View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -37,12 +37,6 @@
                 <h2>Clothings</h2>
                 <ul class="dropdown">
                     <li><a href="">All</a></li>
-                    @foreach (var item in Model)
-                    {
-                        <li>
-                            @Html.ActionLink(item.name_category,"Index","products")
-                        </li>
-                    }
                 </ul>
             </li>
             <li>

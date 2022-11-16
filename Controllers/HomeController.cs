@@ -82,37 +82,70 @@ namespace do_an_web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(customer _customer)
         {
-            try
+
+            if (ModelState.IsValid)
             {
-                if(ModelState.IsValid)
+                var check = db.customers.FirstOrDefault(s => s.email_customer == _customer.email_customer);
+                if (check == null)
                 {
-                    var check = db.customers.FirstOrDefault(s => s.email_customer == _customer.email_customer);
-                    if(check == null)
-                    {
-                        _customer.password_customer = GetMD5(_customer.password_customer);
-                        db.Configuration.ValidateOnSaveEnabled = false;
-                        db.customers.Add(_customer);
-                        db.SaveChanges();
-                        return RedirectToAction("Index");
-                    }
+                    _customer.password_customer = GetMD5(_customer.password_customer);
+                    db.Configuration.ValidateOnSaveEnabled = false;
+                    db.customers.Add(_customer);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
                 }
-                return View();
+                else
+                {
+                    ViewBag.error = "Email already exists";
+                    return View();
+                }
             }
-            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            return View();
+        }
+                       
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string email, string password)
+        {
+            if (ModelState.IsValid)
             {
-                Exception raise = dbEx;
-                foreach (var validationsErrors in dbEx.EntityValidationErrors)
+                var f_password = GetMD5(password);
+                var data = db.customer.Where(s => s.email_customer.Equals(email) && s.password_customer.Equals(f_password)).ToList();
+                if(data.Count> 0)
                 {
-                    foreach (var validationError in validationsErrors.ValidationErrors)
-                    {
-                        string message = string.Format("{0}:{1}",
-                            validationsErrors.Entry.Entity.ToString(),
-                            validationsErrors.ErrorMessage);
-                        raise = new InvalidOperationException(message,raise);
-                    }
+                    Session["Name"] = data.FirstOrDefault().name_customer;
+                    Session["Email"] = data.FirstOrDefault().email_customer;
+                    Session["Id_customer"] = data.FirstOrDefault().id_customer;
                 }
-                throw raise;
+                else
+                {
+                    ViewBag.error = "login failed";
+                    return RedirectToAction("Login");
+                }
             }
+            return View();
+        }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login");
+        }
+
+        public static string GetMD5(string str)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] fromData = Encoding.UTF8.GetBytes(str);
+            byte[] targetData = md5.ComputeHash(fromData);
+            string byte2String = null;
+            for (int i = 0; i < targetData.Length; i++)
+            {
+                byte2String += targetData[i].ToString("x2");
+            }
+            return byte2String;
         }
     }
 }
