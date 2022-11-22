@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="webClothesModelStoreContainer" CdmEntityContainer="webClothesEntities">
+    <EntitySetMapping Name="brands">
+      <EntityTypeMapping TypeName="webClothesModel.brand">
+        <MappingFragment StoreEntitySet="brand">
+          <ScalarProperty Name="id_brand" ColumnName="id_brand" />
+          <ScalarProperty Name="name_brand" ColumnName="name_brand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carts">
+      <EntityTypeMapping TypeName="webClothesModel.cart">
+        <MappingFragment StoreEntitySet="carts">
+          <ScalarProperty Name="id_cart" ColumnName="id_cart" />
+          <ScalarProperty Name="id_products" ColumnName="id_products" />
+          <ScalarProperty Name="images" ColumnName="images" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="webClothesModel.category">
+        <MappingFragment StoreEntitySet="categories">
+          <ScalarProperty Name="id_category" ColumnName="id_category" />
+          <ScalarProperty Name="name_category" ColumnName="name_category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="constracts">
+      <EntityTypeMapping TypeName="webClothesModel.constract">
+        <MappingFragment StoreEntitySet="constracts">
+          <ScalarProperty Name="id_constracts" ColumnName="id_constracts" />
+          <ScalarProperty Name="id_partners" ColumnName="id_partners" />
+          <ScalarProperty Name="id_products" ColumnName="id_products" />
+          <ScalarProperty Name="price_constracts" ColumnName="price_constracts" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_order">
+      <EntityTypeMapping TypeName="webClothesModel.customer_order">
+        <MappingFragment StoreEntitySet="customer_order">
+          <ScalarProperty Name="id_order" ColumnName="id_order" />
+          <ScalarProperty Name="id_customer" ColumnName="id_customer" />
+          <ScalarProperty Name="id_products" ColumnName="id_products" />
+          <ScalarProperty Name="id_cart" ColumnName="id_cart" />
+          <ScalarProperty Name="quantity_order" ColumnName="quantity_order" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers_login">
+      <EntityTypeMapping TypeName="webClothesModel.customers_login">
+        <MappingFragment StoreEntitySet="customers_login">
+          <ScalarProperty Name="id_customer" ColumnName="id_customer" />
+          <ScalarProperty Name="email_customer" ColumnName="email_customer" />
+          <ScalarProperty Name="password_customer" ColumnName="password_customer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers_register">
+      <EntityTypeMapping TypeName="webClothesModel.customers_register">
+        <MappingFragment StoreEntitySet="customers_register">
+          <ScalarProperty Name="id_customer" ColumnName="id_customer" />
+          <ScalarProperty Name="name_customer" ColumnName="name_customer" />
+          <ScalarProperty Name="phone_customer" ColumnName="phone_customer" />
+          <ScalarProperty Name="email_customer" ColumnName="email_customer" />
+          <ScalarProperty Name="password_customer" ColumnName="password_customer" />
+          <ScalarProperty Name="comfirm_password_customer" ColumnName="comfirm_password_customer" />
+          <ScalarProperty Name="gender_customer" ColumnName="gender_customer" />
+          <ScalarProperty Name="age_customer" ColumnName="age_customer" />
+          <ScalarProperty Name="address_customer" ColumnName="address_customer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="partners">
+      <EntityTypeMapping TypeName="webClothesModel.partner">
+        <MappingFragment StoreEntitySet="partners">
+          <ScalarProperty Name="id_partners" ColumnName="id_partners" />
+          <ScalarProperty Name="name_partners" ColumnName="name_partners" />
+          <ScalarProperty Name="phone_partners" ColumnName="phone_partners" />
+          <ScalarProperty Name="email_partners" ColumnName="email_partners" />
+          <ScalarProperty Name="require_partners" ColumnName="require_partners" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="webClothesModel.product">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="id_products" ColumnName="id_products" />
+          <ScalarProperty Name="id_warehouse" ColumnName="id_warehouse" />
+          <ScalarProperty Name="id_category" ColumnName="id_category" />
+          <ScalarProperty Name="id_brand" ColumnName="id_brand" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="images" ColumnName="images" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reports">
+      <EntityTypeMapping TypeName="webClothesModel.report">
+        <MappingFragment StoreEntitySet="reports">
+          <ScalarProperty Name="id_reports" ColumnName="id_reports" />
+          <ScalarProperty Name="id_customer" ColumnName="id_customer" />
+          <ScalarProperty Name="subject_customer" ColumnName="subject_customer" />
+          <ScalarProperty Name="contents_customer" ColumnName="contents_customer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="warehouses">
+      <EntityTypeMapping TypeName="webClothesModel.warehouse">
+        <MappingFragment StoreEntitySet="warehouse">
+          <ScalarProperty Name="id_warehouse" ColumnName="id_warehouse" />
+          <ScalarProperty Name="id_products" ColumnName="id_products" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

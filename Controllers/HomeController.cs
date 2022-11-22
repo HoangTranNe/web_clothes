@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Security.Cryptography;
 using System.ComponentModel.DataAnnotations;
+using PagedList;
 
 namespace do_an_web.Controllers
 {
@@ -22,7 +23,7 @@ namespace do_an_web.Controllers
             else
             {
                 return RedirectToAction("Login");
-            }
+            }                       
         }
 
         public ActionResult About()
@@ -78,19 +79,19 @@ namespace do_an_web.Controllers
         {
             return View();
         }
+        //POST: Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(customer _customer)
+        public ActionResult Register(customers_register _user)
         {
-
             if (ModelState.IsValid)
             {
-                var check = db.customers.FirstOrDefault(s => s.email_customer == _customer.email_customer);
+                var check = db.customers_register.FirstOrDefault(s => s.email_customer == _user.email_customer);
                 if (check == null)
                 {
-                    _customer.password_customer = GetMD5(_customer.password_customer);
+                    _user.password_customer = GetMD5(_user.password_customer);
                     db.Configuration.ValidateOnSaveEnabled = false;
-                    db.customers.Add(_customer);
+                    db.customers_register.Add(_user);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
@@ -99,10 +100,13 @@ namespace do_an_web.Controllers
                     ViewBag.error = "Email already exists";
                     return View();
                 }
+
+
             }
             return View();
+
+
         }
-                       
         public ActionResult Login()
         {
             return View();
@@ -113,39 +117,49 @@ namespace do_an_web.Controllers
         {
             if (ModelState.IsValid)
             {
+
+
                 var f_password = GetMD5(password);
-                var data = db.customer.Where(s => s.email_customer.Equals(email) && s.password_customer.Equals(f_password)).ToList();
-                if(data.Count> 0)
+                var data = db.customers_login.Where(s => s.email_customer.Equals(email) && s.password_customer.Equals(f_password)).ToList();
+                if (data.Count() > 0)
                 {
-                    Session["Name"] = data.FirstOrDefault().name_customer;
+                    //add session                    
                     Session["Email"] = data.FirstOrDefault().email_customer;
-                    Session["Id_customer"] = data.FirstOrDefault().id_customer;
+                    Session["idUser"] = data.FirstOrDefault().id_customer;
+                    return RedirectToAction("Index");
                 }
                 else
                 {
-                    ViewBag.error = "login failed";
+                    ViewBag.error = "Login failed";
                     return RedirectToAction("Login");
                 }
             }
             return View();
         }
+        //Logout
         public ActionResult Logout()
         {
-            Session.Clear();
+            Session.Clear();//remove session
             return RedirectToAction("Login");
         }
-
+        //create a string MD5
         public static string GetMD5(string str)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
             byte[] fromData = Encoding.UTF8.GetBytes(str);
             byte[] targetData = md5.ComputeHash(fromData);
             string byte2String = null;
+
             for (int i = 0; i < targetData.Length; i++)
             {
                 byte2String += targetData[i].ToString("x2");
+
             }
             return byte2String;
+        }
+        public ActionResult Contact_View()
+        {
+            return View();
         }
     }
 }

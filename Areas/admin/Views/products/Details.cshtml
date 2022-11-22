@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<h2>Details</h2>
+<h2>Details</h2>
 
 <div>
     <h4>product</h4>
@@ -40,7 +40,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.images)
+            <img src="~/Content/Images/@Model.images" />
         </dd>
 
         <dt>
@@ -52,11 +52,43 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.brand1.name_brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brand1.name_brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brand2.name_brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brand2.name_brand)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.category.name_category)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.category.name_category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category1.name_category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category1.name_category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category2.name_category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category2.name_category)
         </dd>
 
         <dt>
@@ -67,28 +99,25 @@
             @Html.DisplayFor(model => model.warehouse.id_warehouse)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.warehouse1.id_warehouse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.warehouse1.id_warehouse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.warehouse2.id_warehouse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.warehouse2.id_warehouse)
+        </dd>
+
     </dl>
 </div>
-<p>*@
+<p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id_products }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
-<nav class="container">
-    <div class="row">
-        <div class="col-md-5">
-            <h5>Project Details</h5>
-            <div class="project-info-box">
-                <p><b>Tên Sản Xuất:</b>@Model.name</p>
-                <p><b>Hãng:</b>@Html.DisplayFor(Model => Model.brand.name_brand)</p>
-                <p><b>Thể Loại:</b>@Html.DisplayFor(Model => Model.category.name_category)</p>
-            </div>
-        </div>
-
-        <div class="col-md-7">
-            <img src="~/Content/@Model.images" class="rounded" alt="product-images" />
-            <div class="project-info-box">
-                <p><b>Giá Xe:</b>@Html.DisplayFor(Model => Model.price) VNĐ</p>
-            </div>
-        </div>
-    </div>
-</nav>

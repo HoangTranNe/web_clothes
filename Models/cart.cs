@@ -18,6 +18,8 @@ namespace do_an_web.Models
         public cart()
         {
             this.customer_order = new HashSet<customer_order>();
+            this.customer_order1 = new HashSet<customer_order>();
+            this.customer_order2 = new HashSet<customer_order>();
         }
     
         public int id_cart { get; set; }
@@ -28,5 +30,9 @@ namespace do_an_web.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customer_order> customer_order { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<customer_order> customer_order1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<customer_order> customer_order2 { get; set; }
     }
 }

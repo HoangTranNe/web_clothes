@@ -136,65 +136,58 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
-    <Compile Include="Areas\admin\Controllers\brandsController.cs" />
-    <Compile Include="Areas\admin\Controllers\cartsController.cs" />
-    <Compile Include="Areas\admin\Controllers\categoriesController.cs" />
-    <Compile Include="Areas\admin\Controllers\constractsController.cs" />
-    <Compile Include="Areas\admin\Controllers\customersController.cs" />
-    <Compile Include="Areas\admin\Controllers\customer_orderController.cs" />
-    <Compile Include="Areas\admin\Controllers\partnersController.cs" />
     <Compile Include="Areas\admin\Controllers\productsController.cs" />
-    <Compile Include="Areas\admin\Controllers\reportsController.cs" />
-    <Compile Include="Areas\admin\Controllers\warehousesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\productsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\brand.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\cart.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\category.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\constract.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\customer.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+    <Compile Include="Models\customers_login.cs">
+      <DependentUpon>webClothesModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\customers_register.cs">
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\customer_order.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\partner.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\product.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\report.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\warehouse.cs">
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\webClothesModel.Context.cs">
+    <Compile Include="Models\webClothesModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>webClothesModel.Context.tt</DependentUpon>
+      <DependentUpon>webClothesModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\webClothesModel.cs">
+    <Compile Include="Models\webClothesModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>webClothesModel.tt</DependentUpon>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\webClothesModel.Designer.cs">
+    <Compile Include="Models\webClothesModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>webClothesModel.edmx</DependentUpon>
+      <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -253,15 +246,15 @@
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Content_Main\Site.css" />
-    <Content Include="Models\webClothesModel.Context.tt">
+    <Content Include="Models\webClothesModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>webClothesModel.edmx</DependentUpon>
-      <LastGenOutput>webClothesModel.Context.cs</LastGenOutput>
+      <DependentUpon>webClothesModels.edmx</DependentUpon>
+      <LastGenOutput>webClothesModels.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\webClothesModel.tt">
+    <Content Include="Models\webClothesModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>webClothesModel.edmx</DependentUpon>
-      <LastGenOutput>webClothesModel.cs</LastGenOutput>
+      <DependentUpon>webClothesModels.edmx</DependentUpon>
+      <LastGenOutput>webClothesModels.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\Scripts_Main\bootstrap.js" />
     <Content Include="Scripts\Scripts_Main\bootstrap.min.js" />
@@ -283,12 +276,12 @@
     <Content Include="Content\Content_Boostrap\bootstrap.rtl.min.css.map" />
     <Content Include="Content\Images-Title\pro_1_size.jpg" />
     <None Include=".editorconfig" />
-    <EntityDeploy Include="Models\webClothesModel.edmx">
+    <EntityDeploy Include="Models\webClothesModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>webClothesModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\webClothesModel.edmx.diagram">
-      <DependentUpon>webClothesModel.edmx</DependentUpon>
+    <Content Include="Models\webClothesModels.edmx.diagram">
+      <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\admin\Views\web.config" />
     <Content Include="Areas\admin\Views\products\Create.cshtml" />
@@ -296,51 +289,6 @@
     <Content Include="Areas\admin\Views\products\Details.cshtml" />
     <Content Include="Areas\admin\Views\products\Edit.cshtml" />
     <Content Include="Areas\admin\Views\products\Index.cshtml" />
-    <Content Include="Areas\admin\Views\brands\Create.cshtml" />
-    <Content Include="Areas\admin\Views\brands\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\brands\Details.cshtml" />
-    <Content Include="Areas\admin\Views\brands\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\brands\Index.cshtml" />
-    <Content Include="Areas\admin\Views\carts\Create.cshtml" />
-    <Content Include="Areas\admin\Views\carts\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\carts\Details.cshtml" />
-    <Content Include="Areas\admin\Views\carts\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\carts\Index.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Create.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Details.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Index.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Create.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Details.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Index.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Create.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Details.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Index.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Create.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Details.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Index.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Create.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Details.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Index.cshtml" />
-    <Content Include="Areas\admin\Views\reports\Create.cshtml" />
-    <Content Include="Areas\admin\Views\reports\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\reports\Details.cshtml" />
-    <Content Include="Areas\admin\Views\reports\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\reports\Index.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Create.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Details.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Index.cshtml" />
     <None Include="Scripts\Scripts_Main\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.min.js" />
@@ -366,42 +314,38 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\_ViewStart.cshtml" />
-    <Content Include="Views\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.bundle.js.map" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.esm.js.map" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.esm.min.js.map" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.js.map" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.min.js.map" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\web_clothes_view.cshtml" />
-    <Content Include="Views\products\Create.cshtml" />
-    <Content Include="Views\products\Delete.cshtml" />
-    <Content Include="Views\products\Details.cshtml" />
-    <Content Include="Views\products\Edit.cshtml" />
-    <Content Include="Views\products\Index.cshtml" />
-    <Content Include="Views\Shared\Register.cshtml" />
-    <Content Include="Views\Home\Register_View.cshtml" />
+    <Content Include="Views\Error.cshtml" />
     <Content Include="Views\Home\chinh_sach_bao_mat_thong_tin_view.cshtml" />
     <Content Include="Views\Home\chinh_sach_doi_tra_view.cshtml" />
     <Content Include="Views\Home\chinh_sach_thanh_toan_view.cshtml" />
     <Content Include="Views\Home\dieu_khoan_view.cshtml" />
     <Content Include="Views\Home\huong_dan_mua_hang_view.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login_View.cshtml" />
     <Content Include="Views\Home\product_details_view.cshtml" />
+    <Content Include="Views\Home\Register_View.cshtml" />
     <Content Include="Views\Home\see_all_view.cshtml" />
+    <Content Include="Views\Home\web_clothes_view.cshtml" />
     <Content Include="Views\Shared\chinh_sach_bao_mat_thong_tin.cshtml" />
     <Content Include="Views\Shared\chinh_sach_doi_tra.cshtml" />
     <Content Include="Views\Shared\chinh_sach_thanh_toan.cshtml" />
     <Content Include="Views\Shared\dieu_khoan.cshtml" />
     <Content Include="Views\Shared\huong_dan_mua_hang.cshtml" />
-    <Content Include="Views\Shared\product_details.cshtml" />
-    <Content Include="Views\Shared\see_all.cshtml" />
-    <Content Include="Views\Shared\web-clothes.cshtml" />
     <Content Include="Views\Shared\Login.cshtml" />
-    <Content Include="Views\Home\Login_View.cshtml" />
+    <Content Include="Views\Shared\product_details.cshtml" />
+    <Content Include="Views\Shared\Register.cshtml" />
+    <Content Include="Views\Shared\see_all.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_ViewStart.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Contact.cshtml" />
+    <Content Include="Views\Home\Contact_View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

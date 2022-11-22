@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -18,34 +17,36 @@ namespace do_an_web.Areas.admin.Controllers
         private webClothesEntities db = new webClothesEntities();
 
         // GET: admin/products
-        public ActionResult Index(int? size, string sortProperty,string searchString , int ? page,string sortOrder="", int id_category=0)
+        public ActionResult Index(string searchString, int? page, int id_category = 0)
         {
-            ViewBag.Keyword = searchString;
-            ViewBag.Subject = id_category;
-            var products = db.products.Include(p => p.brand).Include(p => p.category).Include(p => p.warehouse);
-
-            if (!String.IsNullOrEmpty(searchString))
+            if (page == null)
             {
-                searchString = searchString.ToLower();
-                products = products.Where(b => b.name.ToLower().Contains(searchString)).OrderBy(b=>b.id_products);
+                page = 1;
             }
-
-            if (id_category != 0)
-            {
-                products = products.Where(b => b.id_category == id_category);
-            }
-
-            if (page == null) page = 1;
-            int pageSize = (size ?? 5);
+            int pageSize = 3;
             int pageNumber = (page ?? 1);
 
-            if (sortOrder == "asc") ViewBag.SortOrder = "desc";
-            if (sortOrder == "desc") ViewBag.SortOrder = "";
-            if (sortOrder == "") ViewBag.SortOrder = "asc";
-            if(String.IsNullOrEmpty(sortProperty)) sortProperty = "Title";
 
-            ViewBag.Page=page;
+            var products = db.products.Include(p => p.brand).Include(p => p.category).Include(p => p.warehouse);
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                searchString=searchString.ToLower();
+                products = products.Where(b => b.name.ToLower().Contains(searchString));
+            }
 
+            ViewBag.Keyword = searchString;
+            if (!String.IsNullOrEmpty(searchString))
+                products = products.Where(b => b.name.Contains(searchString));
+            if (id_category != 0)
+            {
+                products = products.Where(c => c.id_category == id_category);
+            }
+            ViewBag.CategoryID = new SelectList(db.categories, "id_category", "name_category");
+
+            return View(products.ToPagedList(pageNumber,pageSize));
+        }
+/*        public ActionResult Index(int? page, int? size)
+        {
             List<SelectListItem> items = new List<SelectListItem>();
             items.Add(new SelectListItem { Text = "5", Value = "5" });
             items.Add(new SelectListItem { Text = "10", Value = "10" });
@@ -54,34 +55,28 @@ namespace do_an_web.Areas.admin.Controllers
             items.Add(new SelectListItem { Text = "50", Value = "50" });
             items.Add(new SelectListItem { Text = "100", Value = "100" });
             items.Add(new SelectListItem { Text = "200", Value = "200" });
+
+
             foreach (var item in items)
             {
                 if (item.Value == size.ToString()) item.Selected = true;
             }
-            ViewBag.Size = items;
-            ViewBag.CurrentSize = size;
-            page = page ?? 1;
 
-            int checkTotal = (int)(products.ToList().Count / pageSize) + 1;
 
-            if (pageNumber > checkTotal) pageNumber = checkTotal;
+            ViewBag.size = items; 
+            ViewBag.currentSize = size;
 
-            ViewBag.pageSize = pageSize;
 
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            page = page ?? 1; 
 
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    products = products.OrderByDescending(b => b.name);
-                    break;
-                default:
-                    products = products.OrderBy(b => b.name);
-                    break;
-            }
-            return View(products.ToPagedList(pageNumber,pageSize));
-            
-        }
+            var products = db.products.Include(b => b.category).Include(b=>b.brand);
+            int pageSize = (size ?? 5);
+            int pageNumber = (page ?? 1);
+            int total = (int)(products.ToList().Count / pageSize) + 1;            
+            if (pageNumber > total)
+                pageNumber = total;
+            return View(products.ToPagedList(pageNumber, pageSize));
+        }*/
 
         // GET: admin/products/Details/5
         public ActionResult Details(int? id)
@@ -102,7 +97,13 @@ namespace do_an_web.Areas.admin.Controllers
         public ActionResult Create()
         {
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand");
+            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand");
+            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand");
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category");
+            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category");
+            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category");
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse");
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse");
             ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse");
             return View();
         }
@@ -112,17 +113,38 @@ namespace do_an_web.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,images")] product product)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,images")] product product, HttpPostedFileBase images)
         {
             if (ModelState.IsValid)
             {
-                db.products.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    if (images.ContentLength > 0)
+                    {
+                        string _FileName = Path.GetFileName(images.FileName);
+                        string _path = Path.Combine(Server.MapPath("~/bookimages"), _FileName);
+                        images.SaveAs(_path);
+                        product.images = _FileName;
+                    }
+                    db.products.Add(product);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    ViewBag.Message = "Không Thành Công";
+                }
             }
 
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
+            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
+            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
+            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
+            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             return View(product);
         }
@@ -140,7 +162,13 @@ namespace do_an_web.Areas.admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
+            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
+            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
+            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
+            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             return View(product);
         }
@@ -151,18 +179,19 @@ namespace do_an_web.Areas.admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,images")] product product, HttpPostedFileBase images, FormCollection form)
+        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,images")] product product,HttpPostedFileBase images, FormCollection form)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    if(images!=null)
+                    if (images != null)
                     {
                         string _FileName = Path.GetFileName(images.FileName);
                         string _path = Path.Combine(Server.MapPath("~/bookimages"), _FileName);
                         images.SaveAs(_path);
                         product.images = _FileName;
+                        // get Path of old image for deleting it
                         _path = Path.Combine(Server.MapPath("~/bookimages"), form["oldimage"]);
                         if (System.IO.File.Exists(_path))
                             System.IO.File.Delete(_path);
@@ -177,12 +206,18 @@ namespace do_an_web.Areas.admin.Controllers
                 }
                 catch
                 {
-                    ViewBag.Message = "Không Thành Công";
+                    ViewBag.Message = "Không Thành Công!!";
                 }
                 return RedirectToAction("Index");
             }
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
+            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
+            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
+            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
+            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             return View(product);
         }

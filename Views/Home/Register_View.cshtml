@@ -1,14 +1,17 @@
-﻿@model do_an_web.Models.customer
+﻿@model do_an_web.Models.customers_register
+
 @{
     ViewBag.Title = "Register_View";
     Layout = "~/Views/Shared/Register.cshtml";
 }
 
-<div class="row justify-content-lg-center">
+<div class="row justify-content-md-center">
     <div class="col-md-5">
-        @using (Html.BeginForm("Đăng Kí", "Home", FormMethod.Post))
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post))
         {
+            @Html.ValidationSummary()
             @Html.AntiForgeryToken()
+
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">Register</div>
@@ -16,7 +19,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         @Html.LabelFor(m => m.name_customer)
-                        @Html.TextBoxFor(m => m.name_customer, "", new { @class = "form-control", @placeholder = "Tên" })
+                        @Html.TextBoxFor(m => m.name_customer, "", new { @class = "form-control", @placeholder = "First Name" })
                         @Html.ValidationMessageFor(m => m.name_customer, "", new { @class = "badge badge-danger" })
                     </div>
                     <div class="form-group">
@@ -29,15 +32,16 @@
                         }
                     </div>
                     <div class="form-group">
-                        @Html.LabelFor(m=>m.password_customer)
-                        @Html.TextBoxFor(m => m.password_customer, "", new {@class="form-control",@placeholder= "Mật Khẩu" })
-                        @Html.ValidationMessageFor(m => m.password_customer, "", new {@class="badge badge-banger"})
+                        @Html.LabelFor(m => m.password_customer)
+                        @Html.PasswordFor(m => m.password_customer, new { @class = "form-control", @placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.password_customer, "", new { @class = "badge badge-danger" })
                     </div>
                     <div class="form-group">
-                        <input type="submit"name="submit" class="btn btn-danger" value="Đăng Kí" />
+                        <input type="submit" name="submit" class="btn btn-danger" value="Register" />
                     </div>
                 </div>
             </div>
+
         }
     </div>
 </div>

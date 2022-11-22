@@ -19,6 +19,8 @@ namespace do_an_web.Models
         public string subject_customer { get; set; }
         public string contents_customer { get; set; }
     
-        public virtual customer customer { get; set; }
+        public virtual customers_register customers_register { get; set; }
+        public virtual customers_register customers_register1 { get; set; }
+        public virtual customers_register customers_register2 { get; set; }
     }
 }
