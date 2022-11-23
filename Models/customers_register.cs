@@ -24,19 +24,32 @@ namespace do_an_web.Models
         {
             this.customer_order = new HashSet<customer_order>();
             this.customer_order1 = new HashSet<customer_order>();
-            this.customer_order2 = new HashSet<customer_order>();
             this.reports = new HashSet<report>();
             this.reports1 = new HashSet<report>();
-            this.reports2 = new HashSet<report>();
         }
-    
+
+        [Key, Column(Order = 1)]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int id_customer { get; set; }
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
         public string name_customer { get; set; }
         public Nullable<int> phone_customer { get; set; }
+        [Required]
+        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
         public string email_customer { get; set; }
+        [Required]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$")]
         public string password_customer { get; set; }
+        [NotMapped]
+        [Required]
+        [System.ComponentModel.DataAnnotations.Compare("Password")]
         public string comfirm_password_customer { get; set; }
+        [Required]
+        [RegularExpression(@"[male]+[female]+[other]")]
         public string gender_customer { get; set; }
+        [Required]
+        [RegularExpression(@"(18,99)")]
         public Nullable<int> age_customer { get; set; }
         public string address_customer { get; set; }
     
@@ -44,39 +57,11 @@ namespace do_an_web.Models
         public virtual ICollection<customer_order> customer_order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customer_order> customer_order1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<customer_order> customer_order2 { get; set; }
         public virtual customers_login customers_login { get; set; }
+        public virtual customers_login customers_login1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<report> reports { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<report> reports1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<report> reports2 { get; set; }
-    }
-    public class customer_register
-    {
-        [Key, Column(Order = 1)]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int idUser { get; set; }
-        [Required]
-        [StringLength(50, MinimumLength = 3)]
-        public string FirstName { get; set; }
-        [Required]
-        [StringLength(50, MinimumLength = 3)]
-        public string LastName { get; set; }
-        [Required]
-        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
-        public string Email { get; set; }
-
-        [Required]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$")]
-
-        public string Password { get; set; }
-
-        [NotMapped]
-        [Required]
-        [System.ComponentModel.DataAnnotations.Compare("Password")]
-        public string comfirm_password_customer { get; set; }
     }
 }

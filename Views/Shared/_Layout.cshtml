@@ -26,10 +26,10 @@
                     Wellcome
                 </div>
                 <div class="card-body">
-                    @if (Session["FullName"] != null)
+                    @if (Session["name_customer"] != null)
                     {
-                        <p>Name: @Session["FullName"].ToString()</p>
-                        <p>Email: @Session["Email"].ToString()</p>
+                        <p>Name: @Session["name_customer"].ToString()</p>
+                        <p>Email: @Session["email_customer"].ToString()</p>
                         <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
                     }
                 </div>

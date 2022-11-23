@@ -19,7 +19,6 @@ namespace do_an_web.Models
         {
             this.constracts = new HashSet<constract>();
             this.constracts1 = new HashSet<constract>();
-            this.constracts2 = new HashSet<constract>();
         }
     
         public int id_partners { get; set; }
@@ -32,7 +31,5 @@ namespace do_an_web.Models
         public virtual ICollection<constract> constracts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<constract> constracts1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<constract> constracts2 { get; set; }
     }
 }

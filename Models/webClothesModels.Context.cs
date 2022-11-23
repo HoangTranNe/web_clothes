@@ -11,31 +11,18 @@ namespace do_an_web.Models
 {
     using System;
     using System.Data.Entity;
-    using System.Collections.Generic;
     using System.Data.Entity.Infrastructure;
-    using System.Linq;
-    using System.Web;   
-    using System.Data.Entity.ModelConfiguration.Conventions;
-
+    
     public partial class webClothesEntities : DbContext
     {
         public webClothesEntities()
             : base("name=webClothesEntities")
         {
         }
-        public DbSet<customers_login> customers_Logins { get; set; }
-        public DbSet<customers_register> customers_Registers { get; set; }
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //Database.SetInitializer<demoEntities>(null);
-            modelBuilder.Entity<customers_login>().ToTable("customer_login");
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.Entity<customers_register>().ToTable("customer_register");
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
-            base.OnModelCreating(modelBuilder);
-
-
+            throw new UnintentionalCodeFirstException();
         }
     
         public virtual DbSet<brand> brands { get; set; }
@@ -48,6 +35,7 @@ namespace do_an_web.Models
         public virtual DbSet<partner> partners { get; set; }
         public virtual DbSet<product> products { get; set; }
         public virtual DbSet<report> reports { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<warehouse> warehouses { get; set; }
     }
 }

@@ -19,10 +19,8 @@ namespace do_an_web.Models
         {
             this.constracts = new HashSet<constract>();
             this.constracts1 = new HashSet<constract>();
-            this.constracts2 = new HashSet<constract>();
             this.customer_order = new HashSet<customer_order>();
             this.customer_order1 = new HashSet<customer_order>();
-            this.customer_order2 = new HashSet<customer_order>();
         }
     
         public int id_products { get; set; }
@@ -36,24 +34,17 @@ namespace do_an_web.Models
     
         public virtual brand brand { get; set; }
         public virtual brand brand1 { get; set; }
-        public virtual brand brand2 { get; set; }
         public virtual category category { get; set; }
         public virtual category category1 { get; set; }
-        public virtual category category2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<constract> constracts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<constract> constracts1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<constract> constracts2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customer_order> customer_order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customer_order> customer_order1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<customer_order> customer_order2 { get; set; }
         public virtual warehouse warehouse { get; set; }
         public virtual warehouse warehouse1 { get; set; }
-        public virtual warehouse warehouse2 { get; set; }
     }
 }

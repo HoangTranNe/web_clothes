@@ -21,6 +21,5 @@ namespace do_an_web.Models
     
         public virtual customers_register customers_register { get; set; }
         public virtual customers_register customers_register1 { get; set; }
-        public virtual customers_register customers_register2 { get; set; }
     }
 }

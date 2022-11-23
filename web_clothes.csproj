@@ -171,6 +171,9 @@
     <Compile Include="Models\report.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>webClothesModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\warehouse.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
@@ -276,6 +279,12 @@
     <Content Include="Content\Content_Boostrap\bootstrap.rtl.min.css.map" />
     <Content Include="Content\Images-Title\pro_1_size.jpg" />
     <None Include=".editorconfig" />
+    <Content Include="Areas\admin\Views\web.config" />
+    <Content Include="Areas\admin\Views\products\Create.cshtml" />
+    <Content Include="Areas\admin\Views\products\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\products\Details.cshtml" />
+    <Content Include="Areas\admin\Views\products\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\products\Index.cshtml" />
     <EntityDeploy Include="Models\webClothesModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
@@ -283,12 +292,6 @@
     <Content Include="Models\webClothesModels.edmx.diagram">
       <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\admin\Views\web.config" />
-    <Content Include="Areas\admin\Views\products\Create.cshtml" />
-    <Content Include="Areas\admin\Views\products\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\products\Details.cshtml" />
-    <Content Include="Areas\admin\Views\products\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\products\Index.cshtml" />
     <None Include="Scripts\Scripts_Main\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.js" />
     <Content Include="Scripts\Scripts_Main\jquery-3.4.1.min.js" />

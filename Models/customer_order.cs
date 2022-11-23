@@ -23,12 +23,9 @@ namespace do_an_web.Models
     
         public virtual cart cart { get; set; }
         public virtual cart cart1 { get; set; }
-        public virtual cart cart2 { get; set; }
         public virtual customers_register customers_register { get; set; }
         public virtual customers_register customers_register1 { get; set; }
-        public virtual customers_register customers_register2 { get; set; }
         public virtual product product { get; set; }
         public virtual product product1 { get; set; }
-        public virtual product product2 { get; set; }
     }
 }

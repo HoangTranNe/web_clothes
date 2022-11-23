@@ -12,17 +12,12 @@ namespace do_an_web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class constract
+    public partial class sysdiagram
     {
-        public int id_constracts { get; set; }
-        public Nullable<int> id_partners { get; set; }
-        public Nullable<int> id_products { get; set; }
-        public string price_constracts { get; set; }
-        public Nullable<int> quantity { get; set; }
-    
-        public virtual partner partner { get; set; }
-        public virtual partner partner1 { get; set; }
-        public virtual product product { get; set; }
-        public virtual product product1 { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

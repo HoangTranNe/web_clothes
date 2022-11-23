@@ -19,39 +19,21 @@ namespace do_an_web.Models
 
     public partial class customers_login
     {
-        public int id_customer { get; set; }
-        public string email_customer { get; set; }
-        public string password_customer { get; set; }
-    
-        public virtual customers_register customers_register { get; set; }
-    }
-    public class customer_login
-    {
         [Key, Column(Order = 1)]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int idUser { get; set; }
+        public int id_customer { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3)]
-        public string FirstName { get; set; }
-        [Required]
-        [StringLength(50, MinimumLength = 3)]
-        public string LastName { get; set; }
+        public string name_customer { get; set; }
         [Required]
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
-        public string Email { get; set; }
+        public string email_customer { get; set; }
 
         [Required]
         [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$")]
-
-        public string Password { get; set; }
-
-        [NotMapped]
-        [Required]
-        [System.ComponentModel.DataAnnotations.Compare("Password")]
-        public string ConfirmPassword { get; set; }
-        public string FullName()
-        {
-            return this.FirstName + " " + this.LastName;
-        }
+        public string password_customer { get; set; }
+    
+        public virtual customers_register customers_register { get; set; }
+        public virtual customers_register customers_register1 { get; set; }
     }
 }

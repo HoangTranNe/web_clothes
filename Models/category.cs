@@ -19,7 +19,6 @@ namespace do_an_web.Models
         {
             this.products = new HashSet<product>();
             this.products1 = new HashSet<product>();
-            this.products2 = new HashSet<product>();
         }
     
         public int id_category { get; set; }
@@ -29,7 +28,5 @@ namespace do_an_web.Models
         public virtual ICollection<product> products { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<product> products1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<product> products2 { get; set; }
     }
 }
