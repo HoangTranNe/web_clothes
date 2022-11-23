@@ -21,7 +21,7 @@
 <body>
     <nav class="nav">
         <div class="logo">
-            <a href="https://localhost:44373/Home/web_clothes_view"><img src="~/Content/Images/logo.jpg" /></a>
+            <a href="@Url.Action("Index","Home")"><img src="~/Content/Images/logo.jpg" /></a>
         </div>
         <div class="search-box">
             <input type="text" name="search" class="input-search" placeholder="Search" />
@@ -31,13 +31,13 @@
         </div>
         <ul class="nav-link">
             <li>
-                <a href="https://localhost:44373/Home/Login_View">Login</a>
+                <a href="@Url.Action("Login_View","Home")">Login</a>
             </li>
             <li>
-                <a href="https://localhost:44373/Home/Register_View">Register</a>
+                <a href="@Url.Action("Register_View","Home")">Register</a>
             </li>
             <li>
-                <a href="https://localhost:44373/Home/Contact_View">Contact</a>
+                <a href="@Url.Action("Contact_View", "Home")">Contact</a>
             </li>
         </ul>
     </nav>
