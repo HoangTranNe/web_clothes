@@ -1,8 +1,419 @@
-﻿
+﻿@model IEnumerable<do_an_web.Models.category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<nav class="tab2">
+
+    <div class="tab2-title">
+        <ul class="tab2-details">
+            <li class="home">
+                <a href="https://localhost:44373/Home/web_clothes_view">Home</a>
+            </li>
+            <li class="list">
+                <p style="font-family: monospace; font-weight:700; font-size:25px;">Clothings</p>
+                <ul class="dropdown">
+                    @foreach (var item in Model) { 
+                        <li><a href="@Url.Action("Home", "Index", new {@class="product-details"})">@item.name_category</a></li>
+                    }
+                </ul>
+            </li>
+            <li>
+                <a href="@Url.Action("Contact_View","Home")">Contact</a>
+            </li>
+            <li class="clearance">
+                <a href="">Clearance_Sale</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<nav class="tab3">
+    <h2></h2>
+</nav>
+<nav class="product">
+    <div class="product-list">
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_1.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 1</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_2.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 2</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_3.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 3</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_4.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 4</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_5.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 5</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_6.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 6</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_7.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 7</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_8.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 8</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_9.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 9</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_10.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 10</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_11.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 11</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_12.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 12</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_13.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 13</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_14.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 14</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_15.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 15</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_16.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 16</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_17.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 17</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_18.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 18</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_19.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 19</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <div class="tittle">
+                <div class="image">
+                    <img src="~/Content/Images/pro_20.jpg" />
+                </div>
+                <div class="image-hover">
+                    <button type="submit" class="optional"><a href="https://localhost:44373/Home/product_details_view">Tùy Chọn</a></button>
+                    <button type="submit" class="optional"><a href="#">Mua Ngay</a></button>
+                </div>
+
+                <div class="product-item-info">
+                    <h3>Product 20</h3>
+                    <p>Price: 100$</p>
+                </div>
+            </div>
+            <div class="buy">
+                <button class="cart">Add to cart</button>
+            </div>
+        </div>
+
+    </div>
+</nav>
 

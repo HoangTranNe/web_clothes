@@ -5,43 +5,4 @@
     Layout = "~/Views/Shared/Register.cshtml";
 }
 
-<div class="row justify-content-md-center">
-    <div class="col-md-5">
-        @using (Html.BeginForm("Register", "Home", FormMethod.Post))
-        {
-            @Html.ValidationSummary()
-            @Html.AntiForgeryToken()
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Register</div>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.name_customer)
-                        @Html.TextBoxFor(m => m.name_customer, "", new { @class = "form-control", @placeholder = "First Name" })
-                        @Html.ValidationMessageFor(m => m.name_customer, "", new { @class = "badge badge-danger" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.email_customer)
-                        @Html.TextBoxFor(m => m.email_customer, "", new { @class = "form-control", @placeholder = "Email" })
-                        @Html.ValidationMessageFor(m => m.email_customer, "", new { @class = "badge badge-danger" })
-                        @if (ViewBag.error != null)
-                        {
-                            <span class="badge badge-danger">@ViewBag.error</span>
-                        }
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.password_customer)
-                        @Html.PasswordFor(m => m.password_customer, new { @class = "form-control", @placeholder = "Password" })
-                        @Html.ValidationMessageFor(m => m.password_customer, "", new { @class = "badge badge-danger" })
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="submit" class="btn btn-danger" value="Register" />
-                    </div>
-                </div>
-            </div>
-
-        }
-    </div>
-</div>
+<h2>Register_View</h2>

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Security.Cryptography;
 using System.ComponentModel.DataAnnotations;
 using PagedList;
+using System.Web.WebPages.Html;
 
 namespace do_an_web.Controllers
 {
@@ -16,14 +17,7 @@ namespace do_an_web.Controllers
         private webClothesEntities db = new webClothesEntities();
         public ActionResult Index()
         {
-            if (Session["id_customer"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }                       
+            return View(db.categories.ToList());
         }
 
         public ActionResult About()
@@ -39,7 +33,7 @@ namespace do_an_web.Controllers
 
             return View();
         }
-        public ActionResult web_clothes_view()
+        public ActionResult web_clothes()
         {
             return View(db.categories.ToList());
         }
@@ -160,6 +154,7 @@ namespace do_an_web.Controllers
         public ActionResult Contact_View()
         {
             return View();
-        }
+        }        
+
     }
 }

@@ -29,9 +29,11 @@
 }
 
 body {
-    font-family: monospace;  
-    font-size: 15px;
-    color: black;
+    font-family: monospace;
+    background-repeat: round;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
     text-align: center;
     align-items: center;
     justify-content: space-between;
@@ -119,68 +121,68 @@ body {
     display: flex;
     padding: 1rem;
 }
-.dropdown {
-    position: relative;
-    display: inline-block
-}
-.dropdown{
-    display:none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-    border-radius:10px;
-}
-.title > .list > h2{
-    font-weight:bold;
-}
-.list-dropdown{
-    display:none
-}
-.list:hover .dropdown {
-    display: block;
-}
-.dropdown > li > a{
-    text-decoration: none;
-    color: #000;
-    padding: 0.5rem 1rem;
-}
-.dropdown>li{
-    list-style: none;
-    padding: 1rem 0;
-}
-.dropdown > li > a:hover{
-    color: #fff;
-    background-color: #000;
-    border-radius:10px;
-}
-.title{
+.tab2-details{
     display: flex;
     align-items: baseline;
 }
-.title > li{
+.tab2-details > li{
     list-style: none;
     margin: 0 7rem;
 }
-.title > li > a{
+.tab2-details > li > a{
     text-decoration: none;
     color: #000;
     padding: 1rem 0;
     font-weight: 700;
     font-size:25px;
 }
-    .title > li > a:hover {
+    .tab2-details > li > a:hover {
         background-color: white;
         color: black;
         border-radius: 10px;
         width:200px;
     }
-.clearance{
-    background-color: yellow;
-    border-radius: 10px;
+.dropdown {
+    position: relative;
+    display: inline-block
 }
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+.list-dropdown {
+    display: none
+}
+
+.list:hover .dropdown {
+    display: block;
+}
+
+.dropdown > li > a {
+    text-decoration: none;
+    color: #000;
+    padding: 0.5rem 1rem;
+}
+
+.dropdown > li {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+    .dropdown > li > a:hover {
+        color: #fff;
+        background-color: #000;
+    }
+    .clearance {
+        background-color: yellow;
+        border-radius: 10px;
+    }
 .tab3{
     display: flex;
     align-items: center;
@@ -224,10 +226,10 @@ body {
     width: 240px;
     padding: 1rem 0;
 }
-.product-item:hover .image{
+.tittle:hover .image{
     opacity:0.3;
 }
-.product-item:hover .image-hover {
+.tittle:hover .image-hover {
     opacity: 1;
 }
 .product-item-info {
@@ -236,17 +238,17 @@ body {
     align-items: center;
     justify-content: center;
 }
-.product-item > .image > img {
+.tittle > .image > img {
     border-radius: 20px;
     height: 220px;
     width: 220px;
 }
-.product-item > .product-item-info > button{
+.product-item > button{
     background-color:yellow;
     border:1px solid #000;
     font-size:20px;
     cursor:pointer;
-    height:50px;
+    height:70px;
     width: 200px;
     border-radius: 20px;
 }
@@ -261,7 +263,7 @@ body {
     display: flex;
     align-items: baseline;
     justify-content: space-evenly;
-    height: 450px;
+    height: 550px;
     background-color: black;
     margin-top: 20px
 }
@@ -453,4 +455,54 @@ input[type="submit"]{
     color:#fff;
     font-weight:bold;
     margin-bottom:10px;
+}
+.address {
+    background-color: whitesmoke;
+    margin-left:120px;
+    font-family: monospace;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 540px;
+    padding: initial;
+}
+
+.contact_inf {
+    background-color: white;
+    margin-left: 50px;
+    font-family: monospace;
+    text-align: center;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+    .contact_inf label {
+        font-size: 20px;
+        font-family: monospace;
+    }
+
+    .contact_inf input {
+        border-radius: 5px;
+        border: rgb(112, 112, 55) solid 4px;
+        width: 370px;
+        height: 40px;
+    }
+
+    .contact_inf button {
+        border-radius: 5px;
+        background-color: yellow;
+        border: #000 solid 5px;
+        height: 50px;
+        width: 150px;
+    }
+
+    .contact_inf a {
+        text-decoration: none;
+        color: #000;
+        font-size: 25px;
+    }
+
+.contact {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 5px;
 }

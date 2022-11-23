@@ -137,6 +137,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\productsController.cs" />
+    <Compile Include="Controllers\categoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -332,9 +333,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login_View.cshtml" />
     <Content Include="Views\Home\product_details_view.cshtml" />
-    <Content Include="Views\Home\Register_View.cshtml" />
-    <Content Include="Views\Home\see_all_view.cshtml" />
-    <Content Include="Views\Home\web_clothes_view.cshtml" />
     <Content Include="Views\Shared\chinh_sach_bao_mat_thong_tin.cshtml" />
     <Content Include="Views\Shared\chinh_sach_doi_tra.cshtml" />
     <Content Include="Views\Shared\chinh_sach_thanh_toan.cshtml" />
@@ -342,13 +340,18 @@
     <Content Include="Views\Shared\huong_dan_mua_hang.cshtml" />
     <Content Include="Views\Shared\Login.cshtml" />
     <Content Include="Views\Shared\product_details.cshtml" />
-    <Content Include="Views\Shared\Register.cshtml" />
-    <Content Include="Views\Shared\see_all.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_ViewStart.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Contact.cshtml" />
     <Content Include="Views\Home\Contact_View.cshtml" />
+    <Content Include="Views\Shared\Register.cshtml" />
+    <Content Include="Views\Home\Register_View.cshtml" />
+    <Content Include="Views\categories\Create.cshtml" />
+    <Content Include="Views\categories\Delete.cshtml" />
+    <Content Include="Views\categories\Details.cshtml" />
+    <Content Include="Views\categories\Edit.cshtml" />
+    <Content Include="Views\categories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
