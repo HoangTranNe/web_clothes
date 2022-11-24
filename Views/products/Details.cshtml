@@ -1,116 +1,76 @@
 ﻿@model do_an_web.Models.product
-
+@using do_an_web.Models
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2>THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
+<br />
+<div class="row">
+    <div class="offset-md-1 col-md-4">
+        <img style="width: 100%;" src="~/Images/@Model.images" alt="">
+    </div>
+    <div class="col-md-6 details">
+        <h3>Tên sách: @Model.name</h3>
+        <div style="text-align: justify">
+            <p style="font-weight: bold">
+                Mô tả:
+                <span>
+                    Co_Chay®<br /><br />
 
-<nav class="tab3">
-    <h2></h2>
-</nav>
-<nav class="product-details">
-    <form class="details">
-        <img src="~/Content/Images/pro_1.jpg" />
-        <div class="details-pro">
-            <label class="pro_1" for="pro_1">product 1</label><br />
-            <p>Thương Hiệu: <span style="color:blue;">Co_chay</span> | Tình Trạng <span style="color:blue;">Còn Hàng</span> </p>
-            <h2><span>100$</span></h2>
-            <p>Co_Chay/Sweetwear/Based in SaiGon/Made in VietNam</p>
-            <label for="size">Kích Thước</label>
-            <input type="radio" name="size" class="size" />S
-            <input type="radio" name="size" class="size" />M
-            <input type="radio" name="size" class="size" />L <br />
-            <label for="count">Số Lượng</label>
-            <select class="count">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-            </select>
-            <button type="submit" class="cart">Thêm Giỏ Hàng</button>
+                    Streetwear <br /><br />
+
+                    Based in Saigon<br /><br />
+
+                    Made in Vietnam<br /><br />
+
+                    Hệ Thống Cửa Hàng<br /><br />
+
+                    - CN 1: 445 Sư Vạn Hạnh, P.12, Q.10<br /><br />
+
+                    - CN 2: 48 Trần Quang Diệu, P.14, Q.3<br /><br />
+
+                    - CN 3: 463 Quang Trung, P.10, Q. Gò Vấp<br /><br />
+
+                    - CN 4: 350 Điện Biên Phủ, P.17, Q. Bình Thạnh (GTOWN 1)<br /><br />
+
+                    - CN 5: 136 Nguyễn Hồng Đào, P14, Q. Tân Bình (GTOWN 2)<br /><br />
+
+                    - CN 6: TNP - 26 Lý Tự Trọng, P. Bến Nghé, Q.1.<br /><br />
+
+                    - CN 7: TNP (Sense Market) - Đối Diện Số 90 Lê Lai, P. Bến Nghé, Q.1.<br /><br />
+
+                    - CN 8: PG2-08 Shophouse Vincom, Đường 30/4, P.Xuân Khánh, Q. Ninh Kiều, Cần Thơ.<br /><br />
+
+                    - CN 9: PG2-06 Shophouse Vincom, 1096 Phạm Văn Thuận, P. Tân Mai, TP. Biên Hoà.<br /><br />
+
+                    Viet Street Culture x Streetwear<br /><br />
+
+                    SIZE CHART<br /><br />
+                </span>
+                <img src="~/Content/Images-Title/pro_1_size.jpg" />
+            </p> 
         </div>
-    </form>
-</nav>
-<nav class="decribe">
-    <div class="labels">
-        <p style="font-size: 30px; font-weight:bold;">Mô Tả</p>
-    </div>
-    <div class="descibe-title">
-        <p>
-            Co_Chay®<br /><br />
+        <p class="price">
+            Giá bán: <span style="color:red; font-size:32px;">
+                @String.Format("{0:0.00}",Model.price) VNĐ
+        </span>
 
-            Streetwear <br /><br />
-
-            Based in Saigon<br /><br />
-
-            Made in Vietnam<br /><br />
-
-            Hệ Thống Cửa Hàng<br /><br />
-
-            - CN 1: 445 Sư Vạn Hạnh, P.12, Q.10<br /><br />
-
-            - CN 2: 48 Trần Quang Diệu, P.14, Q.3<br /><br />
-
-            - CN 3: 463 Quang Trung, P.10, Q. Gò Vấp<br /><br />
-
-            - CN 4: 350 Điện Biên Phủ, P.17, Q. Bình Thạnh (GTOWN 1)<br /><br />
-
-            - CN 5: 136 Nguyễn Hồng Đào, P14, Q. Tân Bình (GTOWN 2)<br /><br />
-
-            - CN 6: TNP - 26 Lý Tự Trọng, P. Bến Nghé, Q.1.<br /><br />
-
-            - CN 7: TNP (Sense Market) - Đối Diện Số 90 Lê Lai, P. Bến Nghé, Q.1.<br /><br />
-
-            - CN 8: PG2-08 Shophouse Vincom, Đường 30/4, P.Xuân Khánh, Q. Ninh Kiều, Cần Thơ.<br /><br />
-
-            - CN 9: PG2-06 Shophouse Vincom, 1096 Phạm Văn Thuận, P. Tân Mai, TP. Biên Hoà.<br /><br />
-
-            Viet Street Culture x Streetwear<br /><br />
-
-            SIZE CHART<br /><br />
-        </p>
-        <img src="~/Content/Images-Title/pro_1_size.jpg" />
-    </div>
-</nav>
-<div class="slider">
-    <div class="main">
-        <img src="~/Content/Images/pro_1.jpg" />
-    </div>
-    <div class="main">
-        <img src="~/Content/Images/pro_1.jpg" />
-    </div>
-    <div class="main">
-        <img src="~/Content/Images/pro_1.jpg" />
-    </div>
-    <div class="main">
-        <img src="~/Content/Images/pro_1.jpg" />
-    </div>
-    <div class="main">
-        <img src="~/Content/Images/pro_1.jpg" />
-    </div>
-    <div class="main">
-        <img src="~/Content/Images/pro_1.jpg" />
-    </div>
+    </p>
+    <a class="btn btn-primary" href="@Url.Action("addtocart", "cart", new{ id_products = Model.id_products })">
+        Đặt mua
+    </a>
+</div>
 </div>
 @section scripts{
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript">
-            $(document).ready(function () {
-                $('.slider').slick({
-                    infinite: true,
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                });
-            })
+        $(document).ready(function () {
+            $('.slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+        })
     </script>
 }
