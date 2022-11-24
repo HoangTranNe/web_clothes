@@ -395,12 +395,12 @@
     <Content Include="Views\products\Details.cshtml" />
     <Content Include="Views\products\Edit.cshtml" />
     <Content Include="Views\products\Index.cshtml" />
+    <Content Include="Views\cart\showcart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Data\" />
     <Folder Include="Areas\admin\Views\Shared\" />
-    <Folder Include="Views\cart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,38 @@
+﻿@using do_an_web.Models
+@model List<do_an_web.Models.needtobuy>
+@{
+    ViewBag.Title = "showcart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã Sản Phẩm</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Ảnh Sản Phẩm</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+            <th>Thành tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var clothes in Model)
+        {
+            <tr>
+                <td>@clothes.id_product</td>
+                <td>@clothes.name</td>
+                <td><img src="~/Images/@clothes.images" /></td>
+                <td>@clothes.quantity</td>
+                <td>@clothes.price</td>
+                <td>@clothes.total()</td>
+            </tr>
+        }
+        <tr style="font-weight:bold; text-align:right; color:red;">
+            <td colspan="5">Tổng số lượng: @ViewBag.TongSL</td>
+            <td colspan="1">Tổng tiền: @ViewBag.TongTien</td>
+        </tr>
+    </tbody>
+</table>
+

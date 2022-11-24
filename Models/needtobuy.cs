@@ -12,13 +12,11 @@ namespace do_an_web.Models
         public string name { get; set; }
         public string images { get; set; }
         public double price { get; set; }
-        public double quantity { get; set; }
+        public int quantity { get; set; }
         public double total ()
         { 
             return price * quantity;
         }
-        public int price_total { get; set; }
-        public int quantity_total { get; set;}
 
         public needtobuy(int products)
         {
