@@ -153,6 +153,7 @@
     <Compile Include="Models\brand.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\cartController.cs" />
     <Compile Include="Models\category.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
@@ -165,6 +166,7 @@
     <Compile Include="Models\customer_order.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\needtobuy.cs" />
     <Compile Include="Models\partner.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
@@ -398,6 +400,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Data\" />
     <Folder Include="Areas\admin\Views\Shared\" />
+    <Folder Include="Views\cart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\glyphicons-halflings-regular.woff2" />
