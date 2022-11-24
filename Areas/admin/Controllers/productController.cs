@@ -12,14 +12,15 @@ using PagedList;
 
 namespace do_an_web.Areas.admin.Controllers
 {
-    public class productsController : Controller
+    public class productController : Controller
     {
         private webClothesEntities db = new webClothesEntities();
 
         // GET: admin/products
         public ActionResult Index(string searchString, int? page, int id_category = 0)
         {
-            if (page == null)
+            var items = db.products.ToList();
+            /*if (page == null)
             {
                 page = 1;
             }
@@ -41,9 +42,10 @@ namespace do_an_web.Areas.admin.Controllers
             {
                 products = products.Where(c => c.id_category == id_category);
             }
-            ViewBag.CategoryID = new SelectList(db.categories, "id_category", "name_category");
+            ViewBag.CategoryID = new SelectList(db.categories, "id_category", "name_category");*/
 
-            return View(products.ToPagedList(pageNumber, pageSize));
+            /* return View(products.ToPagedList(pageNumber, pageSize));*/
+            return View(items);
         }
 
         // GET: admin/products/Details/5
@@ -85,7 +87,7 @@ namespace do_an_web.Areas.admin.Controllers
                     if (images.ContentLength > 0)
                     {
                         string _FileName = Path.GetFileName(images.FileName);
-                        string _path = Path.Combine(Server.MapPath("~/bookimages"), _FileName);
+                        string _path = Path.Combine(Server.MapPath("~/Content/Images"), _FileName);
                         images.SaveAs(_path);
                         product.images = _FileName;
                     }

@@ -1,4 +1,5 @@
-﻿@model PagedList.IPagedList<do_an_web.Models.product>
+﻿@*@model PagedList.IPagedList<do_an_web.Models.product>*@
+@model IEnumerable<do_an_web.Models.product>
 @using PagedList.Mvc;
 
 @{
@@ -8,12 +9,10 @@
 
 <h2>Index</h2>
 
-<h2>Index</h2>
-
 <p>
     @Html.ActionLink("Thêm Sản Phẩm", "Create", null, new { @class = "btn btn-warning" })
 </p>
-@using (Html.BeginForm("Index", "products", FormMethod.Get, new { @class = "form-inline" }))
+@*@using (Html.BeginForm("Index", "products", FormMethod.Get, new { @class = "form-inline" }))
 {
     <div class="form-group">
         <label>Tên Sản Phẩm: </label>
@@ -21,7 +20,7 @@
         <input type="button" class="btn btn-danger" value="Tìm Sản Phẩm">
     </div>
     <hr />
-}
+}*@
 
 @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -93,16 +92,16 @@
                     </p>*@
             }
         </div>
-        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6 text-right">
+       @* <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6 text-right">
             Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
-        </div>
+        </div>*@
     </div>
 
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, size = ViewBag.currentSize }))
+ @*   @Html.PagedListPager(Model, page => Url.Action("Index", new { page, size = ViewBag.currentSize }))*@
 }
 <br />
 <br />
-Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+@*Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-@Styles.Render("~/Content/web_clothes.css")
+@Styles.Render("~/Content/web_clothes.css")*@
 
