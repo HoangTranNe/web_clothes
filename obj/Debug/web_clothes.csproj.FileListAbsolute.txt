@@ -169,11 +169,9 @@ D:\do_an_web\bin\PagedList.Mvc.dll
 D:\do_an_web\bin\PagedList.xml
 D:\do_an_web\bin\PagedList.Mvc.xml
 D:\do_an_web\bin\Microsoft.AspNetCore.Http.Abstractions.dll
-D:\do_an_web\bin\Microsoft.AspNetCore.Http.Extensions.dll
 D:\do_an_web\bin\Microsoft.AspNetCore.Http.Features.dll
 D:\do_an_web\bin\Microsoft.Bcl.AsyncInterfaces.dll
 D:\do_an_web\bin\Microsoft.Extensions.Caching.Abstractions.dll
-D:\do_an_web\bin\Microsoft.Extensions.Caching.Memory.dll
 D:\do_an_web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\do_an_web\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
 D:\do_an_web\bin\Microsoft.Extensions.Logging.Abstractions.dll
@@ -188,11 +186,9 @@ D:\do_an_web\bin\System.Text.Encodings.Web.dll
 D:\do_an_web\bin\System.Threading.Tasks.Extensions.dll
 D:\do_an_web\bin\System.ValueTuple.dll
 D:\do_an_web\bin\Microsoft.AspNetCore.Http.Abstractions.xml
-D:\do_an_web\bin\Microsoft.AspNetCore.Http.Extensions.xml
 D:\do_an_web\bin\Microsoft.AspNetCore.Http.Features.xml
 D:\do_an_web\bin\Microsoft.Bcl.AsyncInterfaces.xml
 D:\do_an_web\bin\Microsoft.Extensions.Caching.Abstractions.xml
-D:\do_an_web\bin\Microsoft.Extensions.Caching.Memory.xml
 D:\do_an_web\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 D:\do_an_web\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
 D:\do_an_web\bin\Microsoft.Extensions.Logging.Abstractions.xml
