@@ -18,8 +18,70 @@
     <script type="text/javascript" src="slick/slick.min.js"></script>
 </head>
 <body>
+    <nav class="nav">
+        <div class="logo">
+            <a href="@Url.Action("Index","Home")"><img src="~/Content/Images/logo.jpg" /></a>
+        </div>
+        <div class="search-box">
+            <input type="text" name="search" class="input-search" placeholder="Search" />
+            <button>
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+        <ul class="nav-link">
+            <li>
+                <a href="@Url.Action("Login_View","Home")">Login</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Register_View","Home")">Register</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Contact_View", "Home")">Contact</a>
+            </li>
+        </ul>
+    </nav>
     <div>
         @RenderBody()
     </div>
+    <nav class="footer">
+        <div class="footer-title">
+            <div class="social">
+                <h2>Liên Hệ</h2>
+                <div class="icon">
+                    <a href="https://www.facebook.com/hoangtran1609"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/lol_bruzzzz/"><i class="fa-brands fa-instagram"></i></a><br /><br />
+                    <a href=""><i class="fa-brands fa-telegram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="help">
+                <h2>Hướng Dẫn</h2>
+                <ul class="de-muc">
+                    <li><a href="@Url.Action("dieu_khoan_view","Home")">Điều Khoản</a></li>
+                    <li><a href="@Url.Action("huong_dan_mua_hang_view","Home")">Hướng Dẫn Mua Hàng</a></li>
+                    <li><a href="@Url.Action("chinh_sach_doi_tra_view","Home")">Chính Sách Đổi Trả</a></li>
+                    <li><a href="@Url.Action("chinh_sach_bao_mat_thong_tin_view","Home")">Bảo Mật Thông Tin Khách Hàng</a></li>
+                    <li><a href="@Url.Action("chinh_sach_thanh_toan_view","Home")">Chính Sách Thanh Toán</a></li>
+                    <li class="reversed"><p>Co_Chay®</p></li>
+                    <li class="reversed"><p>Copy By Needs Of Wisdom®</p></li>
+                </ul>
+            </div>
+            <div class="contact_us">
+                <h2>Địa Chỉ</h2>
+                <ul class="de-muc">
+                    <li><a href="">CN Chính: <span style="font-weight: bold;">123 Nguyễn Văn Linh, Quận 7, TP.HCM</span></a></li>
+                    <li><a href="">CN 2 <span style="font-weight: bold;">445 Sư Vạn Hạnh, P.12, Q.10</span></a></li>
+                    <li><a href="">CN 3 <span style="font-weight: bold;">48 Trần Quang Diệu, P.14, Q.3</span></a></li>
+                    <li><a href="">CN 4 <span style="font-weight: bold;">463 Quang Trung, P.10, Q. Gò Vấp</span></a></li>
+                    <li><a href="">Điện Thoại: <span style="font-weight: bold;">0946253769</span></a></li>
+                    <li><a href="">Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></a> <span style="color: white">|</span> <a href="">Email: <span style="font-weight: bold;">tranbaohoang2003@gmail.com</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
