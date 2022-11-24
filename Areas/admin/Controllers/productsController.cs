@@ -30,7 +30,7 @@ namespace do_an_web.Areas.admin.Controllers
             var products = db.products.Include(p => p.brand).Include(p => p.category).Include(p => p.warehouse);
             if (!String.IsNullOrEmpty(searchString))
             {
-                searchString=searchString.ToLower();
+                searchString = searchString.ToLower();
                 products = products.Where(b => b.name.ToLower().Contains(searchString));
             }
 
@@ -43,40 +43,8 @@ namespace do_an_web.Areas.admin.Controllers
             }
             ViewBag.CategoryID = new SelectList(db.categories, "id_category", "name_category");
 
-            return View(products.ToPagedList(pageNumber,pageSize));
-        }
-/*        public ActionResult Index(int? page, int? size)
-        {
-            List<SelectListItem> items = new List<SelectListItem>();
-            items.Add(new SelectListItem { Text = "5", Value = "5" });
-            items.Add(new SelectListItem { Text = "10", Value = "10" });
-            items.Add(new SelectListItem { Text = "20", Value = "20" });
-            items.Add(new SelectListItem { Text = "25", Value = "25" });
-            items.Add(new SelectListItem { Text = "50", Value = "50" });
-            items.Add(new SelectListItem { Text = "100", Value = "100" });
-            items.Add(new SelectListItem { Text = "200", Value = "200" });
-
-
-            foreach (var item in items)
-            {
-                if (item.Value == size.ToString()) item.Selected = true;
-            }
-
-
-            ViewBag.size = items; 
-            ViewBag.currentSize = size;
-
-
-            page = page ?? 1; 
-
-            var products = db.products.Include(b => b.category).Include(b=>b.brand);
-            int pageSize = (size ?? 5);
-            int pageNumber = (page ?? 1);
-            int total = (int)(products.ToList().Count / pageSize) + 1;            
-            if (pageNumber > total)
-                pageNumber = total;
             return View(products.ToPagedList(pageNumber, pageSize));
-        }*/
+        }
 
         // GET: admin/products/Details/5
         public ActionResult Details(int? id)
@@ -97,13 +65,7 @@ namespace do_an_web.Areas.admin.Controllers
         public ActionResult Create()
         {
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand");
-            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand");
-            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand");
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category");
-            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category");
-            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category");
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse");
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse");
             ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse");
             return View();
         }
@@ -138,13 +100,7 @@ namespace do_an_web.Areas.admin.Controllers
             }
 
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
-            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
-            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             return View(product);
         }
@@ -162,13 +118,7 @@ namespace do_an_web.Areas.admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
-            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
-            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             return View(product);
         }
@@ -179,7 +129,7 @@ namespace do_an_web.Areas.admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,images")] product product,HttpPostedFileBase images, FormCollection form)
+        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,images")] product product, HttpPostedFileBase images, FormCollection form)
         {
             if (ModelState.IsValid)
             {
@@ -211,13 +161,7 @@ namespace do_an_web.Areas.admin.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
-            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
-            ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
             return View(product);
         }

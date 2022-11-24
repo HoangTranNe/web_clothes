@@ -21,11 +21,7 @@ namespace do_an_web.Models
         public Nullable<int> quantity_order { get; set; }
         public Nullable<int> total { get; set; }
     
-        public virtual cart cart { get; set; }
-        public virtual cart cart1 { get; set; }
-        public virtual customers_register customers_register { get; set; }
-        public virtual customers_register customers_register1 { get; set; }
+        public virtual customer customer { get; set; }
         public virtual product product { get; set; }
-        public virtual product product1 { get; set; }
     }
 }

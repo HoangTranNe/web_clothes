@@ -9,17 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="carts">
-      <EntityTypeMapping TypeName="webClothesModel.cart">
-        <MappingFragment StoreEntitySet="carts">
-          <ScalarProperty Name="id_cart" ColumnName="id_cart" />
-          <ScalarProperty Name="id_products" ColumnName="id_products" />
-          <ScalarProperty Name="images" ColumnName="images" />
-          <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="quantity" ColumnName="quantity" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="categories">
       <EntityTypeMapping TypeName="webClothesModel.category">
         <MappingFragment StoreEntitySet="categories">
@@ -51,19 +40,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="customers_login">
-      <EntityTypeMapping TypeName="webClothesModel.customers_login">
-        <MappingFragment StoreEntitySet="customers_login">
-          <ScalarProperty Name="id_customer" ColumnName="id_customer" />
-          <ScalarProperty Name="name_customer" ColumnName="name_customer" />
-          <ScalarProperty Name="email_customer" ColumnName="email_customer" />
-          <ScalarProperty Name="password_customer" ColumnName="password_customer" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="customers_register">
-      <EntityTypeMapping TypeName="webClothesModel.customers_register">
-        <MappingFragment StoreEntitySet="customers_register">
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="webClothesModel.customer">
+        <MappingFragment StoreEntitySet="customers">
           <ScalarProperty Name="id_customer" ColumnName="id_customer" />
           <ScalarProperty Name="name_customer" ColumnName="name_customer" />
           <ScalarProperty Name="phone_customer" ColumnName="phone_customer" />

@@ -26,12 +26,10 @@ namespace do_an_web.Models
         }
     
         public virtual DbSet<brand> brands { get; set; }
-        public virtual DbSet<cart> carts { get; set; }
         public virtual DbSet<category> categories { get; set; }
         public virtual DbSet<constract> constracts { get; set; }
         public virtual DbSet<customer_order> customer_order { get; set; }
-        public virtual DbSet<customers_login> customers_login { get; set; }
-        public virtual DbSet<customers_register> customers_register { get; set; }
+        public virtual DbSet<customer> customers { get; set; }
         public virtual DbSet<partner> partners { get; set; }
         public virtual DbSet<product> products { get; set; }
         public virtual DbSet<report> reports { get; set; }

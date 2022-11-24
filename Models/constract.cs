@@ -21,8 +21,6 @@ namespace do_an_web.Models
         public Nullable<int> quantity { get; set; }
     
         public virtual partner partner { get; set; }
-        public virtual partner partner1 { get; set; }
         public virtual product product { get; set; }
-        public virtual product product1 { get; set; }
     }
 }
