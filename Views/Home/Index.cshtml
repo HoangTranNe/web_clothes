@@ -3,7 +3,32 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Content/Images-Title/discount_1.png" style="height:500px; width:700px;" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/Images-Title/discount_2.png" style="height:500px; width:700px;" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/Images-Title/discount_3.jpg" style="height:500px; width:700px;" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 <nav class="tab2">
 
     <div class="tab2-title">
@@ -35,7 +60,7 @@
 
         <div class="card col-sm-4 col-md-4 col-lg-4 d-flex align-items-stretch book-section">
 
-            <a href="@Url.Action("Details", "products", new { id = clothes.id_products })">
+            <a href="@Url.Action("Details", "product", new { id = clothes.id_products })">
                 <img class="card-img-top book-picture h-100 w-50"
                      src="~/Content/Images/@clothes.images" alt="Card image">
             </a>

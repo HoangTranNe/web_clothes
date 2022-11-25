@@ -7,8 +7,10 @@
 
 <h2>Index</h2>
 
-
-<table class="table" id="myTable">
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.name)
@@ -20,6 +22,9 @@
             @Html.DisplayNameFor(model => model.discount)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.descibe)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.images)
         </th>
         <th>
@@ -29,7 +34,7 @@
             @Html.DisplayNameFor(model => model.category.name_category)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.warehouse.id_warehouse)
+            @Html.DisplayNameFor(model => model.warehouse.name_warehouse)
         </th>
         <th></th>
     </tr>
@@ -46,7 +51,10 @@
             @Html.DisplayFor(modelItem => item.discount)
         </td>
         <td>
-            <img src="~/Content/Images/@item.images" width="100" height="100"/>
+            @Html.DisplayFor(modelItem => item.descibe)
+        </td>
+        <td>
+            <img src="~/Content/Images/@item.images" width="100" height="100" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.brand.name_brand)
@@ -55,11 +63,14 @@
             @Html.DisplayFor(modelItem => item.category.name_category)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.warehouse.id_warehouse)
-        </td>       
+            @Html.DisplayFor(modelItem => item.warehouse.name_warehouse)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id_products }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id_products }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id_products })
+        </td>
     </tr>
 }
 
 </table>
-
-
