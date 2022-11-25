@@ -89,8 +89,9 @@
           <Property Name="id_category" Type="int" />
           <Property Name="id_brand" Type="int" />
           <Property Name="name" Type="nvarchar" MaxLength="255" />
-          <Property Name="price" Type="nvarchar" MaxLength="255" />
+          <Property Name="price" Type="real" />
           <Property Name="discount" Type="int" />
+          <Property Name="descibe" Type="varchar" MaxLength="255" />
           <Property Name="images" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="reports">
@@ -107,8 +108,8 @@
             <PropertyRef Name="id_warehouse" />
           </Key>
           <Property Name="id_warehouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_products" Type="int" />
-          <Property Name="quantity" Type="int" />
+          <Property Name="name_warehouse" Type="nvarchar" MaxLength="255" />
+          <Property Name="located" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <Association Name="FK__constract__id_pa__3B75D760">
           <End Role="partners" Type="Self.partners" Multiplicity="0..1" />
@@ -365,8 +366,9 @@
           <Property Name="id_category" Type="Int32" />
           <Property Name="id_brand" Type="Int32" />
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="price" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Single" />
           <Property Name="discount" Type="Int32" />
+          <Property Name="descibe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="images" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="brand" Relationship="Self.FK__products__id_bra__3A81B327" FromRole="products" ToRole="brand" />
           <NavigationProperty Name="category" Relationship="Self.FK__products__id_cat__38996AB5" FromRole="products" ToRole="categories" />
@@ -390,8 +392,8 @@
             <PropertyRef Name="id_warehouse" />
           </Key>
           <Property Name="id_warehouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_products" Type="Int32" />
-          <Property Name="quantity" Type="Int32" />
+          <Property Name="name_warehouse" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="located" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="products" Relationship="Self.FK__products__id_war__398D8EEE" FromRole="warehouse" ToRole="products" />
         </EntityType>
         <Association Name="FK__products__id_bra__3A81B327">
@@ -648,6 +650,7 @@
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="descibe" ColumnName="descibe" />
                 <ScalarProperty Name="images" ColumnName="images" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -666,8 +669,8 @@
             <EntityTypeMapping TypeName="webClothesModel.warehouse">
               <MappingFragment StoreEntitySet="warehouse">
                 <ScalarProperty Name="id_warehouse" ColumnName="id_warehouse" />
-                <ScalarProperty Name="id_products" ColumnName="id_products" />
-                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="name_warehouse" ColumnName="name_warehouse" />
+                <ScalarProperty Name="located" ColumnName="located" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

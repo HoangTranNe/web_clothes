@@ -94,8 +94,9 @@
     <Property Name="id_category" Type="Int32" />
     <Property Name="id_brand" Type="Int32" />
     <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="price" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Single" />
     <Property Name="discount" Type="Int32" />
+    <Property Name="descibe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="images" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="brand" Relationship="Self.FK__products__id_bra__3A81B327" FromRole="products" ToRole="brand" />
     <NavigationProperty Name="category" Relationship="Self.FK__products__id_cat__38996AB5" FromRole="products" ToRole="categories" />
@@ -119,8 +120,8 @@
       <PropertyRef Name="id_warehouse" />
     </Key>
     <Property Name="id_warehouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="id_products" Type="Int32" />
-    <Property Name="quantity" Type="Int32" />
+    <Property Name="name_warehouse" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="located" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="products" Relationship="Self.FK__products__id_war__398D8EEE" FromRole="warehouse" ToRole="products" />
   </EntityType>
   <Association Name="FK__products__id_bra__3A81B327">

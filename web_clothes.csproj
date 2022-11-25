@@ -194,7 +194,7 @@
     <Compile Include="Areas\admin\Controllers\customersController.cs" />
     <Compile Include="Areas\admin\Controllers\customer_orderController.cs" />
     <Compile Include="Areas\admin\Controllers\partnersController.cs" />
-    <Compile Include="Areas\admin\Controllers\productController.cs" />
+    <Compile Include="Areas\admin\Controllers\productsController.cs" />
     <Compile Include="Areas\admin\Controllers\reportsController.cs" />
     <Compile Include="Areas\admin\Controllers\warehousesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -325,6 +325,11 @@
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.esm.min.js" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.js" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.min.js" />
+    <Content Include="Areas\admin\Views\warehouses\Create.cshtml" />
+    <Content Include="Areas\admin\Views\warehouses\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\warehouses\Details.cshtml" />
+    <Content Include="Areas\admin\Views\warehouses\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\warehouses\Index.cshtml" />
     <EntityDeploy Include="Models\webClothesModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
@@ -332,6 +337,11 @@
     <Content Include="Models\webClothesModels.edmx.diagram">
       <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\admin\Views\products\Create.cshtml" />
+    <Content Include="Areas\admin\Views\products\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\products\Details.cshtml" />
+    <Content Include="Areas\admin\Views\products\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\products\Index.cshtml" />
     <None Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.min.js" />
@@ -347,11 +357,6 @@
     <Content Include="Content\Images-Title\pro_1_size.jpg" />
     <None Include=".editorconfig" />
     <Content Include="Areas\admin\Views\web.config" />
-    <Content Include="Areas\admin\Views\product\Create.cshtml" />
-    <Content Include="Areas\admin\Views\product\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\product\Details.cshtml" />
-    <Content Include="Areas\admin\Views\product\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\product\Index.cshtml" />
     <Content Include="Areas\admin\Views\brands\Create.cshtml" />
     <Content Include="Areas\admin\Views\brands\Delete.cshtml" />
     <Content Include="Areas\admin\Views\brands\Details.cshtml" />
@@ -387,11 +392,6 @@
     <Content Include="Areas\admin\Views\reports\Details.cshtml" />
     <Content Include="Areas\admin\Views\reports\Edit.cshtml" />
     <Content Include="Areas\admin\Views\reports\Index.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Create.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Details.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Index.cshtml" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.min.js.map" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.js.map" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.esm.min.js.map" />
@@ -436,17 +436,17 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Error.cshtml" />
-    <Content Include="Views\Home\chinh_sach_bao_mat_thong_tin_view.cshtml" />
-    <Content Include="Views\Home\chinh_sach_doi_tra_view.cshtml" />
-    <Content Include="Views\Home\chinh_sach_thanh_toan_view.cshtml" />
-    <Content Include="Views\Home\dieu_khoan_view.cshtml" />
-    <Content Include="Views\Home\huong_dan_mua_hang_view.cshtml" />
+    <Content Include="Views\privacy\chinh_sach_bao_mat_thong_tin_view.cshtml" />
+    <Content Include="Views\privacy\chinh_sach_doi_tra_view.cshtml" />
+    <Content Include="Views\privacy\chinh_sach_thanh_toan_view.cshtml" />
+    <Content Include="Views\privacy\dieu_khoan_view.cshtml" />
+    <Content Include="Views\privacy\huong_dan_mua_hang_view.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\chinh_sach_bao_mat_thong_tin.cshtml" />
-    <Content Include="Views\Shared\chinh_sach_doi_tra.cshtml" />
-    <Content Include="Views\Shared\chinh_sach_thanh_toan.cshtml" />
-    <Content Include="Views\Shared\dieu_khoan.cshtml" />
-    <Content Include="Views\Shared\huong_dan_mua_hang.cshtml" />
+    <Content Include="Views\privacy\chinh_sach_bao_mat_thong_tin.cshtml" />
+    <Content Include="Views\privacy\chinh_sach_doi_tra.cshtml" />
+    <Content Include="Views\privacy\chinh_sach_thanh_toan.cshtml" />
+    <Content Include="Views\privacy\dieu_khoan.cshtml" />
+    <Content Include="Views\privacy\huong_dan_mua_hang.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_ViewStart.cshtml" />
     <Content Include="Views\Web.config" />
@@ -461,6 +461,8 @@
     <Content Include="Views\cart\cartpartial.cshtml" />
     <Content Include="Views\cart\DatHang.cshtml" />
     <Content Include="Views\cart\HoanThanhDonHang.cshtml" />
+    <Content Include="Views\Home\takecategory.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

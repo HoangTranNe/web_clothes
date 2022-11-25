@@ -84,8 +84,9 @@
     <Property Name="id_category" Type="int" />
     <Property Name="id_brand" Type="int" />
     <Property Name="name" Type="nvarchar" MaxLength="255" />
-    <Property Name="price" Type="nvarchar" MaxLength="255" />
+    <Property Name="price" Type="real" />
     <Property Name="discount" Type="int" />
+    <Property Name="descibe" Type="varchar" MaxLength="255" />
     <Property Name="images" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="reports">
@@ -102,8 +103,8 @@
       <PropertyRef Name="id_warehouse" />
     </Key>
     <Property Name="id_warehouse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_products" Type="int" />
-    <Property Name="quantity" Type="int" />
+    <Property Name="name_warehouse" Type="nvarchar" MaxLength="255" />
+    <Property Name="located" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <Association Name="FK__constract__id_pa__3B75D760">
     <End Role="partners" Type="Self.partners" Multiplicity="0..1" />

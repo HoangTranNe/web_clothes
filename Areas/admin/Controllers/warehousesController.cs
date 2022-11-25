@@ -46,7 +46,7 @@ namespace do_an_web.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_warehouse,id_products,quantity")] warehouse warehouse)
+        public ActionResult Create([Bind(Include = "id_warehouse,name_warehouse,located")] warehouse warehouse)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace do_an_web.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_warehouse,id_products,quantity")] warehouse warehouse)
+        public ActionResult Edit([Bind(Include = "id_warehouse,name_warehouse,located")] warehouse warehouse)
         {
             if (ModelState.IsValid)
             {

@@ -1,0 +1,83 @@
+﻿@model do_an_web.Models.product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descibe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descibe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.images)
+        </dt>
+
+        <dd>
+            <img src="~/Content/Images/@Model.images" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brand.name_brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brand.name_brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category.name_category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.name_category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.warehouse.name_warehouse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.warehouse.name_warehouse)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_products }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

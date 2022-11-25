@@ -93,6 +93,7 @@
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="descibe" ColumnName="descibe" />
           <ScalarProperty Name="images" ColumnName="images" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -111,8 +112,8 @@
       <EntityTypeMapping TypeName="webClothesModel.warehouse">
         <MappingFragment StoreEntitySet="warehouse">
           <ScalarProperty Name="id_warehouse" ColumnName="id_warehouse" />
-          <ScalarProperty Name="id_products" ColumnName="id_products" />
-          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="name_warehouse" ColumnName="name_warehouse" />
+          <ScalarProperty Name="located" ColumnName="located" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

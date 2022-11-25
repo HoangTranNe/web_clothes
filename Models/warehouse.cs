@@ -21,8 +21,8 @@ namespace do_an_web.Models
         }
     
         public int id_warehouse { get; set; }
-        public Nullable<int> id_products { get; set; }
-        public Nullable<int> quantity { get; set; }
+        public string name_warehouse { get; set; }
+        public string located { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<product> products { get; set; }

@@ -27,8 +27,9 @@ namespace do_an_web.Models
         public Nullable<int> id_category { get; set; }
         public Nullable<int> id_brand { get; set; }
         public string name { get; set; }
-        public string price { get; set; }
+        public Nullable<float> price { get; set; }
         public Nullable<int> discount { get; set; }
+        public string descibe { get; set; }
         public string images { get; set; }
     
         public virtual brand brand { get; set; }

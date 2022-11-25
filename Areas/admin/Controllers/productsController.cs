@@ -8,11 +8,10 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using do_an_web.Models;
-using PagedList;
 
 namespace do_an_web.Areas.admin.Controllers
 {
-    public class productController : Controller
+    public class productsController : Controller
     {
         private webClothesEntities db = new webClothesEntities();
 
@@ -68,7 +67,7 @@ namespace do_an_web.Areas.admin.Controllers
         {
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand");
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category");
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse");
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "name_warehouse");
             return View();
         }
 
@@ -121,7 +120,7 @@ namespace do_an_web.Areas.admin.Controllers
             }
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "id_warehouse", product.id_warehouse);
+            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "name_warehouse", product.id_warehouse);
             return View(product);
         }
 

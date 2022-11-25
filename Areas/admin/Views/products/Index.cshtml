@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<do_an_web.Models.product>
-@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Thêm Sản Phẩm", "Create", null, new { @class = "btn btn-warning" })
 </p>
-@*@using (Html.BeginForm("Index", "products", FormMethod.Get, new { @class = "form-inline" }))
+@using (Html.BeginForm("Index", "products", FormMethod.Get, new { @class = "form-inline" }))
 {
     <div class="form-group">
         <label>Tên Sản Phẩm: </label>
@@ -19,9 +19,9 @@
         <input type="button" class="btn btn-danger" value="Tìm Sản Phẩm">
     </div>
     <hr />
-}*@
+}
 
-@using (Html.BeginForm("Create", "product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <table class="table">
         <tr>
@@ -45,6 +45,9 @@
             </th>
             <th>
                 Mã Kho
+            </th>
+            <th>
+                Miêu Tả
             </th>
             <th></th>
         </tr>
@@ -74,12 +77,14 @@
                     @Html.DisplayFor(modelItem => item.warehouse.id_warehouse)
                 </td>
                 <td>
+                    @Html.DisplayFor(modeItem => item.descibe)
+                </td>
+                <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.id_products }) |
                     @Html.ActionLink("Details", "Details", new { id = item.id_products }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.id_products })
                 </td>
             </tr>
         }
-
     </table>
 }

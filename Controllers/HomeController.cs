@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.ComponentModel.DataAnnotations;
 using PagedList;
 using System.Web.WebPages.Html;
+using System.Data.Entity;
 
 namespace do_an_web.Controllers
 {
@@ -17,11 +18,11 @@ namespace do_an_web.Controllers
         private webClothesEntities db = new webClothesEntities();
         private List<product> Add_New_Product(int quantity)
         {
-            return db.products.OrderByDescending(p => p.id_products).Take(quantity).ToList();
+            return db.products.OrderByDescending(p => p.name).Take(quantity).ToList();
         }
         public ActionResult Index()
         {
-            var new_pro = Add_New_Product(5);
+            var new_pro = Add_New_Product(20);
             return View(new_pro);
         }
 
@@ -62,7 +63,24 @@ namespace do_an_web.Controllers
         public ActionResult Contact_View()
         {
             return View();
-        }        
-        
+        }
+        public ActionResult takecategory()
+        {
+            var cate_list = db.categories.ToList();
+            return PartialView(cate_list);
+        }
+        public ActionResult prowithcate(int id)
+        {
+            //Lấy các sách theo mã chủ đề được chọn
+            var prowithcase_list = db.products.Where(p => p.id_category == id).ToList();
+            //Trả về View để render các sách trên (tái sử dụng View Index ở trên, truyền vào danh sách)
+            return View("Index", prowithcase_list);
+        }
+        public ActionResult Details(int id)
+        {
+            //Lấy sách có mã tương ứng
+            var product = db.products.FirstOrDefault(p => p.id_products == id);
+            return View(product);
+        }
     }
 }
