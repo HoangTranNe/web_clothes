@@ -19,6 +19,7 @@ namespace do_an_web.Models
         {
             this.constracts = new HashSet<constract>();
             this.customer_order = new HashSet<customer_order>();
+            this.details_order = new HashSet<details_order>();
         }
     
         public int id_products { get; set; }
@@ -36,6 +37,8 @@ namespace do_an_web.Models
         public virtual ICollection<constract> constracts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<customer_order> customer_order { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<details_order> details_order { get; set; }
         public virtual warehouse warehouse { get; set; }
     }
 }

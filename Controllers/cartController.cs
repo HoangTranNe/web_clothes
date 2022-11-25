@@ -78,5 +78,78 @@ namespace do_an_web.Models
             ViewBag.TongTien = caculate_total_price();
             return PartialView();
         }
+        public ActionResult deleteproduct(int id_products)
+        {
+            List<needtobuy> gioHang = makecart();
+            //Lấy sản phẩm trong giỏ hàng
+            var sanpham = gioHang.FirstOrDefault(s => s.id_product == id_products);
+            if (sanpham != null)
+            {
+                gioHang.RemoveAll(s => s.id_product == id_products);
+                return RedirectToAction("showcart"); //Quay về trang giỏ hàng
+            }
+            if (gioHang.Count == 0) //Quay về trang chủ nếu giỏ hàng không có gì
+                return RedirectToAction("Index", "Home");
+            return RedirectToAction("showcart");
+        }
+        public ActionResult CapNhatMatHang(int id_products, int quantity)
+        {
+            List<needtobuy> gioHang = makecart();
+            //Lấy sản phẩm trong giỏ hàng
+            var sanpham = gioHang.FirstOrDefault(s => s.id_product == id_products);
+            if (sanpham != null)
+            {
+                //Cập nhật lại số lượng tương ứng
+                //Lưu ý số lượng phải lớn hơn hoặc bằng 1
+                sanpham.quantity = quantity;
+            }
+            return RedirectToAction("showcart"); //Quay về trang giỏ hàng
+
+        }
+        public ActionResult DatHang()
+        {
+            if (Session["TaiKhoan"] == null) //Chưa đăng nhập
+                return RedirectToAction("DangNhap", "NguoiDung");
+            List<needtobuy> gioHang = makecart();
+            if (gioHang == null || gioHang.Count == 0) //Chưa có giỏ hàng hoặc chưa có sp
+                return RedirectToAction("Index", "products");
+            ViewBag.TongSL = caculate_total_quantity();
+            ViewBag.TongTien = caculate_total_price();
+            return View(gioHang); //Trả về View hiển thị thông tin giỏ hàng
+        }
+        webClothesEntities database = new webClothesEntities();
+        //Xác nhận đơn và lưu vào CSDL
+        public ActionResult DongYDatHang()
+        {
+            customer khach = Session["TaiKhoan"] as customer; //Khách
+            List<needtobuy> gioHang = makecart(); //Giỏ hàng
+            customer_order DonHang = new customer_order(); //Tạo mới đơn đặt hàng
+            DonHang.id_customer = khach.id_customer;
+            DonHang.date_buy = DateTime.Now;
+            DonHang.price = (float)caculate_total_price();
+            DonHang.states = false;
+            DonHang.name_customer = khach.name_customer;
+            DonHang.address_customer = khach.address_customer;
+            DonHang.phone_customer = khach.phone_customer;
+            DonHang.status_paying = false;
+            DonHang.status_deli = false;
+
+            database.customer_order.Add(DonHang);
+            database.SaveChanges();
+            //Lần lượt thêm từng chi tiết cho đơn hàng trên
+            foreach (var sanpham in gioHang)
+            {
+                details_order chitiet = new details_order();
+                chitiet.id_order = DonHang.id_order;
+                chitiet.id_products = sanpham.id_product;
+                chitiet.quantity_order = sanpham.quantity;
+                chitiet.unit_price = (float)sanpham.price;
+                database.details_order.Add(chitiet);
+            }
+            database.SaveChanges();
+            //Xóa giỏ hàng
+            Session["GioHang"] = null;
+            return RedirectToAction("HoanThanhDonHang");
+        }
     }
 }

@@ -4,25 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8b9b883c4af446fca81d272c6862b992" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="webClothesModel.brand" Width="1.5" PointX="8.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.category" Width="1.5" PointX="8.5" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.constract" Width="1.5" PointX="9.375" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.customer_order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.customer" Width="1.5" PointX="0.5" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.partner" Width="1.5" PointX="11.875" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.product" Width="1.5" PointX="6.5" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.report" Width="1.5" PointX="2.5" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.sysdiagram" Width="1.5" PointX="19.375" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.warehouse" Width="1.5" PointX="6.375" PointY="6.625" IsExpanded="true" />
-        <AssociationConnector Association="webClothesModel.FK__products__id_bra__35BCFE0A" ManuallyRouted="false" />
-        <AssociationConnector Association="webClothesModel.FK__products__id_cat__33D4B598" ManuallyRouted="false" />
-        <AssociationConnector Association="webClothesModel.FK__constract__id_pa__36B12243" ManuallyRouted="false" />
-        <AssociationConnector Association="webClothesModel.FK__constract__id_pr__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="webClothesModel.FK__customer___id_cu__38996AB5" ManuallyRouted="false" />
-        <AssociationConnector Association="webClothesModel.FK__customer___id_pr__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="webClothesModel.FK__reports__id_cust__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="webClothesModel.FK__products__id_war__34C8D9D1" ManuallyRouted="false" />
+      <Diagram DiagramId="cb651330d1914984bb3cb4415efc7808" Name="Diagram1">
+        <EntityTypeShape EntityType="webClothesModel.brand" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.category" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.constract" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.customer_order" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.customer" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.details_order" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.partner" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.product" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.report" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.warehouse" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <AssociationConnector Association="webClothesModel.FK__products__id_bra__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="webClothesModel.FK__products__id_cat__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="webClothesModel.FK__constract__id_pa__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="webClothesModel.FK__constract__id_pr__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="webClothesModel.FK__customer___id_cu__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="webClothesModel.FK__customer___id_pr__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="webClothesModel.FK__reports__id_cust__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="webClothesModel.FK__details_o__id_pr__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="webClothesModel.FK__products__id_war__398D8EEE" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

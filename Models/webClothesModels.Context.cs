@@ -30,10 +30,10 @@ namespace do_an_web.Models
         public virtual DbSet<constract> constracts { get; set; }
         public virtual DbSet<customer_order> customer_order { get; set; }
         public virtual DbSet<customer> customers { get; set; }
+        public virtual DbSet<details_order> details_order { get; set; }
         public virtual DbSet<partner> partners { get; set; }
         public virtual DbSet<product> products { get; set; }
         public virtual DbSet<report> reports { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<warehouse> warehouses { get; set; }
     }
 }

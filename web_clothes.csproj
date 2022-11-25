@@ -202,10 +202,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\cartController.cs" />
     <Compile Include="Models\brand.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\cartController.cs" />
     <Compile Include="Models\category.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
@@ -218,6 +218,9 @@
     <Compile Include="Models\customer_order.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\details_order.cs">
+      <DependentUpon>webClothesModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\needtobuy.cs" />
     <Compile Include="Models\partner.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
@@ -226,9 +229,6 @@
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\report.cs">
-      <DependentUpon>webClothesModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\warehouse.cs">
@@ -240,13 +240,13 @@
       <DependentUpon>webClothesModels.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webClothesModels.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>webClothesModels.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\webClothesModels.Designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -314,10 +314,13 @@
       <DependentUpon>webClothesModels.edmx</DependentUpon>
       <LastGenOutput>webClothesModels.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\webClothesModels.edmx.diagram">
+      <DependentUpon>webClothesModels.edmx</DependentUpon>
+    </Content>
     <Content Include="Models\webClothesModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>webClothesModels.edmx</DependentUpon>
       <LastGenOutput>webClothesModels.cs</LastGenOutput>
+      <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.bundle.js" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.bundle.min.js" />
@@ -325,6 +328,10 @@
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.esm.min.js" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.js" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.min.js" />
+    <EntityDeploy Include="Models\webClothesModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.min.js" />
@@ -339,13 +346,6 @@
     <Content Include="Scripts\Scripts_Main\bootstrap.min.js" />
     <Content Include="Content\Images-Title\pro_1_size.jpg" />
     <None Include=".editorconfig" />
-    <EntityDeploy Include="Models\webClothesModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\webClothesModels.edmx.diagram">
-      <DependentUpon>webClothesModels.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\admin\Views\web.config" />
     <Content Include="Areas\admin\Views\product\Create.cshtml" />
     <Content Include="Areas\admin\Views\product\Delete.cshtml" />
@@ -459,6 +459,7 @@
     <Content Include="Views\products\Index.cshtml" />
     <Content Include="Views\cart\showcart.cshtml" />
     <Content Include="Views\cart\cartpartial.cshtml" />
+    <Content Include="Views\cart\DatHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

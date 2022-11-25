@@ -6,7 +6,7 @@
     </Key>
     <Property Name="id_brand" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name_brand" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="products" Relationship="Self.FK__products__id_bra__35BCFE0A" FromRole="brand" ToRole="products" />
+    <NavigationProperty Name="products" Relationship="Self.FK__products__id_bra__3A81B327" FromRole="brand" ToRole="products" />
   </EntityType>
   <EntityType Name="category">
     <Key>
@@ -14,7 +14,7 @@
     </Key>
     <Property Name="id_category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name_category" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="products" Relationship="Self.FK__products__id_cat__33D4B598" FromRole="categories" ToRole="products" />
+    <NavigationProperty Name="products" Relationship="Self.FK__products__id_cat__38996AB5" FromRole="categories" ToRole="products" />
   </EntityType>
   <EntityType Name="constract">
     <Key>
@@ -25,8 +25,8 @@
     <Property Name="id_products" Type="Int32" />
     <Property Name="price_constracts" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="quantity" Type="Int32" />
-    <NavigationProperty Name="partner" Relationship="Self.FK__constract__id_pa__36B12243" FromRole="constracts" ToRole="partners" />
-    <NavigationProperty Name="product" Relationship="Self.FK__constract__id_pr__37A5467C" FromRole="constracts" ToRole="products" />
+    <NavigationProperty Name="partner" Relationship="Self.FK__constract__id_pa__3B75D760" FromRole="constracts" ToRole="partners" />
+    <NavigationProperty Name="product" Relationship="Self.FK__constract__id_pr__3C69FB99" FromRole="constracts" ToRole="products" />
   </EntityType>
   <EntityType Name="customer_order">
     <Key>
@@ -35,11 +35,17 @@
     <Property Name="id_order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="id_customer" Type="Int32" />
     <Property Name="id_products" Type="Int32" />
-    <Property Name="id_cart" Type="Int32" />
-    <Property Name="quantity_order" Type="Int32" />
-    <Property Name="total" Type="Int32" />
-    <NavigationProperty Name="customer" Relationship="Self.FK__customer___id_cu__38996AB5" FromRole="customer_order" ToRole="customers" />
-    <NavigationProperty Name="product" Relationship="Self.FK__customer___id_pr__398D8EEE" FromRole="customer_order" ToRole="products" />
+    <Property Name="date_buy" Type="DateTime" Precision="3" />
+    <Property Name="price" Type="Single" />
+    <Property Name="states" Type="Boolean" />
+    <Property Name="date_deli" Type="DateTime" Precision="3" />
+    <Property Name="name_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="address_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="phone_customer" Type="Int32" />
+    <Property Name="status_paying" Type="Boolean" />
+    <Property Name="status_deli" Type="Boolean" />
+    <NavigationProperty Name="customer" Relationship="Self.FK__customer___id_cu__3D5E1FD2" FromRole="customer_order" ToRole="customers" />
+    <NavigationProperty Name="product" Relationship="Self.FK__customer___id_pr__3E52440B" FromRole="customer_order" ToRole="products" />
   </EntityType>
   <EntityType Name="customer">
     <Key>
@@ -54,8 +60,19 @@
     <Property Name="gender_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="age_customer" Type="Int32" />
     <Property Name="address_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="customer_order" Relationship="Self.FK__customer___id_cu__38996AB5" FromRole="customers" ToRole="customer_order" />
-    <NavigationProperty Name="reports" Relationship="Self.FK__reports__id_cust__3A81B327" FromRole="customers" ToRole="reports" />
+    <NavigationProperty Name="customer_order" Relationship="Self.FK__customer___id_cu__3D5E1FD2" FromRole="customers" ToRole="customer_order" />
+    <NavigationProperty Name="reports" Relationship="Self.FK__reports__id_cust__3F466844" FromRole="customers" ToRole="reports" />
+  </EntityType>
+  <EntityType Name="details_order">
+    <Key>
+      <PropertyRef Name="id_order" />
+    </Key>
+    <Property Name="id_order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_products" Type="Int32" />
+    <Property Name="quantity_order" Type="Int32" />
+    <Property Name="unit_price" Type="Single" />
+    <Property Name="total" Type="Single" />
+    <NavigationProperty Name="product" Relationship="Self.FK__details_o__id_pr__403A8C7D" FromRole="details_order" ToRole="products" />
   </EntityType>
   <EntityType Name="partner">
     <Key>
@@ -66,7 +83,7 @@
     <Property Name="phone_partners" Type="Int32" />
     <Property Name="email_partners" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="require_partners" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="constracts" Relationship="Self.FK__constract__id_pa__36B12243" FromRole="partners" ToRole="constracts" />
+    <NavigationProperty Name="constracts" Relationship="Self.FK__constract__id_pa__3B75D760" FromRole="partners" ToRole="constracts" />
   </EntityType>
   <EntityType Name="product">
     <Key>
@@ -80,11 +97,12 @@
     <Property Name="price" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="discount" Type="Int32" />
     <Property Name="images" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="brand" Relationship="Self.FK__products__id_bra__35BCFE0A" FromRole="products" ToRole="brand" />
-    <NavigationProperty Name="category" Relationship="Self.FK__products__id_cat__33D4B598" FromRole="products" ToRole="categories" />
-    <NavigationProperty Name="constracts" Relationship="Self.FK__constract__id_pr__37A5467C" FromRole="products" ToRole="constracts" />
-    <NavigationProperty Name="customer_order" Relationship="Self.FK__customer___id_pr__398D8EEE" FromRole="products" ToRole="customer_order" />
-    <NavigationProperty Name="warehouse" Relationship="Self.FK__products__id_war__34C8D9D1" FromRole="products" ToRole="warehouse" />
+    <NavigationProperty Name="brand" Relationship="Self.FK__products__id_bra__3A81B327" FromRole="products" ToRole="brand" />
+    <NavigationProperty Name="category" Relationship="Self.FK__products__id_cat__38996AB5" FromRole="products" ToRole="categories" />
+    <NavigationProperty Name="constracts" Relationship="Self.FK__constract__id_pr__3C69FB99" FromRole="products" ToRole="constracts" />
+    <NavigationProperty Name="customer_order" Relationship="Self.FK__customer___id_pr__3E52440B" FromRole="products" ToRole="customer_order" />
+    <NavigationProperty Name="details_order" Relationship="Self.FK__details_o__id_pr__403A8C7D" FromRole="products" ToRole="details_order" />
+    <NavigationProperty Name="warehouse" Relationship="Self.FK__products__id_war__398D8EEE" FromRole="products" ToRole="warehouse" />
   </EntityType>
   <EntityType Name="report">
     <Key>
@@ -94,17 +112,7 @@
     <Property Name="id_customer" Type="Int32" />
     <Property Name="subject_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="contents_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="customer" Relationship="Self.FK__reports__id_cust__3A81B327" FromRole="reports" ToRole="customers" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="customer" Relationship="Self.FK__reports__id_cust__3F466844" FromRole="reports" ToRole="customers" />
   </EntityType>
   <EntityType Name="warehouse">
     <Key>
@@ -113,9 +121,9 @@
     <Property Name="id_warehouse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="id_products" Type="Int32" />
     <Property Name="quantity" Type="Int32" />
-    <NavigationProperty Name="products" Relationship="Self.FK__products__id_war__34C8D9D1" FromRole="warehouse" ToRole="products" />
+    <NavigationProperty Name="products" Relationship="Self.FK__products__id_war__398D8EEE" FromRole="warehouse" ToRole="products" />
   </EntityType>
-  <Association Name="FK__products__id_bra__35BCFE0A">
+  <Association Name="FK__products__id_bra__3A81B327">
     <End Role="brand" Type="Self.brand" Multiplicity="0..1" />
     <End Role="products" Type="Self.product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -127,7 +135,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__products__id_cat__33D4B598">
+  <Association Name="FK__products__id_cat__38996AB5">
     <End Role="categories" Type="Self.category" Multiplicity="0..1" />
     <End Role="products" Type="Self.product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -139,7 +147,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__constract__id_pa__36B12243">
+  <Association Name="FK__constract__id_pa__3B75D760">
     <End Role="partners" Type="Self.partner" Multiplicity="0..1" />
     <End Role="constracts" Type="Self.constract" Multiplicity="*" />
     <ReferentialConstraint>
@@ -151,7 +159,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__constract__id_pr__37A5467C">
+  <Association Name="FK__constract__id_pr__3C69FB99">
     <End Role="products" Type="Self.product" Multiplicity="0..1" />
     <End Role="constracts" Type="Self.constract" Multiplicity="*" />
     <ReferentialConstraint>
@@ -163,7 +171,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__customer___id_cu__38996AB5">
+  <Association Name="FK__customer___id_cu__3D5E1FD2">
     <End Role="customers" Type="Self.customer" Multiplicity="0..1" />
     <End Role="customer_order" Type="Self.customer_order" Multiplicity="*" />
     <ReferentialConstraint>
@@ -175,7 +183,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__customer___id_pr__398D8EEE">
+  <Association Name="FK__customer___id_pr__3E52440B">
     <End Role="products" Type="Self.product" Multiplicity="0..1" />
     <End Role="customer_order" Type="Self.customer_order" Multiplicity="*" />
     <ReferentialConstraint>
@@ -187,7 +195,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__reports__id_cust__3A81B327">
+  <Association Name="FK__reports__id_cust__3F466844">
     <End Role="customers" Type="Self.customer" Multiplicity="0..1" />
     <End Role="reports" Type="Self.report" Multiplicity="*" />
     <ReferentialConstraint>
@@ -199,7 +207,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__products__id_war__34C8D9D1">
+  <Association Name="FK__details_o__id_pr__403A8C7D">
+    <End Role="products" Type="Self.product" Multiplicity="0..1" />
+    <End Role="details_order" Type="Self.details_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="id_products" />
+      </Principal>
+      <Dependent Role="details_order">
+        <PropertyRef Name="id_products" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__products__id_war__398D8EEE">
     <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
     <End Role="products" Type="Self.product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -217,40 +237,44 @@
     <EntitySet Name="constracts" EntityType="Self.constract" />
     <EntitySet Name="customer_order" EntityType="Self.customer_order" />
     <EntitySet Name="customers" EntityType="Self.customer" />
+    <EntitySet Name="details_order" EntityType="Self.details_order" />
     <EntitySet Name="partners" EntityType="Self.partner" />
     <EntitySet Name="products" EntityType="Self.product" />
     <EntitySet Name="reports" EntityType="Self.report" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="warehouses" EntityType="Self.warehouse" />
-    <AssociationSet Name="FK__products__id_bra__35BCFE0A" Association="Self.FK__products__id_bra__35BCFE0A">
+    <AssociationSet Name="FK__products__id_bra__3A81B327" Association="Self.FK__products__id_bra__3A81B327">
       <End Role="brand" EntitySet="brands" />
       <End Role="products" EntitySet="products" />
     </AssociationSet>
-    <AssociationSet Name="FK__products__id_cat__33D4B598" Association="Self.FK__products__id_cat__33D4B598">
+    <AssociationSet Name="FK__products__id_cat__38996AB5" Association="Self.FK__products__id_cat__38996AB5">
       <End Role="categories" EntitySet="categories" />
       <End Role="products" EntitySet="products" />
     </AssociationSet>
-    <AssociationSet Name="FK__constract__id_pa__36B12243" Association="Self.FK__constract__id_pa__36B12243">
+    <AssociationSet Name="FK__constract__id_pa__3B75D760" Association="Self.FK__constract__id_pa__3B75D760">
       <End Role="partners" EntitySet="partners" />
       <End Role="constracts" EntitySet="constracts" />
     </AssociationSet>
-    <AssociationSet Name="FK__constract__id_pr__37A5467C" Association="Self.FK__constract__id_pr__37A5467C">
+    <AssociationSet Name="FK__constract__id_pr__3C69FB99" Association="Self.FK__constract__id_pr__3C69FB99">
       <End Role="products" EntitySet="products" />
       <End Role="constracts" EntitySet="constracts" />
     </AssociationSet>
-    <AssociationSet Name="FK__customer___id_cu__38996AB5" Association="Self.FK__customer___id_cu__38996AB5">
+    <AssociationSet Name="FK__customer___id_cu__3D5E1FD2" Association="Self.FK__customer___id_cu__3D5E1FD2">
       <End Role="customers" EntitySet="customers" />
       <End Role="customer_order" EntitySet="customer_order" />
     </AssociationSet>
-    <AssociationSet Name="FK__customer___id_pr__398D8EEE" Association="Self.FK__customer___id_pr__398D8EEE">
+    <AssociationSet Name="FK__customer___id_pr__3E52440B" Association="Self.FK__customer___id_pr__3E52440B">
       <End Role="products" EntitySet="products" />
       <End Role="customer_order" EntitySet="customer_order" />
     </AssociationSet>
-    <AssociationSet Name="FK__reports__id_cust__3A81B327" Association="Self.FK__reports__id_cust__3A81B327">
+    <AssociationSet Name="FK__reports__id_cust__3F466844" Association="Self.FK__reports__id_cust__3F466844">
       <End Role="customers" EntitySet="customers" />
       <End Role="reports" EntitySet="reports" />
     </AssociationSet>
-    <AssociationSet Name="FK__products__id_war__34C8D9D1" Association="Self.FK__products__id_war__34C8D9D1">
+    <AssociationSet Name="FK__details_o__id_pr__403A8C7D" Association="Self.FK__details_o__id_pr__403A8C7D">
+      <End Role="products" EntitySet="products" />
+      <End Role="details_order" EntitySet="details_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__products__id_war__398D8EEE" Association="Self.FK__products__id_war__398D8EEE">
       <End Role="warehouse" EntitySet="warehouses" />
       <End Role="products" EntitySet="products" />
     </AssociationSet>

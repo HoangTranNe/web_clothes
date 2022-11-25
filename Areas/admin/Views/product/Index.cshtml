@@ -1,5 +1,4 @@
-﻿@*@model PagedList.IPagedList<do_an_web.Models.product>*@
-@model IEnumerable<do_an_web.Models.product>
+﻿@model IEnumerable<do_an_web.Models.product>
 @using PagedList.Mvc;
 
 @{
@@ -22,7 +21,7 @@
     <hr />
 }*@
 
-@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create","product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <table class="table">
         <tr>
@@ -63,7 +62,7 @@
                     @Html.DisplayFor(modelItem => item.discount)
                 </td>
                 <td>
-                    <img src="~/Content/Images/@item.images" />
+                    <img src="~/Content/Images/@item.images" height="150" width="150" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.brand.name_brand)
@@ -85,7 +84,7 @@
     <br />
     <div class="row">
         <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
-            @using (Html.BeginForm("Index", "products", FormMethod.Get))
+            @using (Html.BeginForm("Index", "product", FormMethod.Get))
             {
                 @*                <p>
                         Kích thước trang: @Html.DropDownList("size", (List<SelectListItem>)ViewBag.size, new { @onchange = "this.form.submit();" })

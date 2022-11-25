@@ -12,12 +12,14 @@ namespace do_an_web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class details_order
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int id_order { get; set; }
+        public Nullable<int> id_products { get; set; }
+        public Nullable<int> quantity_order { get; set; }
+        public Nullable<float> unit_price { get; set; }
+        public Nullable<float> total { get; set; }
+    
+        public virtual product product { get; set; }
     }
 }
