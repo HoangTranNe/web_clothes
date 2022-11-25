@@ -4,8 +4,8 @@
     Layout = "~/Views/Shared/chinh_sach_thanh_toan.cshtml";
 }
 
-<nav class="dieu-khoan-tag">
-    <a class="dieu-khoan" href="https://localhost:44373/Home/chinh_sach_thanh_toan_view">Chính Sách Thanh Toán</a>
+<nav class="dieu-khoan-tag">    
+    <a href="@Url.Action("chinh_sach_thanh_toan_view","Home", new {@class="dieu-khoan"})">Chính Sách Thanh Toán</a>
 </nav>
 <nav class="title-dieu-khoan">
     <div class="main-dieu-khoan">

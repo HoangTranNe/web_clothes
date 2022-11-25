@@ -33,10 +33,6 @@ namespace do_an_web.Controllers
 
             return View();
         }
-        public ActionResult web_clothes()
-        {
-            return View(db.categories.ToList());
-        }
         public ActionResult dieu_khoan_view()
         {
             return View();
@@ -45,15 +41,7 @@ namespace do_an_web.Controllers
         {
             return View();
         }
-        public ActionResult see_all_view()
-        {
-            return View();
-        }
         public ActionResult chinh_sach_doi_tra_view()
-        {
-            return View();
-        }
-        public ActionResult login_view()
         {
             return View();
         }
@@ -62,10 +50,6 @@ namespace do_an_web.Controllers
             return View();
         }
         public ActionResult chinh_sach_thanh_toan_view()
-        {
-            return View();
-        }
-        public ActionResult product_details_view()
         {
             return View();
         }
