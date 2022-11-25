@@ -1,3 +1,13 @@
-﻿<a href="@Url.Action("showcart", "cart")" style="text-decoration: none; color:white; font-weight: bold">
-    <img src="~/Content/Images/Giohang.gif" /> Giỏ hàng (@ViewBag.caculate_total_quantity)
+﻿@*@using do_an_web.Models
+@{
+    customer kh = (customer)Session["TaiKhoan"];
+}
+if (kh != null)
+{
+<span style="color: white; font-weight: bold">
+    Username: @kh.name_customer
+</span>*@
+}
+<a href="@Url.Action("showcart", "cart")" style="text-decoration: none; color:white; font-weight: bold">
+    <img src="~/Content/Images/Giohang.gif" /> Giỏ hàng (@ViewBag.TongSL)
 </a>

@@ -240,13 +240,13 @@
       <DependentUpon>webClothesModels.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webClothesModels.cs">
-      <DependentUpon>webClothesModels.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webClothesModels.Designer.cs">
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -314,13 +314,10 @@
       <DependentUpon>webClothesModels.edmx</DependentUpon>
       <LastGenOutput>webClothesModels.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\webClothesModels.edmx.diagram">
-      <DependentUpon>webClothesModels.edmx</DependentUpon>
-    </Content>
     <Content Include="Models\webClothesModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>webClothesModels.cs</LastGenOutput>
       <DependentUpon>webClothesModels.edmx</DependentUpon>
+      <LastGenOutput>webClothesModels.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.bundle.js" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.bundle.min.js" />
@@ -332,6 +329,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Models\webClothesModels.edmx.diagram">
+      <DependentUpon>webClothesModels.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.min.js" />
@@ -460,6 +460,7 @@
     <Content Include="Views\cart\showcart.cshtml" />
     <Content Include="Views\cart\cartpartial.cshtml" />
     <Content Include="Views\cart\DatHang.cshtml" />
+    <Content Include="Views\cart\HoanThanhDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

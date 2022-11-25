@@ -108,8 +108,8 @@ namespace do_an_web.Models
         }
         public ActionResult DatHang()
         {
-            if (Session["TaiKhoan"] == null) //Chưa đăng nhập
-                return RedirectToAction("DangNhap", "NguoiDung");
+ /*           if (Session["TaiKhoan"] == null) //Chưa đăng nhập
+                return RedirectToAction("DangNhap", "NguoiDung");*/
             List<needtobuy> gioHang = makecart();
             if (gioHang == null || gioHang.Count == 0) //Chưa có giỏ hàng hoặc chưa có sp
                 return RedirectToAction("Index", "products");
@@ -150,6 +150,10 @@ namespace do_an_web.Models
             //Xóa giỏ hàng
             Session["GioHang"] = null;
             return RedirectToAction("HoanThanhDonHang");
+        }
+        public ActionResult HoanThanhDonHang()
+        {
+            return View();
         }
     }
 }

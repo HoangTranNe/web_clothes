@@ -15,24 +15,16 @@ namespace do_an_web.Controllers
     public class HomeController : Controller
     {
         private webClothesEntities db = new webClothesEntities();
+        private List<product> Add_New_Product(int quantity)
+        {
+            return db.products.OrderByDescending(p => p.id_products).Take(quantity).ToList();
+        }
         public ActionResult Index()
         {
-            return View(db.categories.ToList());
+            var new_pro = Add_New_Product(5);
+            return View(new_pro);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
         public ActionResult dieu_khoan_view()
         {
             return View();
@@ -71,6 +63,6 @@ namespace do_an_web.Controllers
         {
             return View();
         }        
-
+        
     }
 }
