@@ -330,6 +330,11 @@
     <Content Include="Areas\admin\Views\warehouses\Details.cshtml" />
     <Content Include="Areas\admin\Views\warehouses\Edit.cshtml" />
     <Content Include="Areas\admin\Views\warehouses\Index.cshtml" />
+    <Content Include="Areas\admin\Views\products\Create.cshtml" />
+    <Content Include="Areas\admin\Views\products\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\products\Details.cshtml" />
+    <Content Include="Areas\admin\Views\products\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\products\Index.cshtml" />
     <EntityDeploy Include="Models\webClothesModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
@@ -337,11 +342,6 @@
     <Content Include="Models\webClothesModels.edmx.diagram">
       <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\admin\Views\products\Create.cshtml" />
-    <Content Include="Areas\admin\Views\products\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\products\Details.cshtml" />
-    <Content Include="Areas\admin\Views\products\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\products\Index.cshtml" />
     <None Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.min.js" />

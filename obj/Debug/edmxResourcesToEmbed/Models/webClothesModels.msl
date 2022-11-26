@@ -95,6 +95,7 @@
           <ScalarProperty Name="discount" ColumnName="discount" />
           <ScalarProperty Name="descibe" ColumnName="descibe" />
           <ScalarProperty Name="images" ColumnName="images" />
+          <ScalarProperty Name="images_size" ColumnName="images_size" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

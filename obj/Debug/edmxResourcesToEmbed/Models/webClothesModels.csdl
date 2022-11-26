@@ -96,8 +96,9 @@
     <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="price" Type="Single" />
     <Property Name="discount" Type="Int32" />
-    <Property Name="descibe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descibe" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
     <Property Name="images" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="images_size" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="brand" Relationship="Self.FK__products__id_bra__3A81B327" FromRole="products" ToRole="brand" />
     <NavigationProperty Name="category" Relationship="Self.FK__products__id_cat__38996AB5" FromRole="products" ToRole="categories" />
     <NavigationProperty Name="constracts" Relationship="Self.FK__constract__id_pr__3C69FB99" FromRole="products" ToRole="constracts" />

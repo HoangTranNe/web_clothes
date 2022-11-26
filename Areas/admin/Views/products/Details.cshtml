@@ -41,7 +41,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.descibe)
+            @Html.Raw(Model.descibe)
         </dd>
 
         <dt>
@@ -50,6 +50,13 @@
 
         <dd>
             <img src="~/Content/Images/@Model.images" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.images_size)
+        </dt>
+
+        <dd>
+            <img src="~/Content/Images-Title/@Model.images_size" />
         </dd>
 
         <dt>

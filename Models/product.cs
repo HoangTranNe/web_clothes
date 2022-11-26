@@ -31,6 +31,7 @@ namespace do_an_web.Models
         public Nullable<int> discount { get; set; }
         public string descibe { get; set; }
         public string images { get; set; }
+        public string images_size { get; set; }
     
         public virtual brand brand { get; set; }
         public virtual category category { get; set; }

@@ -86,8 +86,9 @@
     <Property Name="name" Type="nvarchar" MaxLength="255" />
     <Property Name="price" Type="real" />
     <Property Name="discount" Type="int" />
-    <Property Name="descibe" Type="varchar" MaxLength="255" />
+    <Property Name="descibe" Type="varchar" MaxLength="8000" />
     <Property Name="images" Type="nvarchar" MaxLength="255" />
+    <Property Name="images_size" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="reports">
     <Key>

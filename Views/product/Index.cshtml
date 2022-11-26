@@ -28,6 +28,9 @@
             @Html.DisplayNameFor(model => model.images)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.images_size)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.brand.name_brand)
         </th>
         <th>
@@ -51,10 +54,13 @@
             @Html.DisplayFor(modelItem => item.discount)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.descibe)
+            @Html.Raw(item.descibe)
         </td>
         <td>
             <img src="~/Content/Images/@item.images" width="100" height="100" />
+        </td>
+        <td>
+            <img src="~/Content/Images-Title/@item.images_size" width="100" height="100" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.brand.name_brand)
@@ -66,9 +72,9 @@
             @Html.DisplayFor(modelItem => item.warehouse.name_warehouse)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_products }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_products }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_products })
+            @Html.ActionLink("Edit", "Edit", new { id = item.id_products }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id_products }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id_products })
         </td>
     </tr>
 }
