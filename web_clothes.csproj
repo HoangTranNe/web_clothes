@@ -275,6 +275,30 @@
     <Content Include="Content\Images-Title\discount_1.png" />
     <Content Include="Content\Images-Title\discount_2.png" />
     <Content Include="Content\Images-Title\discount_3.jpg" />
+    <Content Include="Content\Images-Title\pro_1.jpg" />
+    <Content Include="Content\Images-Title\pro_10.jpg" />
+    <Content Include="Content\Images-Title\pro_11.jpg" />
+    <Content Include="Content\Images-Title\pro_12.jpg" />
+    <Content Include="Content\Images-Title\pro_13.jpg" />
+    <Content Include="Content\Images-Title\pro_14.jpg" />
+    <Content Include="Content\Images-Title\pro_15.jpg" />
+    <Content Include="Content\Images-Title\pro_2.jpg" />
+    <Content Include="Content\Images-Title\pro_3.jpg" />
+    <Content Include="Content\Images-Title\pro_4.jpg" />
+    <Content Include="Content\Images-Title\pro_5.jpg" />
+    <Content Include="Content\Images-Title\pro_6.jpg" />
+    <Content Include="Content\Images-Title\pro_7.jpg" />
+    <Content Include="Content\Images-Title\pro_8.jpg" />
+    <Content Include="Content\Images-Title\pro_9.jpg" />
+    <Content Include="Content\Images-Title\pro_16.jpg" />
+    <Content Include="Content\Images-Title\pro_17.jpg" />
+    <Content Include="Content\Images-Title\pro_18.jpg" />
+    <Content Include="Content\Images-Title\pro_19.jpg" />
+    <Content Include="Content\Images-Title\pro_20.jpg" />
+    <Content Include="Content\Images-Title\pro_21.jpg" />
+    <Content Include="Content\Images-Title\pro_22.jpg" />
+    <Content Include="Content\Images-Title\pro_23.jpg" />
+    <Content Include="Content\Images-Title\pro_24.jpg" />
     <Content Include="Content\Images\background.jpg" />
     <Content Include="Content\Images\Giohang.gif" />
     <Content Include="Content\Images\logo.jpg" />
@@ -330,11 +354,6 @@
     <Content Include="Areas\admin\Views\warehouses\Details.cshtml" />
     <Content Include="Areas\admin\Views\warehouses\Edit.cshtml" />
     <Content Include="Areas\admin\Views\warehouses\Index.cshtml" />
-    <Content Include="Areas\admin\Views\products\Create.cshtml" />
-    <Content Include="Areas\admin\Views\products\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\products\Details.cshtml" />
-    <Content Include="Areas\admin\Views\products\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\products\Index.cshtml" />
     <EntityDeploy Include="Models\webClothesModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
@@ -342,6 +361,11 @@
     <Content Include="Models\webClothesModels.edmx.diagram">
       <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\admin\Views\products\Create.cshtml" />
+    <Content Include="Areas\admin\Views\products\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\products\Details.cshtml" />
+    <Content Include="Areas\admin\Views\products\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\products\Index.cshtml" />
     <None Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.min.js" />
@@ -354,7 +378,6 @@
     <Content Include="Scripts\Sctipts_Boostrap\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Scripts_Main\bootstrap.js" />
     <Content Include="Scripts\Scripts_Main\bootstrap.min.js" />
-    <Content Include="Content\Images-Title\pro_1_size.jpg" />
     <None Include=".editorconfig" />
     <Content Include="Areas\admin\Views\web.config" />
     <Content Include="Areas\admin\Views\brands\Create.cshtml" />
@@ -468,6 +491,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Data\" />
     <Folder Include="Areas\admin\Views\Shared\" />
+    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Content_Main\bootstrap.min.css.map" />

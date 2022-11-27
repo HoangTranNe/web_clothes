@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 
 namespace do_an_web.Models
 {
@@ -13,14 +10,14 @@ namespace do_an_web.Models
         public string images { get; set; }
         public double price { get; set; }
         public int quantity { get; set; }
-        public double total ()
-        { 
+        public double total()
+        {
             return price * quantity;
         }
 
         public needtobuy(int products)
         {
-            this.id_product= products;
+            this.id_product = products;
             var product = buy.products.Single(s => s.id_products == this.id_product);
             this.name = product.name;
             this.images = product.images;

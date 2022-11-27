@@ -5,8 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<h2>Index</h2>
+<h2>Thêm Sản Phẩm</h2>
 
 <p>
     @Html.ActionLink("Thêm Sản Phẩm", "Create", null, new { @class = "btn btn-warning" })
@@ -18,10 +17,10 @@
         <input type="Text" class="form-control mx-sm-3" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập Tên Sản Phẩm Cần Tìm">
         <input type="button" class="btn btn-danger" value="Tìm Sản Phẩm">
     </div>
-    <hr />
+    <hr /><hr />
 }
 
-@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create", "products", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <table class="table">
         <tr>

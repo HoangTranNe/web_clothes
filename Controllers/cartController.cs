@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace do_an_web.Models
@@ -45,10 +44,10 @@ namespace do_an_web.Models
         private int caculate_total_quantity()
         {
             int quantity_total = 0;
-            List<needtobuy> carts= makecart();
+            List<needtobuy> carts = makecart();
             if (carts != null)
             {
-                quantity_total=carts.Sum(s => s.quantity);
+                quantity_total = carts.Sum(s => s.quantity);
             }
             return quantity_total;
         }
@@ -108,8 +107,8 @@ namespace do_an_web.Models
         }
         public ActionResult DatHang()
         {
- /*           if (Session["TaiKhoan"] == null) //Chưa đăng nhập
-                return RedirectToAction("DangNhap", "NguoiDung");*/
+            /*           if (Session["TaiKhoan"] == null) //Chưa đăng nhập
+                           return RedirectToAction("DangNhap", "NguoiDung");*/
             List<needtobuy> gioHang = makecart();
             if (gioHang == null || gioHang.Count == 0) //Chưa có giỏ hàng hoặc chưa có sp
                 return RedirectToAction("Index", "products");

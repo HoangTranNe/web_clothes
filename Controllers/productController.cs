@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using do_an_web.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using do_an_web.Models;
 
 namespace do_an_web.Controllers
 {
@@ -50,7 +47,7 @@ namespace do_an_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,descibe,images")] product product)
+        public ActionResult Create([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,descibe,images,images_size")] product product, HttpPostedFileBase images, HttpPostedFileBase images_size)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +85,7 @@ namespace do_an_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,descibe,images")] product product)
+        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,descibe,images,images_size")] product product, HttpPostedFileBase images, FormCollection form, HttpPostedFileBase images_size)
         {
             if (ModelState.IsValid)
             {

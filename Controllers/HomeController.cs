@@ -1,21 +1,16 @@
 ﻿using do_an_web.Models;
-using System;
-using System.Text;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Security.Cryptography;
-using System.ComponentModel.DataAnnotations;
-using PagedList;
-using System.Web.WebPages.Html;
 using System.Data.Entity;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web.Mvc;
 
 namespace do_an_web.Controllers
 {
     public class HomeController : Controller
     {
-        private webClothesEntities db = new webClothesEntities();
+        webClothesEntities db = new webClothesEntities();
         private List<product> Add_New_Product(int quantity)
         {
             return db.products.OrderByDescending(p => p.name).Take(quantity).ToList();
