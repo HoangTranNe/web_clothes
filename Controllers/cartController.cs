@@ -39,7 +39,7 @@ namespace do_an_web.Models
             {
                 product.quantity++; //Sản phẩm đã có trong giỏ thì tăng số lượng lên 1
             }
-            return RedirectToAction("Details", "products", new { id = id_products });
+            return RedirectToAction("Details", "Home", new { id = id_products });
         }
         private int caculate_total_quantity()
         {
@@ -65,7 +65,7 @@ namespace do_an_web.Models
             //Nếu giỏ hàng trống thì trả về trang ban đầu
             if (carts == null || carts.Count == 0)
             {
-                return RedirectToAction("Index", "products");
+                return RedirectToAction("Index", "Home");
             }
             ViewBag.TongSL = caculate_total_quantity();
             ViewBag.TongTien = caculate_total_price();
@@ -107,11 +107,11 @@ namespace do_an_web.Models
         }
         public ActionResult DatHang()
         {
-            /*           if (Session["TaiKhoan"] == null) //Chưa đăng nhập
-                           return RedirectToAction("DangNhap", "NguoiDung");*/
+            if (Session["TaiKhoan"] == null) //Chưa đăng nhập
+                return RedirectToAction("DangNhap", "Users");
             List<needtobuy> gioHang = makecart();
             if (gioHang == null || gioHang.Count == 0) //Chưa có giỏ hàng hoặc chưa có sp
-                return RedirectToAction("Index", "products");
+                return RedirectToAction("Index", "Home");
             ViewBag.TongSL = caculate_total_quantity();
             ViewBag.TongTien = caculate_total_price();
             return View(gioHang); //Trả về View hiển thị thông tin giỏ hàng

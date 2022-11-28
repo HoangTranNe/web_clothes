@@ -1,23 +1,25 @@
-﻿using do_an_web.Models;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using do_an_web.Models;
 
 namespace do_an_web.Areas.admin.Controllers
 {
     public class productsController : Controller
     {
-        webClothesEntities db = new webClothesEntities();
+        private webClothesEntities db = new webClothesEntities();
 
         // GET: admin/products
         public ActionResult Index()
         {
-            var items = db.products.ToList();
-            return View(items);
+            var products = db.products.Include(p => p.brand).Include(p => p.category).Include(p => p.warehouse);
+            return View(products.ToList());
         }
 
         // GET: admin/products/Details/5
@@ -50,26 +52,38 @@ namespace do_an_web.Areas.admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Create([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,descibe,images,images_size")] product product, HttpPostedFileBase images)
+        public ActionResult Create([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,descibe,images,images_size")] product product, HttpPostedFileBase images, HttpPostedFileBase images_size)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-
-                    string fileName = Path.GetFileName(images.FileName);
-                    string extension = Path.Combine(Server.MapPath("~/Content/Images/"), fileName);
-                    fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-                    images.SaveAs(extension);
-                    product.images = (fileName);
+                    if (images.ContentLength > 0)
+                    {
+                        string _FileName = Path.GetFileName(images.FileName);
+                        string _path = Path.Combine(Server.MapPath("~/Images"), _FileName);
+                        images.SaveAs(_path);
+                        product.images = _FileName;
+                    }
+                    if (images_size.ContentLength > 0)
+                    {
+                        string _FileName = Path.GetFileName(images_size.FileName);
+                        string _path = Path.Combine(Server.MapPath("~/Images"), _FileName);
+                        images_size.SaveAs(_path);
+                        product.images = _FileName;
+                    }
+                    db.products.Add(product);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
                 }
                 catch
                 {
-                    ViewBag.Message = "Không Thành Công";
+                    ViewBag.Message = "Không thành công";
                 }
                 db.products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+
             }
 
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
@@ -97,12 +111,12 @@ namespace do_an_web.Areas.admin.Controllers
         }
 
         // POST: admin/products/Edit/5
-        // To protect from overposting   attacks, enable the specific properties you want to bind to, for 
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,descibe,images,images_size")] product product, HttpPostedFileBase images, FormCollection form, HttpPostedFileBase images_size)
+        public ActionResult Edit([Bind(Include = "id_products,id_warehouse,id_category,id_brand,name,price,discount,descibe,images,images_size")] product product, HttpPostedFileBase images, HttpPostedFileBase images_size, FormCollection form)
         {
             if (ModelState.IsValid)
             {
@@ -110,42 +124,42 @@ namespace do_an_web.Areas.admin.Controllers
                 {
                     if (images != null)
                     {
-                        string _FileName1 = Path.GetFileName(images.FileName);
-
-                        string _path1 = Path.Combine(Server.MapPath("~/Content/Images"), _FileName1);
-
-                        images.SaveAs(_path1);
-                        product.images = _FileName1;
+                        string _FileName = Path.GetFileName(images.FileName);
+                        string _path = Path.Combine(Server.MapPath("~/Images"), _FileName);
+                        images.SaveAs(_path);
+                        product.images = _FileName;
                         // get Path of old image for deleting it
-                        _path1 = Path.Combine(Server.MapPath("~/Content/Images"), form["Images"]);
-                        if (System.IO.File.Exists(_path1))
-                            System.IO.File.Delete(_path1);
+                        _path = Path.Combine(Server.MapPath("~/Images"), form["oldimage"]);
+                        if (System.IO.File.Exists(_path))
+                            System.IO.File.Delete(_path);
 
                     }
                     if (images_size != null)
                     {
-                        string _FileName2 = Path.GetFileName(images_size.FileName);
+                        string _FileName = Path.GetFileName(images_size.FileName);
+                        string _path = Path.Combine(Server.MapPath("/Images"), _FileName);
+                        images_size.SaveAs(_path);
+                        product.images_size = _FileName;
+                        // get Path of old image for deleting it
+                        _path = Path.Combine(Server.MapPath("~/Images"), form["oldimage"]);
+                        if (System.IO.File.Exists(_path))
+                            System.IO.File.Delete(_path);
 
-                        string _path2 = Path.Combine(Server.MapPath("~/Content/Images_Title"), _FileName2);
-
-                        images.SaveAs(_path2);
-                        product.images_size = _FileName2;
-                        _path2 = Path.Combine(Server.MapPath("~/Content/Images_Title"), form["Images_Title"]);
-                        if (System.IO.File.Exists(_path2))
-                            System.IO.File.Delete(_path2);
                     }
                     else
                     {
-                        product.images = form["Images"];
-                        product.images_size = form["Images_Title"];
+                        product.images = form["oldimage"];
+                        product.images_size = form["oldimage"];
+                        db.Entry(product).State = EntityState.Modified;
                         db.Entry(product).State = EntityState.Modified;
                         db.SaveChanges();
-                        return RedirectToAction("Index");
+                        db.SaveChanges();
+                        return RedirectToAction("Index");                        
                     }
                 }
                 catch
                 {
-                    ViewBag.Message = "Không Thành Công!!";
+                    ViewBag.Message = "không thành công!!";
                 }
                 return RedirectToAction("Index");
             }
@@ -154,7 +168,6 @@ namespace do_an_web.Areas.admin.Controllers
             ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "name_warehouse", product.id_warehouse);
             return View(product);
         }
-    
 
         // GET: admin/products/Delete/5
         public ActionResult Delete(int? id)

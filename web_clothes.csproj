@@ -199,6 +199,7 @@
     <Compile Include="Areas\admin\Controllers\warehousesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\productController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -272,33 +273,33 @@
     <Content Include="Content\Content_Main\bootstrap-theme.min.css" />
     <Content Include="Content\Content_Main\bootstrap.css" />
     <Content Include="Content\Content_Main\bootstrap.min.css" />
+    <Content Include="Content\Images\1.jpg" />
+    <Content Include="Content\Images\10.jpg" />
+    <Content Include="Content\Images\11.jpg" />
+    <Content Include="Content\Images\12.jpg" />
+    <Content Include="Content\Images\13.jpg" />
+    <Content Include="Content\Images\14.jpg" />
+    <Content Include="Content\Images\15.jpg" />
+    <Content Include="Content\Images\16.jpg" />
+    <Content Include="Content\Images\17.jpg" />
+    <Content Include="Content\Images\18.jpg" />
+    <Content Include="Content\Images\19.jpg" />
+    <Content Include="Content\Images\2.jpg" />
+    <Content Include="Content\Images\20.jpg" />
+    <Content Include="Content\Images\21.jpg" />
+    <Content Include="Content\Images\22.jpg" />
+    <Content Include="Content\Images\23.jpg" />
+    <Content Include="Content\Images\24.jpg" />
+    <Content Include="Content\Images\3.jpg" />
+    <Content Include="Content\Images\4.jpg" />
+    <Content Include="Content\Images\5.jpg" />
+    <Content Include="Content\Images\6.jpg" />
+    <Content Include="Content\Images\7.jpg" />
+    <Content Include="Content\Images\8.jpg" />
+    <Content Include="Content\Images\9.jpg" />
     <Content Include="Content\Images\discount_1.png" />
-    <Content Include="Content\Images-Title\discount_2.png" />
-    <Content Include="Content\Images-Title\discount_3.jpg" />
-    <Content Include="Content\Images-Title\Pro_1.jpg" />
-    <Content Include="Content\Images-Title\Pro_10.jpg" />
-    <Content Include="Content\Images-Title\Pro_11.jpg" />
-    <Content Include="Content\Images-Title\Pro_12.jpg" />
-    <Content Include="Content\Images-Title\Pro_13.jpg" />
-    <Content Include="Content\Images-Title\Pro_14.jpg" />
-    <Content Include="Content\Images-Title\Pro_15.jpg" />
-    <Content Include="Content\Images-Title\Pro_2.jpg" />
-    <Content Include="Content\Images-Title\Pro_3.jpg" />
-    <Content Include="Content\Images-Title\Pro_4.jpg" />
-    <Content Include="Content\Images-Title\Pro_5.jpg" />
-    <Content Include="Content\Images-Title\Pro_6.jpg" />
-    <Content Include="Content\Images-Title\Pro_7.jpg" />
-    <Content Include="Content\Images-Title\Pro_8.jpg" />
-    <Content Include="Content\Images-Title\Pro_9.jpg" />
-    <Content Include="Content\Images-Title\Pro_16.jpg" />
-    <Content Include="Content\Images-Title\Pro_17.jpg" />
-    <Content Include="Content\Images-Title\Pro_18.jpg" />
-    <Content Include="Content\Images-Title\Pro_19.jpg" />
-    <Content Include="Content\Images-Title\Pro_20.jpg" />
-    <Content Include="Content\Images-Title\Pro_21.jpg" />
-    <Content Include="Content\Images-Title\Pro_22.jpg" />
-    <Content Include="Content\Images-Title\Pro_23.jpg" />
-    <Content Include="Content\Images-Title\Pro_24.jpg" />
+    <Content Include="Content\Images\discount_2.png" />
+    <Content Include="Content\Images\discount_3.jpg" />
     <Content Include="Content\Images\background.jpg" />
     <Content Include="Content\Images\Giohang.gif" />
     <Content Include="Content\Images\logo.jpg" />
@@ -486,6 +487,8 @@
     <Content Include="Views\product\Details.cshtml" />
     <Content Include="Views\product\Edit.cshtml" />
     <Content Include="Views\product\Index.cshtml" />
+    <Content Include="Views\Users\Register.cshtml" />
+    <Content Include="Views\Users\DangNhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -32,6 +32,7 @@ namespace do_an_web.Models
         public Nullable<int> discount { get; set; }
         public string descibe { get; set; }
         public string images { get; set; }
+
         public string images_size { get; set; }
     
         public virtual brand brand { get; set; }
@@ -42,7 +43,6 @@ namespace do_an_web.Models
         public virtual ICollection<customer_order> customer_order { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<details_order> details_order { get; set; }
-        public virtual warehouse warehouse { get; set; }
-        /*public HttpPostedFileBase ImageFile { get; set; }*/
+        public virtual warehouse warehouse { get; set; }        
     }
 }

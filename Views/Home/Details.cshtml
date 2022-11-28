@@ -5,12 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
+<h2>THÔNG TIN CHI TIẾT SÁCH</h2>
 <br />
 <div class="row">
     <div class="offset-md-1 col-md-4">
-        <img style="width: 100%;" src="~/Content/Images/@Model.images" alt="">
-        <img style="width: 100%;" src="~/Content/Images-Title/@Model.images_size" alt="">
+        <img style="width: 100%;" src="~/Images/@Model.images" alt="">
     </div>
     <div class="col-md-6 details">
         <h3>Tên sách: @Model.name</h3>
@@ -18,8 +17,11 @@
             <span style="font-weight: bold">Mô tả:</span> @Model.descibe
         </p>
         <p class="price">
-            Giá bán: <span style="color:red; font-size:32px;">@Model.price VNĐ</span>
-        </p>
-    </div>
+            Giá bán: <span style="color:red; font-size:32px;">
+                @String.Format("{0:0.00}", Model.price) VNĐ
+        </span>
+    </p>
+    <a class="btn btn-primary" href="@Url.Action("addtocart", "cart", new { id_products = Model.id_products })"> Đặt mua</a>
+</div>
 </div>
 
