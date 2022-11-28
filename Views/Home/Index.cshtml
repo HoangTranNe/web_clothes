@@ -1,5 +1,4 @@
 ﻿@using do_an_web.Models
-@model IEnumerable<product>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -58,17 +57,20 @@
 <div class="row">
     @foreach (var clothes in Model)
     {
-        <div class="card col-sm-4 col-md-4 col-lg-4 d-flex align-items-stretch book-section">
+        if (clothes.id_category == 1)
+        {
+            <div class="card col-sm-4 col-md-4 col-lg-4 d-flex align-items-stretch cart-section">
 
-            <a href="@Url.Action("Details", "product", new { id_products = clothes.id_products })">
-                <img class="card-img-top book-picture h-100 w-50"
-                     src="~/Content/Images/@clothes.images" alt="Card image"/>
-            </a>
-            <div class="card-body">
-                <h4 class="card-title">@clothes.name</h4>
-                <p class="card-text">@clothes.price</p>
+                <a href="@Url.Action("Details", "Home", new { id = clothes.id_products })">
+                    <img class="card-img-top book-picture h-100 w-50"
+                         src="~/Content/Images/@clothes.images" alt="Card image" />
+                </a>
+                <div class="card-body">
+                    <h4 class="card-title">@clothes.name</h4>
+                    <p class="card-text">@clothes.price</p>
+                </div>
             </div>
-        </div>
+        }
     }
 </div>
 

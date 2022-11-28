@@ -14,32 +14,32 @@ namespace do_an_web.Models
         }
         public List<needtobuy> makecart()
         {
-            List<needtobuy> carts = Session["cart"] as List<needtobuy>;
+            List<needtobuy> carts = Session["Cart"] as List<needtobuy>;
             //Nếu giỏ hàng chưa tồn tại thì tạo mới và đưa vào Session
             if (carts == null)
             {
                 carts = new List<needtobuy>();
-                Session["cart"] = carts;
+                Session["Cart"] = carts;
             }
             return carts;
         }
-        public RedirectToRouteResult addtocart(int id_products)
+        public ActionResult addtocart(int id_product)
         {
             //Lấy giỏ hàng hiện tại
             List<needtobuy> carts = makecart();
             //Kiểm tra xem có tồn tại mặt hàng trong giỏ hay chưa
             //Nếu có thì tăng số lượng lên 1, ngược lại thêm vào giỏ
-            needtobuy product = carts.FirstOrDefault(s => s.id_product == id_products);
+            needtobuy product = carts.FirstOrDefault(s => s.id_product == id_product);
             if (product == null) //Sản phẩm chưa có trong giỏ
             {
-                product = new needtobuy(id_products);
+                product = new needtobuy(id_product);
                 carts.Add(product);
             }
             else
             {
                 product.quantity++; //Sản phẩm đã có trong giỏ thì tăng số lượng lên 1
             }
-            return RedirectToAction("Details", "Home", new { id = id_products });
+            return RedirectToAction("Details", "Home", new { id = id_product });
         }
         private int caculate_total_quantity()
         {
@@ -77,25 +77,25 @@ namespace do_an_web.Models
             ViewBag.TongTien = caculate_total_price();
             return PartialView();
         }
-        public ActionResult deleteproduct(int id_products)
+        public ActionResult deleteproduct(int id_product)
         {
             List<needtobuy> gioHang = makecart();
             //Lấy sản phẩm trong giỏ hàng
-            var sanpham = gioHang.FirstOrDefault(s => s.id_product == id_products);
+            var sanpham = gioHang.FirstOrDefault(s => s.id_product == id_product);
             if (sanpham != null)
             {
-                gioHang.RemoveAll(s => s.id_product == id_products);
+                gioHang.RemoveAll(s => s.id_product == id_product);
                 return RedirectToAction("showcart"); //Quay về trang giỏ hàng
             }
             if (gioHang.Count == 0) //Quay về trang chủ nếu giỏ hàng không có gì
                 return RedirectToAction("Index", "Home");
             return RedirectToAction("showcart");
         }
-        public ActionResult CapNhatMatHang(int id_products, int quantity)
+        public ActionResult CapNhatMatHang(int id_product, int quantity)
         {
             List<needtobuy> gioHang = makecart();
             //Lấy sản phẩm trong giỏ hàng
-            var sanpham = gioHang.FirstOrDefault(s => s.id_product == id_products);
+            var sanpham = gioHang.FirstOrDefault(s => s.id_product == id_product);
             if (sanpham != null)
             {
                 //Cập nhật lại số lượng tương ứng
@@ -147,7 +147,7 @@ namespace do_an_web.Models
             }
             database.SaveChanges();
             //Xóa giỏ hàng
-            Session["GioHang"] = null;
+            Session["Cart"] = null;
             return RedirectToAction("HoanThanhDonHang");
         }
         public ActionResult HoanThanhDonHang()

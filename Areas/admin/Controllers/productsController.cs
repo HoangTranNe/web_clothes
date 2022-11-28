@@ -61,20 +61,17 @@ namespace do_an_web.Areas.admin.Controllers
                     if (images.ContentLength > 0)
                     {
                         string _FileName = Path.GetFileName(images.FileName);
-                        string _path = Path.Combine(Server.MapPath("~/Images"), _FileName);
+                        string _path = Path.Combine(Server.MapPath("~/Content/Images"), _FileName);
                         images.SaveAs(_path);
                         product.images = _FileName;
                     }
                     if (images_size.ContentLength > 0)
                     {
                         string _FileName = Path.GetFileName(images_size.FileName);
-                        string _path = Path.Combine(Server.MapPath("~/Images"), _FileName);
+                        string _path = Path.Combine(Server.MapPath("~/Content/Images"), _FileName);
                         images_size.SaveAs(_path);
-                        product.images = _FileName;
+                        product.images_size = _FileName;
                     }
-                    db.products.Add(product);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
                 }
                 catch
                 {
@@ -82,7 +79,7 @@ namespace do_an_web.Areas.admin.Controllers
                 }
                 db.products.Add(product);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index"); ;
 
             }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.Mvc;
@@ -69,12 +70,11 @@ namespace do_an_web.Controllers
             //Lấy các sách theo mã chủ đề được chọn
             var prowithcase_list = db.products.Where(p => p.id_category == id).ToList();
             //Trả về View để render các sách trên (tái sử dụng View Index ở trên, truyền vào danh sách)
-            return View("Index", prowithcase_list);
+            return View("Index","Home", prowithcase_list);
         }
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            //Lấy sách có mã tương ứng
-            var product = db.products.FirstOrDefault(p => p.id_products == id);
+            var product = db.products.FirstOrDefault(s => s.id_products == id);
             return View(product);
         }
     }

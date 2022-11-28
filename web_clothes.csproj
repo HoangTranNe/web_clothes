@@ -198,7 +198,6 @@
     <Compile Include="Areas\admin\Controllers\reportsController.cs" />
     <Compile Include="Areas\admin\Controllers\warehousesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\productController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -481,14 +480,9 @@
     <Content Include="Views\cart\DatHang.cshtml" />
     <Content Include="Views\cart\HoanThanhDonHang.cshtml" />
     <Content Include="Views\Home\takecategory.cshtml" />
-    <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\product\Create.cshtml" />
-    <Content Include="Views\product\Delete.cshtml" />
-    <Content Include="Views\product\Details.cshtml" />
-    <Content Include="Views\product\Edit.cshtml" />
-    <Content Include="Views\product\Index.cshtml" />
     <Content Include="Views\Users\Register.cshtml" />
     <Content Include="Views\Users\DangNhap.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -20,6 +20,11 @@ namespace do_an_web
                 url: "admin/homeAdmin/{action}/{id}",
                 defaults: new { controller = "homeAdmin", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "user",
+                url: "user/home/{action}/{id}",
+                defaults: new { controller = "user", action = "Index", id = UrlParameter.Optional }
+            );
         }
     }
 }
