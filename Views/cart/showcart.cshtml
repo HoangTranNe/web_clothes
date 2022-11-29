@@ -26,13 +26,14 @@
             <tr>
                 <td>@clothes.id_product</td>
                 <td>@clothes.name</td>
-                <td><img src="~/Images/@clothes.images" /></td>
-                @using (Html.BeginForm("CapNhatMatHang", "cart", new { id_products = clothes.id_product }))
+                <td><img src="~/Content/Images/@clothes.images" style="height:200px; width:200px;" /></td>
+                @*@using (Html.BeginForm("CapNhatMatHang", "Cart", new { id_products = clothes.id_product }))
                 {
                     <td>
                         <input type="number" min="1" value="@clothes.quantity" name="SoLuong" />
                     </td>
 
+                    <td>@clothes.price</td>
                     <td>@clothes.price</td>
                     <td>@clothes.total()</td>
                     <td>
@@ -41,18 +42,18 @@
                     <td>
                         <button type="submit" class="btn btn-primary">Cập nhật</button>
                     </td>
-                }
+                }*@
                 <td>@clothes.quantity</td>
                 <td>@clothes.price</td>
                 <td>@clothes.total()</td>
                 <td>
-                    @Html.ActionLink("Chi tiết", "Details", new { id = clothes.id_product }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Chi tiết", "Details","Home", new { id = clothes.id_product }, new { @class = "btn btn-success" })
                 </td>
                 <td>
-                    @Html.ActionLink("Cập nhật", "CapNhatMatHang", new { id_products = clothes.id_product }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Cập nhật", "CapNhatMatHang","cart", new { id_product = clothes.id_product }, new { @class = "btn btn-primary" })
                 </td>
                 <td>
-                    @Html.ActionLink("Xóa", "deleteproduct", new { id_products = clothes.id_product }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Xóa", "deleteproduct","cart", new { id_product = clothes.id_product }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }
