@@ -1,8 +1,12 @@
-﻿using do_an_web.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
+using do_an_web.Models;
 
 namespace do_an_web.Areas.admin.Controllers
 {
@@ -42,7 +46,7 @@ namespace do_an_web.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_customer,name_customer,phone_customer,email_customer,password_customer,comfirm_password_customer,gender_customer,age_customer,address_customer")] customer customer)
+        public ActionResult Create([Bind(Include = "id_customer,name_customer,phone_customer,email_customer,password_customer,comfirm_password_customer,address_customer")] customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +78,7 @@ namespace do_an_web.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_customer,name_customer,phone_customer,email_customer,password_customer,comfirm_password_customer,gender_customer,age_customer,address_customer")] customer customer)
+        public ActionResult Edit([Bind(Include = "id_customer,name_customer,phone_customer,email_customer,password_customer,comfirm_password_customer,address_customer")] customer customer)
         {
             if (ModelState.IsValid)
             {

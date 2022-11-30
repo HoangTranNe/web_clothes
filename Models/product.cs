@@ -11,15 +11,12 @@ namespace do_an_web.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Web;
-
+    
     public partial class product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public product()
         {
-            this.constracts = new HashSet<constract>();
-            this.customer_order = new HashSet<customer_order>();
             this.details_order = new HashSet<details_order>();
         }
     
@@ -27,22 +24,15 @@ namespace do_an_web.Models
         public Nullable<int> id_warehouse { get; set; }
         public Nullable<int> id_category { get; set; }
         public Nullable<int> id_brand { get; set; }
-        public string name { get; set; }
+        public string name_product { get; set; }
         public Nullable<float> price { get; set; }
-        public Nullable<int> discount { get; set; }
         public string descibe { get; set; }
         public string images { get; set; }
-
         public string images_size { get; set; }
     
         public virtual brand brand { get; set; }
         public virtual category category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<constract> constracts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<customer_order> customer_order { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<details_order> details_order { get; set; }
-        public virtual warehouse warehouse { get; set; }        
     }
 }

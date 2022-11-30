@@ -5,30 +5,47 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name_category)
-        </th>
-        <th></th>
-    </tr>
+<section class="vh-100 bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2>DANH SÁCH CÁC LOẠI QUẦN ÁO</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name_category)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_category }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_category }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_category })
-        </td>
-    </tr>
-}
+                            <p>
+                                @Html.ActionLink("TẠO LOẠI MỚI", "Create", null, new { @class = "btn btn-primary" })
+                            </p>
+                            <table class="table">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.name_category)
+                                    </th>
+                                    <th></th>
+                                </tr>
 
-</table>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.name_category)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("SỬA LOẠI", "Edit", new { id = item.id_category }) |
+                                            @Html.ActionLink("CHI TIẾT LOẠI", "Details", new { id = item.id_category }) |
+                                            @Html.ActionLink("XÓA LOẠI QUẦN ÁO", "Delete", new { id = item.id_category })
+                                        </td>
+                                    </tr>
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

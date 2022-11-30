@@ -27,8 +27,6 @@ namespace do_an_web.Models
         public string email_customer { get; set; }
         public string password_customer { get; set; }
         public string comfirm_password_customer { get; set; }
-        public string gender_customer { get; set; }
-        public Nullable<int> age_customer { get; set; }
         public string address_customer { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

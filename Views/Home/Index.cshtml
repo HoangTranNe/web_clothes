@@ -1,4 +1,4 @@
-﻿@using do_an_web.Models
+﻿@model IEnumerable<do_an_web.Models.product>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -66,10 +66,10 @@
                          src="~/Content/Images/@clothes.images" alt="Card image" />
                 </a>
                 <div class="card-body">
-                    <h4 class="card-title">@clothes.name</h4>
+                    <h4 class="card-title">@clothes.name_product</h4>
                     <p class="card-text">@clothes.price</p>
                 </div>
-            </div>
+            </div>      
         }
     }
 </div>

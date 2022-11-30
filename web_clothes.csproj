@@ -190,14 +190,12 @@
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\brandsController.cs" />
     <Compile Include="Areas\admin\Controllers\categoriesController.cs" />
-    <Compile Include="Areas\admin\Controllers\constractsController.cs" />
     <Compile Include="Areas\admin\Controllers\customersController.cs" />
     <Compile Include="Areas\admin\Controllers\customer_orderController.cs" />
-    <Compile Include="Areas\admin\Controllers\partnersController.cs" />
     <Compile Include="Areas\admin\Controllers\productsController.cs" />
     <Compile Include="Areas\admin\Controllers\reportsController.cs" />
-    <Compile Include="Areas\admin\Controllers\warehousesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\searchController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,9 +205,6 @@
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\category.cs">
-      <DependentUpon>webClothesModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\constract.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\customer.cs">
@@ -222,16 +217,10 @@
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\needtobuy.cs" />
-    <Compile Include="Models\partner.cs">
-      <DependentUpon>webClothesModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\product.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\report.cs">
-      <DependentUpon>webClothesModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\warehouse.cs">
       <DependentUpon>webClothesModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webClothesModels.Context.cs">
@@ -349,11 +338,11 @@
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.esm.min.js" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.js" />
     <Content Include="Scripts\Sctipts_Boostrap\bootstrap.min.js" />
-    <Content Include="Areas\admin\Views\warehouses\Create.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Details.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\warehouses\Index.cshtml" />
+    <Content Include="Areas\admin\Views\products\Create.cshtml" />
+    <Content Include="Areas\admin\Views\products\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\products\Details.cshtml" />
+    <Content Include="Areas\admin\Views\products\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\products\Index.cshtml" />
     <EntityDeploy Include="Models\webClothesModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
@@ -361,11 +350,16 @@
     <Content Include="Models\webClothesModels.edmx.diagram">
       <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\admin\Views\products\Create.cshtml" />
-    <Content Include="Areas\admin\Views\products\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\products\Details.cshtml" />
-    <Content Include="Areas\admin\Views\products\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\products\Index.cshtml" />
+    <Content Include="Areas\admin\Views\customer_order\Create.cshtml" />
+    <Content Include="Areas\admin\Views\customer_order\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\customer_order\Details.cshtml" />
+    <Content Include="Areas\admin\Views\customer_order\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\customer_order\Index.cshtml" />
+    <Content Include="Areas\admin\Views\customers\Create.cshtml" />
+    <Content Include="Areas\admin\Views\customers\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\customers\Details.cshtml" />
+    <Content Include="Areas\admin\Views\customers\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\customers\Index.cshtml" />
     <None Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.min.js" />
@@ -390,26 +384,6 @@
     <Content Include="Areas\admin\Views\categories\Details.cshtml" />
     <Content Include="Areas\admin\Views\categories\Edit.cshtml" />
     <Content Include="Areas\admin\Views\categories\Index.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Create.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Details.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\constracts\Index.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Create.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Details.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\customers\Index.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Create.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Details.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\customer_order\Index.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Create.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Details.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\partners\Index.cshtml" />
     <Content Include="Areas\admin\Views\reports\Create.cshtml" />
     <Content Include="Areas\admin\Views\reports\Delete.cshtml" />
     <Content Include="Areas\admin\Views\reports\Details.cshtml" />
@@ -483,6 +457,7 @@
     <Content Include="Views\Users\Register.cshtml" />
     <Content Include="Views\Users\DangNhap.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\search\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

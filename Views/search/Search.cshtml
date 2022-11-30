@@ -1,0 +1,30 @@
+﻿@model IEnumerable<do_an_web.Models.product>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .row{
+        justify-content:space-evenly;
+        display:flex;
+    }
+</style>
+<div class="row">
+    @foreach (var item in Model)
+    {
+       <div class="card col-sm-3 col-md-3 col-lg-3 d-flex align-items-center cart-section">
+           <a href="@Url.Action("Details","Home", new { id = item.id_products})" class="card">
+               <img class="card-img-top"
+                    src="~/Content/Images/@item.images"                    
+                    alt="...">
+           </a>
+           <div class="card-body">
+               <h2 class="card-title">@Html.DisplayFor(modelItem => item.name_product)</h2>
+               <p class="card-text">@Html.DisplayFor(modelItem => item.price)</p>
+           </div>
+       </div>
+
+    }
+</div>
+

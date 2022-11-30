@@ -1,11 +1,15 @@
 ﻿using do_an_web.Models;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace do_an_web.Controllers
 {
@@ -14,7 +18,7 @@ namespace do_an_web.Controllers
         webClothesEntities db = new webClothesEntities();
         private List<product> Add_New_Product(int quantity)
         {
-            return db.products.OrderByDescending(p => p.name).Take(quantity).ToList();
+            return db.products.OrderByDescending(p => p.name_product).Take(quantity).ToList();
         }
         public ActionResult Index()
         {
@@ -77,5 +81,28 @@ namespace do_an_web.Controllers
             var product = db.products.FirstOrDefault(s => s.id_products == id);
             return View(product);
         }
+        /*public ActionResult fillcategory(int id)
+        {
+            #region
+            fillcategory.Open();
+            SqlCommand cmdp = con.CreateCommand();
+            cmdp.CommandType = CommandType.Text;
+
+            var categoryID = Request.QueryString["category"];
+            int catId = string.IsNullOrEmpty(categoryID) ? 0 : int.Parse(categoryID);
+            if (!string.IsNullOrEmpty(categoryID))
+                cmdp.CommandText = " select * from products where [category_id] = " + catId;
+            else
+                cmdp.CommandText = "select * from products";
+            cmdp.ExecuteNonQuery();
+            DataTable dttp = new DataTable();
+            SqlDataAdapter dap = new SqlDataAdapter(cmdp);
+            dap.Fill(dttp);
+            Datalist1.DataSource = dttp;
+            Datalist1.DataBind();
+
+            con.Close();
+            #endregion
+        }*/
     }
 }

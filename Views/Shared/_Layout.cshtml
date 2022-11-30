@@ -23,15 +23,12 @@
         <div class="logo">
             <a href="@Url.Action("Index","Home")"><img src="~/Content/Images/logo.jpg" /></a>
         </div>
-        <div class="search-box">
-            <button type="button" class="btn btn-default">
-                <input class="glyphicon glyphicon-search" style="padding: 5px 4rem; border-radius:10px;" placeholder="Search" />
-            </button>
-
-            <button type="button" class="btn btn-info">
-                <p class="glyphicon glyphicon-search"><a style="text-decoration:none; color:white;">Search</a></p>
-            </button>
-        </div>
+        @using (Html.BeginForm("Search", "search", FormMethod.Get))
+        {
+            <div class="input-search" style="font-size:25px;">
+                <input type="text" name="search" id="" placeholder="Search" style="border-radius:20px;">
+            </div>
+        }
         <ul class="nav-link">
             <li class="nav-item">
                 <a href="@Url.Action("DangNhap","Users")">Login</a>
@@ -44,7 +41,7 @@
             </li>
         </ul>
         <div class="ml-auto">
-            @Html.Action("cartpartial", "cart")
+            @*@Html.Action("cartpartial", "cart")*@
         </div>
         <div class="row justify-content-md-start">
             <div class="col-md-15">

@@ -18,7 +18,7 @@ namespace do_an_web.Areas.admin.Controllers
         // GET: admin/products
         public ActionResult Index()
         {
-            var products = db.products.Include(p => p.brand).Include(p => p.category).Include(p => p.warehouse);
+            var products = db.products.Include(p => p.brand).Include(p => p.category);
             return View(products.ToList());
         }
 
@@ -42,7 +42,6 @@ namespace do_an_web.Areas.admin.Controllers
         {
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand");
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category");
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "name_warehouse");
             return View();
         }
 
@@ -85,7 +84,7 @@ namespace do_an_web.Areas.admin.Controllers
 
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "name_warehouse", product.id_warehouse);
+
             return View(product);
         }
 
@@ -103,7 +102,6 @@ namespace do_an_web.Areas.admin.Controllers
             }
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "name_warehouse", product.id_warehouse);
             return View(product);
         }
 
@@ -162,7 +160,6 @@ namespace do_an_web.Areas.admin.Controllers
             }
             ViewBag.id_brand = new SelectList(db.brands, "id_brand", "name_brand", product.id_brand);
             ViewBag.id_category = new SelectList(db.categories, "id_category", "name_category", product.id_category);
-            ViewBag.id_warehouse = new SelectList(db.warehouses, "id_warehouse", "name_warehouse", product.id_warehouse);
             return View(product);
         }
 

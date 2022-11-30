@@ -13,17 +13,13 @@ namespace do_an_web.Controllers
     {
         webClothesEntities db = new webClothesEntities();
         // GET: Users
-        public ActionResult Index()
-        {
-            return View();
-        }
         [HttpGet]
         public ActionResult Register()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult DangKy(customer kh)
+        public ActionResult Register(customer kh)
         {            
             if (ModelState.IsValid)
             {
@@ -37,11 +33,12 @@ namespace do_an_web.Controllers
                     ModelState.AddModelError(string.Empty, "Email không được để trống");
                 if (string.IsNullOrEmpty(kh.phone_customer.ToString()))
                     ModelState.AddModelError(string.Empty, "Điện thoại không được để trống");
-                    //Kiểm tra xem có người nào đã đăng kí với tên đăng nhập này hay chưa
-                    var khachhang = db.customers.FirstOrDefault(k => k.name_customer == kh.name_customer);
+                //Kiểm tra xem có người nào đã đăng kí với tên đăng nhập này hay chưa
+
+                var khachhang = db.customers.FirstOrDefault(k => k.name_customer == kh.name_customer);
                 if (khachhang != null)
                     ModelState.AddModelError(string.Empty, "Đã có người đăng kí tên này");
-            if (ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     db.customers.Add(kh);
                     db.SaveChanges();

@@ -16,18 +16,12 @@ namespace do_an_web.Models
     {
         public int id_order { get; set; }
         public Nullable<int> id_customer { get; set; }
-        public Nullable<int> id_products { get; set; }
         public Nullable<System.DateTime> date_buy { get; set; }
         public Nullable<float> price { get; set; }
-        public Nullable<bool> states { get; set; }
-        public Nullable<System.DateTime> date_deli { get; set; }
-        public string name_customer { get; set; }
+        public Nullable<System.DateTime> deli_date { get; set; }
         public string address_customer { get; set; }
         public Nullable<int> phone_customer { get; set; }
-        public Nullable<bool> status_paying { get; set; }
-        public Nullable<bool> status_deli { get; set; }
     
         public virtual customer customer { get; set; }
-        public virtual product product { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace do_an_web.Models
         {
             this.id_product = products;
             var product = buy.products.Single(s => s.id_products == this.id_product);
-            this.name = product.name;
+            this.name = product.name_product;
             this.images = product.images;
             this.price = double.Parse(product.price.ToString());
             this.quantity = 1;

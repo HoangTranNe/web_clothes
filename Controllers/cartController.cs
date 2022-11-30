@@ -56,7 +56,7 @@ namespace do_an_web.Models
             double total_price = 0;
             List<needtobuy> carts = makecart();
             if (carts != null)
-                total_price = carts.Sum(s => s.price);
+                total_price = carts.Sum(p=>p.total());
             return total_price;
         }
         public ActionResult showcart()
@@ -126,12 +126,8 @@ namespace do_an_web.Models
             DonHang.id_customer = khach.id_customer;
             DonHang.date_buy = DateTime.Now;
             DonHang.price = (float)caculate_total_price();
-            DonHang.states = false;
-            DonHang.name_customer = khach.name_customer;
             DonHang.address_customer = khach.address_customer;
-            DonHang.phone_customer = khach.phone_customer;
-            DonHang.status_paying = false;
-            DonHang.status_deli = false;
+            DonHang.phone_customer = khach.phone_customer;  
 
             database.customer_order.Add(DonHang);
             database.SaveChanges();

@@ -5,87 +5,87 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
+<section class="vh-100 bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2>Details</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
+                            <div>
+                                <h4>product</h4>
+                                <hr />
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.name_product)
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.price)
-        </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.name_product)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.price)
-        </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.price)
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.discount)
-        </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.price)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.discount)
-        </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.descibe)
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.descibe)
-        </dt>
+                                    <dd>
+                                        @Html.Raw(Model.descibe)
+                                    </dd>
 
-        <dd>
-            @Html.Raw(Model.descibe)
-        </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.images)
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.images)
-        </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.images)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.images)
-        </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.images_size)
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.images_size)
-        </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.images_size)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.images_size)
-        </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.brand.name_brand)
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.brand.name_brand)
-        </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.brand.name_brand)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.brand.name_brand)
-        </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.category.name_category)
+                                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.category.name_category)
-        </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.category.name_category)
+                                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.category.name_category)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.warehouse.name_warehouse)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.warehouse.name_warehouse)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_products }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                                </dl>
+                            </div>
+                            <p>
+                                @Html.ActionLink("Edit", "Edit", new { id = Model.id_products }) |
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

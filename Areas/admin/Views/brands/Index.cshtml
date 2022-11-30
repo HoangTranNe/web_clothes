@@ -5,30 +5,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<section class="vh-100 bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-9 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2>DANH SÁCH HÃNG</h2>
+                            <p>
+                                @Html.ActionLink("THÊM HÃNG", "Create",null, new { @class = "btn btn-primary" })
+                            </p>
+                            <table class="table">
+                                <tr>
+                                    <th style="display:flex;">
+                                        @Html.DisplayNameFor(model => model.name_brand)
+                                    </th>
+                                    <th></th>
+                                </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name_brand)
-        </th>
-        <th></th>
-    </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.name_brand)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("CHỈNH LẠI", "Edit" , new { id = item.id_brand }) |
+                                            @Html.ActionLink("CHI TIẾT", "Details", new { id = item.id_brand }) |
+                                            @Html.ActionLink("XÓA", "Delete", new { id = item.id_brand })
+                                        </td>
+                                    </tr>
+                                }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name_brand)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_brand }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_brand }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_brand })
-        </td>
-    </tr>
-}
-
-</table>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

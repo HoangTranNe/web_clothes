@@ -1,8 +1,12 @@
-﻿using do_an_web.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
+using do_an_web.Models;
 
 namespace do_an_web.Areas.admin.Controllers
 {
@@ -13,7 +17,7 @@ namespace do_an_web.Areas.admin.Controllers
         // GET: admin/customer_order
         public ActionResult Index()
         {
-            var customer_order = db.customer_order.Include(c => c.customer).Include(c => c.product);
+            var customer_order = db.customer_order.Include(c => c.customer);
             return View(customer_order.ToList());
         }
 
@@ -36,7 +40,6 @@ namespace do_an_web.Areas.admin.Controllers
         public ActionResult Create()
         {
             ViewBag.id_customer = new SelectList(db.customers, "id_customer", "name_customer");
-            ViewBag.id_products = new SelectList(db.products, "id_products", "name");
             return View();
         }
 
@@ -45,7 +48,7 @@ namespace do_an_web.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_order,id_customer,id_products,id_cart,quantity_order,total")] customer_order customer_order)
+        public ActionResult Create([Bind(Include = "id_order,id_customer,date_buy,price,deli_date,address_customer,phone_customer")] customer_order customer_order)
         {
             if (ModelState.IsValid)
             {
@@ -55,7 +58,6 @@ namespace do_an_web.Areas.admin.Controllers
             }
 
             ViewBag.id_customer = new SelectList(db.customers, "id_customer", "name_customer", customer_order.id_customer);
-            ViewBag.id_products = new SelectList(db.products, "id_products", "name", customer_order.id_products);
             return View(customer_order);
         }
 
@@ -72,7 +74,6 @@ namespace do_an_web.Areas.admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.id_customer = new SelectList(db.customers, "id_customer", "name_customer", customer_order.id_customer);
-            ViewBag.id_products = new SelectList(db.products, "id_products", "name", customer_order.id_products);
             return View(customer_order);
         }
 
@@ -81,7 +82,7 @@ namespace do_an_web.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_order,id_customer,id_products,id_cart,quantity_order,total")] customer_order customer_order)
+        public ActionResult Edit([Bind(Include = "id_order,id_customer,date_buy,price,deli_date,address_customer,phone_customer")] customer_order customer_order)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +91,6 @@ namespace do_an_web.Areas.admin.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.id_customer = new SelectList(db.customers, "id_customer", "name_customer", customer_order.id_customer);
-            ViewBag.id_products = new SelectList(db.products, "id_products", "name", customer_order.id_products);
             return View(customer_order);
         }
 

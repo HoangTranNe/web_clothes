@@ -16,78 +16,100 @@
     <script src="https://kit.fontawesome.com/0ab0c4b239.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
-    <body>
-        <nav class="nav">
-            <div class="logo">
-                <a href="@Url.Action("Index","Home")"><img src="~/Content/Images/logo.jpg" /></a>
-            </div>
-            <div class="search-box">
-                <button type="button" class="btn btn-default">
-                    <input class="glyphicon glyphicon-search"
-                           style="padding: 5px 4rem; border-radius:10px;"
-                           placeholder="Search" />
-                </button>
-
-                <button type="button" class="btn btn-info">
-                    <p class="glyphicon glyphicon-search"><a href="@Url.Action("Index","Home")">Search</a></p>
-                </button>
-            </div>
-            <ul class="nav-link">
-                <li>
-                    <a href="@Url.Action("Login_View","Home")">Login</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("Register_View","Home")">Register</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("Contact_View", "Home")">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div>
-            @RenderBody()
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <a href="@Url.Action("Index","Home")"><img src="~/Content/Images/logo.jpg" /></a>
         </div>
-        <nav class="footer">
-            <div class="footer-title">
-                <div class="social">
-                    <h2>Liên Hệ</h2>
-                    <div class="icon">
-                        <a href="https://www.facebook.com/hoangtran1609"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/lol_bruzzzz/"><i class="fa-brands fa-instagram"></i></a><br /><br />
-                        <a href="https://t.me/hoangtran203"><i class="fa-brands fa-telegram"></i></a>
-                        <a href="https://twitter.com/HOANGTRAN_203"><i class="fa-brands fa-twitter"></i></a>
+        @using (Html.BeginForm("Search", "search", FormMethod.Get))
+        {
+            <div class="input-search" style="font-size:25px;">
+                <input type="text" name="search" id="" placeholder="Search" style="border-radius:20px;">
+            </div>
+        }
+        <ul class="nav-link">
+            <li class="nav-item">
+                <a href="@Url.Action("DangNhap","Users")">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Register","Users")">Register</a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Contact_View", "Home")">Contact</a>
+            </li>
+        </ul>
+        <div class="ml-auto">
+            @*@Html.Action("cartpartial", "cart")*@
+        </div>
+        <div class="row justify-content-md-start">
+            <div class="col-md-15">
+                <div class="card">
+                    <div class="card-header">
+                        Wellcome
+                    </div>
+                    <div class="card-body">
+                        @if (Session["name_customer"] != null)
+                        {
+                            <p>Name: @Session["name_customer"].ToString()</p>
+                            <p>Email: @Session["email_customer"].ToString()</p>
+                            <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
+                        }
                     </div>
                 </div>
-                <div class="help">
-                    <h2>Hướng Dẫn</h2>
-                    <ul class="de-muc">
-                        <li><a href="https://localhost:44373/Home/dieu_khoan_view">Điều Khoản</a></li>
-                        <li><a href="https://localhost:44373/Home/huong_dan_mua_hang_view">Hướng Dẫn Mua Hàng</a></li>
-                        <li><a href="https://localhost:44373/Home/chinh_sach_doi_tra_view">Chính Sách Đổi Trả</a></li>
-                        <li><a href="">Bảo Mật Thông Tin Khách Hàng</a></li>
-                        <li><a href="">Chính Sách Thanh Toán</a></li>
-                        <li class="reversed"><p>Co_Chay®</p></li>
-                        <li class="reversed"><p>Copy By Needs Of Wisdom®</p></li>
-                    </ul>
-                </div>
-                <div class="contact_us">
-                    <h2>Địa Chỉ</h2>
-                    <ul class="de-muc">
-                        <li><a href="">CN Chính: <span style="font-weight: bold;">123 Nguyễn Văn Linh, Quận 7, TP.HCM</span></a></li>
-                        <li><a href="">CN 2 <span style="font-weight: bold;">445 Sư Vạn Hạnh, P.12, Q.10</span></a></li>
-                        <li><a href="">CN 3 <span style="font-weight: bold;">48 Trần Quang Diệu, P.14, Q.3</span></a></li>
-                        <li><a href="">CN 4 <span style="font-weight: bold;">463 Quang Trung, P.10, Q. Gò Vấp</span></a></li>
-                        <li><a href="">Điện Thoại: <span style="font-weight: bold;">0946253769</span></a></li>
-                        <li><a href="">Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></a> <span style="color: white">|</span> <a href="">Email: <span style="font-weight: bold;">tranbaohoang2003@gmail.com</span></a></li>
-                    </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <nav class="footer">
+        <div class="footer-title">
+            <div class="social">
+                <h2>Liên Hệ</h2>
+                <div class="icon">
+                    <a href="https://www.facebook.com/hoangtran1609"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/lol_bruzzzz/"><i class="fa-brands fa-instagram"></i></a><br /><br />
+                    <a href="https://t.me/hoangtran203"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://twitter.com/HOANGTRAN_203"><i class="fa-brands fa-twitter"></i></a>
                 </div>
             </div>
-        </nav>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="slick/slick.min.js"></script>
-    </body>
+            <div class="help">
+                <h2>Hướng Dẫn</h2>
+                <ul class="de-muc">
+                    <li><a href="@Url.Action("dieu_khoan_view","privacy")">Điều Khoản</a></li>
+                    <li><a href="@Url.Action("huong_dan_mua_hang_view","privacy")">Hướng Dẫn Mua Hàng</a></li>
+                    <li><a href="@Url.Action("chinh_sach_doi_tra_view","privacy")">Chính Sách Đổi Trả</a></li>
+                    <li><a href="@Url.Action("chinh_sach_bao_mat_thong_tin_view","privacy")">Bảo Mật Thông Tin Khách Hàng</a></li>
+                    <li><a href="@Url.Action("chinh_sach_thanh_toan_view","privacy")">Chính Sách Thanh Toán</a></li>
+                    <li class="reversed"><p>Co_Chay®</p></li>
+                    <li class="reversed"><p>Copy By Needs Of Wisdom®</p></li>
+                </ul>
+            </div>
+            <div class="contact_us">
+                <h2>Địa Chỉ</h2>
+                <ul class="de-muc">
+                    <li><a href="https://goo.gl/maps/QGLQ5hjP9r7WwYA18">CN Chính: <span style="font-weight: bold;">176 Đường Số 2,phường 13, quận 6</span></a></li>
+                    <li><a href="https://goo.gl/maps/hLsM1CTMYTTRULUy9">CN 2 <span style="font-weight: bold;">445 Sư Vạn Hạnh, P.12, Q.10</span></a></li>
+                    <li><a href="https://goo.gl/maps/s86qZcmxQzWW3Kdn8">CN 3 <span style="font-weight: bold;">48 Trần Quang Diệu, P.14, Q.3</span></a></li>
+                    <li><a href="https://goo.gl/maps/nYsG4nMUZvYAEgT57">CN 4 <span style="font-weight: bold;">463 Quang Trung, P.10, Q. Gò Vấp</span></a></li>
+                    <li><p>Điện Thoại: <span style="font-weight: bold;">0946253769</span></p></li>
+                    <li>
+                        <p>Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></p> <span style="color: white">
+                            |
+                        </span> <p>Email: <span style="font-weight: bold;">tranbaohoang2003@gmail.com</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+</body>
 </html>

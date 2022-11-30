@@ -17,32 +17,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="constracts">
-      <EntityTypeMapping TypeName="webClothesModel.constract">
-        <MappingFragment StoreEntitySet="constracts">
-          <ScalarProperty Name="id_constracts" ColumnName="id_constracts" />
-          <ScalarProperty Name="id_partners" ColumnName="id_partners" />
-          <ScalarProperty Name="id_products" ColumnName="id_products" />
-          <ScalarProperty Name="price_constracts" ColumnName="price_constracts" />
-          <ScalarProperty Name="quantity" ColumnName="quantity" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="customer_order">
       <EntityTypeMapping TypeName="webClothesModel.customer_order">
         <MappingFragment StoreEntitySet="customer_order">
           <ScalarProperty Name="id_order" ColumnName="id_order" />
           <ScalarProperty Name="id_customer" ColumnName="id_customer" />
-          <ScalarProperty Name="id_products" ColumnName="id_products" />
           <ScalarProperty Name="date_buy" ColumnName="date_buy" />
           <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="states" ColumnName="states" />
-          <ScalarProperty Name="date_deli" ColumnName="date_deli" />
-          <ScalarProperty Name="name_customer" ColumnName="name_customer" />
+          <ScalarProperty Name="deli_date" ColumnName="deli_date" />
           <ScalarProperty Name="address_customer" ColumnName="address_customer" />
           <ScalarProperty Name="phone_customer" ColumnName="phone_customer" />
-          <ScalarProperty Name="status_paying" ColumnName="status_paying" />
-          <ScalarProperty Name="status_deli" ColumnName="status_deli" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -55,8 +39,6 @@
           <ScalarProperty Name="email_customer" ColumnName="email_customer" />
           <ScalarProperty Name="password_customer" ColumnName="password_customer" />
           <ScalarProperty Name="comfirm_password_customer" ColumnName="comfirm_password_customer" />
-          <ScalarProperty Name="gender_customer" ColumnName="gender_customer" />
-          <ScalarProperty Name="age_customer" ColumnName="age_customer" />
           <ScalarProperty Name="address_customer" ColumnName="address_customer" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -72,17 +54,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="partners">
-      <EntityTypeMapping TypeName="webClothesModel.partner">
-        <MappingFragment StoreEntitySet="partners">
-          <ScalarProperty Name="id_partners" ColumnName="id_partners" />
-          <ScalarProperty Name="name_partners" ColumnName="name_partners" />
-          <ScalarProperty Name="phone_partners" ColumnName="phone_partners" />
-          <ScalarProperty Name="email_partners" ColumnName="email_partners" />
-          <ScalarProperty Name="require_partners" ColumnName="require_partners" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="products">
       <EntityTypeMapping TypeName="webClothesModel.product">
         <MappingFragment StoreEntitySet="products">
@@ -90,9 +61,8 @@
           <ScalarProperty Name="id_warehouse" ColumnName="id_warehouse" />
           <ScalarProperty Name="id_category" ColumnName="id_category" />
           <ScalarProperty Name="id_brand" ColumnName="id_brand" />
-          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="name_product" ColumnName="name_product" />
           <ScalarProperty Name="price" ColumnName="price" />
-          <ScalarProperty Name="discount" ColumnName="discount" />
           <ScalarProperty Name="descibe" ColumnName="descibe" />
           <ScalarProperty Name="images" ColumnName="images" />
           <ScalarProperty Name="images_size" ColumnName="images_size" />
@@ -106,15 +76,6 @@
           <ScalarProperty Name="id_customer" ColumnName="id_customer" />
           <ScalarProperty Name="subject_customer" ColumnName="subject_customer" />
           <ScalarProperty Name="contents_customer" ColumnName="contents_customer" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="warehouses">
-      <EntityTypeMapping TypeName="webClothesModel.warehouse">
-        <MappingFragment StoreEntitySet="warehouse">
-          <ScalarProperty Name="id_warehouse" ColumnName="id_warehouse" />
-          <ScalarProperty Name="name_warehouse" ColumnName="name_warehouse" />
-          <ScalarProperty Name="located" ColumnName="located" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

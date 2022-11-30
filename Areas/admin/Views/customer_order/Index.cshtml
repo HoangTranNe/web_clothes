@@ -13,19 +13,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.id_cart)
+            @Html.DisplayNameFor(model => model.date_buy)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.quantity_order)
+            @Html.DisplayNameFor(model => model.price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.total)
+            @Html.DisplayNameFor(model => model.deli_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address_customer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone_customer)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.customer.name_customer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.product.name)
         </th>
         <th></th>
     </tr>
@@ -33,19 +36,22 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.id_cart)
+            @Html.DisplayFor(modelItem => item.date_buy)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.quantity_order)
+            @Html.DisplayFor(modelItem => item.price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.total)
+            @Html.DisplayFor(modelItem => item.deli_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address_customer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone_customer)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.customer.name_customer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.product.name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id_order }) |
