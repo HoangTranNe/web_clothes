@@ -6,26 +6,29 @@
 }
 
 <style>
-    .row{        
+    .row{  
+        font-family:'Times New Roman', Times, serif;
         font-size:20px;
     }
 </style>
-<h2>THÔNG TIN CHI TIẾT SÁCH</h2>
+<h2 style="font-family: 'Times New Roman', Times, serif;">THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
 <br />
 <div class="row">
     <div class="offset-md-2 col-md-4">
         <label>Hình Sản Phẩm</label>
         <img style="width:550px; height:550px;" src="~/Content/Images/@Model.images" alt="">
-        <label>Bảng Size</label>
-        <img style="width:550px; height:550px;" src="~/Content/Images/@Model.images_size" alt="">
     </div>    
     
     <div class="col-md-6 details">
         <h3>Tên sách: @Model.name_product</h3>
         <p style="text-align: center">
-            <span style="font-weight: bold;">Mô tả:</span> 
-            <div style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+            <span style="font-weight: bold;">Mô tả:</span>
+            <div>
                 @Model.descibe
+            </div>
+            <div>
+                <label>Bảng Size</label>
+                <img style="width:550px; height:550px;" src="~/Content/Images/@Model.images_size" alt="">
             </div>
         </p>
         <p class="price">

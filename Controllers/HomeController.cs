@@ -22,9 +22,8 @@ namespace do_an_web.Controllers
         public ActionResult Index(int? page, int? size)
         {
             List<SelectListItem> items = new List<SelectListItem>();
-            items.Add(new SelectListItem { Text = "6", Value = "6" });
-            items.Add(new SelectListItem { Text = "12", Value = "12" });
-            items.Add(new SelectListItem { Text = "18", Value = "18" });
+            items.Add(new SelectListItem { Text = "8", Value = "8" });
+            items.Add(new SelectListItem { Text = "16", Value = "16" });
             items.Add(new SelectListItem { Text = "24", Value = "24" });
 
             foreach (var item in items)
@@ -35,7 +34,7 @@ namespace do_an_web.Controllers
             ViewBag.currentSize = size;
             if (page == null) page = 1;
             var products = db.products.Include(p => p.brand).Include(p => p.category).OrderBy(b => b.id_products);
-            int pageSize = (size ?? 6);
+            int pageSize = (size ?? 8);
 
             int pageNumber = (page ?? 1);
 

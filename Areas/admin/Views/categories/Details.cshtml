@@ -6,16 +6,18 @@
 }
 
 
-<section class="vh-100 bg-image"
-         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
+<section class="vh-a bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg'">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="col-auto col-md-auto col-lg-auto col-xl-auto">
                     <div class="card" style="border-radius: 15px;">
-                        <div class="card-body p-5">                            
+                        <div class="card-body p-5">
+                            <h2>Details</h2>
+
                             <div>
-                                <h4>LOẠI</h4>
+                                <h4>category</h4>
                                 <hr />
                                 <dl class="dl-horizontal">
                                     <dt>
@@ -30,7 +32,7 @@
                             </div>
                             <p>
                                 @Html.ActionLink("Edit", "Edit", new { id = Model.id_category }) |
-                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
+                                @Html.ActionLink("Back to List", "Index", null, new {@class="btn btn-danger"})
                             </p>
                         </div>
                     </div>

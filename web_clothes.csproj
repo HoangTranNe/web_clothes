@@ -353,6 +353,11 @@
     <Content Include="Areas\admin\Views\customers\Details.cshtml" />
     <Content Include="Areas\admin\Views\customers\Edit.cshtml" />
     <Content Include="Areas\admin\Views\customers\Index.cshtml" />
+    <Content Include="Areas\admin\Views\categories\Create.cshtml" />
+    <Content Include="Areas\admin\Views\categories\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\categories\Details.cshtml" />
+    <Content Include="Areas\admin\Views\categories\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\categories\Index.cshtml" />
     <EntityDeploy Include="Models\webClothesModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
@@ -379,11 +384,6 @@
     <Content Include="Areas\admin\Views\brands\Details.cshtml" />
     <Content Include="Areas\admin\Views\brands\Edit.cshtml" />
     <Content Include="Areas\admin\Views\brands\Index.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Create.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Details.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\categories\Index.cshtml" />
     <Content Include="Areas\admin\Views\reports\Create.cshtml" />
     <Content Include="Areas\admin\Views\reports\Delete.cshtml" />
     <Content Include="Areas\admin\Views\reports\Details.cshtml" />

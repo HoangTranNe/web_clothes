@@ -5,18 +5,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<section class="vh-100 bg-image"
-         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
+
+<section class="vh-a bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg'">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="col-auto col-md-auto col-lg-auto col-xl-auto">
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body p-5">
-                            <h2>DANH SÁCH CÁC LOẠI QUẦN ÁO</h2>
+                            <h2>Index</h2>
 
                             <p>
-                                @Html.ActionLink("TẠO LOẠI MỚI", "Create", null, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Create New", "Create", null, new {@class="btn btn-primary"})
                             </p>
                             <table class="table">
                                 <tr>
@@ -33,9 +34,9 @@
                                             @Html.DisplayFor(modelItem => item.name_category)
                                         </td>
                                         <td>
-                                            @Html.ActionLink("SỬA LOẠI", "Edit", new { id = item.id_category }) |
-                                            @Html.ActionLink("CHI TIẾT LOẠI", "Details", new { id = item.id_category }) |
-                                            @Html.ActionLink("XÓA LOẠI QUẦN ÁO", "Delete", new { id = item.id_category })
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.id_category }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.id_category }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.id_category })
                                         </td>
                                     </tr>
                                 }
