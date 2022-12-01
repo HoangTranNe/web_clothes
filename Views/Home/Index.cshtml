@@ -1,4 +1,7 @@
-﻿@model IEnumerable<do_an_web.Models.product>
+﻿@model PagedList.IPagedList<do_an_web.Models.product>
+@using PagedList.Mvc;
+
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -42,9 +45,6 @@
                     @Html.Action("takecategory", "Home")
                 </div>
             </li>
-            <li>
-                <a href="@Url.Action("Contact_View","Home")">Contact</a>
-            </li>
             <li class="clearance">
                 <a href="">Clearance_Sale</a>
             </li>
@@ -54,24 +54,39 @@
 <nav class="tab3">
     <h2></h2>
 </nav>
-<div class="row">
+<div class="row"
+     style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
     @foreach (var clothes in Model)
     {
-        if (clothes.id_category == 1)
-        {
-            <div class="card col-sm-3 col-md-3 col-lg-3 d-flex align-items-stretch cart-section">
+        <div class="card col-sm-3 col-md-3 col-lg-2 d-flex align-items-stretch cart-section"
+             style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
 
-                <a href="@Url.Action("Details", "Home", new { id = clothes.id_products })">
-                    <img class="card-img-top book-picture h-100 w-50"
-                         src="~/Content/Images/@clothes.images" alt="Card image" />
-                </a>
-                <div class="card-body">
-                    <h4 class="card-title">@clothes.name_product</h4>
-                    <p class="card-text">@clothes.price</p>
-                </div>
-            </div>      
-        }
+            <a href="@Url.Action("Details", "Home", new { id = clothes.id_products })">
+                <img class="card-img-top book-picture h-100 w-50  col-sm-3 col-md-3 col-lg-2 "
+                     src="~/Content/Images/@clothes.images" alt="Card image" />
+            </a>
+            <div class="card-body">
+                <h4 class="card-title">@clothes.name_product</h4>
+                <p class="card-text">@clothes.price</p>
+            </div>
+        </div>
     }
+</div>
+<br />
+<br />
+<br />
+<div class="row">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+            <p style="font-weight:bold">CỎ CHÁY®</p>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6 text-right">
+            Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+            <div>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, size = ViewBag.currentSize }))
+            </div>
+        </div>
+    </div>
 </div>
 
 

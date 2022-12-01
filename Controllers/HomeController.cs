@@ -1,4 +1,6 @@
 ﻿using do_an_web.Models;
+using PagedList;
+using PagedList.Mvc;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -9,6 +11,7 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.Mvc;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace do_an_web.Controllers
@@ -16,14 +19,27 @@ namespace do_an_web.Controllers
     public class HomeController : Controller
     {
         webClothesEntities db = new webClothesEntities();
-        private List<product> Add_New_Product(int quantity)
+        public ActionResult Index(int? page, int? size)
         {
-            return db.products.OrderByDescending(p => p.name_product).Take(quantity).ToList();
-        }
-        public ActionResult Index()
-        {
-            var new_pro = Add_New_Product(20);
-            return View(new_pro);
+            List<SelectListItem> items = new List<SelectListItem>();
+            items.Add(new SelectListItem { Text = "6", Value = "6" });
+            items.Add(new SelectListItem { Text = "12", Value = "12" });
+            items.Add(new SelectListItem { Text = "18", Value = "18" });
+            items.Add(new SelectListItem { Text = "24", Value = "24" });
+
+            foreach (var item in items)
+            {
+                if (item.Value == size.ToString()) item.Selected = true;
+            }
+            ViewBag.size = items;
+            ViewBag.currentSize = size;
+            if (page == null) page = 1;
+            var products = db.products.Include(p => p.brand).Include(p => p.category).OrderBy(b => b.id_products);
+            int pageSize = (size ?? 6);
+
+            int pageNumber = (page ?? 1);
+
+            return View(products.ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult dieu_khoan_view()
@@ -74,35 +90,12 @@ namespace do_an_web.Controllers
             //Lấy các sách theo mã chủ đề được chọn
             var prowithcase_list = db.products.Where(p => p.id_category == id).ToList();
             //Trả về View để render các sách trên (tái sử dụng View Index ở trên, truyền vào danh sách)
-            return View("Index","Home", prowithcase_list);
+            return View("Index", prowithcase_list);
         }
         public ActionResult Details(int? id)
         {
             var product = db.products.FirstOrDefault(s => s.id_products == id);
             return View(product);
         }
-        /*public ActionResult fillcategory(int id)
-        {
-            #region
-            fillcategory.Open();
-            SqlCommand cmdp = con.CreateCommand();
-            cmdp.CommandType = CommandType.Text;
-
-            var categoryID = Request.QueryString["category"];
-            int catId = string.IsNullOrEmpty(categoryID) ? 0 : int.Parse(categoryID);
-            if (!string.IsNullOrEmpty(categoryID))
-                cmdp.CommandText = " select * from products where [category_id] = " + catId;
-            else
-                cmdp.CommandText = "select * from products";
-            cmdp.ExecuteNonQuery();
-            DataTable dttp = new DataTable();
-            SqlDataAdapter dap = new SqlDataAdapter(cmdp);
-            dap.Fill(dttp);
-            Datalist1.DataSource = dttp;
-            Datalist1.DataBind();
-
-            con.Close();
-            #endregion
-        }*/
     }
 }

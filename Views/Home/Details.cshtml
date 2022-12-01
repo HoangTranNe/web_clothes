@@ -6,8 +6,7 @@
 }
 
 <style>
-    .row{
-        font-family:monospace;
+    .row{        
         font-size:20px;
     }
 </style>
@@ -24,7 +23,10 @@
     <div class="col-md-6 details">
         <h3>Tên sách: @Model.name_product</h3>
         <p style="text-align: center">
-            <span style="font-weight: bold">Mô tả:</span> @Model.descibe
+            <span style="font-weight: bold;">Mô tả:</span> 
+            <div style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                @Model.descibe
+            </div>
         </p>
         <p class="price">
             Giá bán: <span style="color:red; font-size:32px;">@Model.price VNĐ</span>

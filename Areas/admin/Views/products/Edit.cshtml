@@ -6,9 +6,9 @@
 }
 
 
-<section class="vh-100 bg-image"
+<section class="vh-a bg-image"
          style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
-    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="mask d-flex align-items-center h-auto gradient-custom-3">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
@@ -16,7 +16,7 @@
                         <div class="card-body p-5">
                             <h2>Edit</h2>
 
-                            @using (Html.BeginForm())
+                            @using (Html.BeginForm("Edit", "products", FormMethod.Post, new { enctype = "multipart/form-data" }))
                             {
                                 @Html.AntiForgeryToken()
 
@@ -28,67 +28,70 @@
 
 
                                     <div class="form-group">
-                                        @Html.LabelFor(model => model.id_category, "id_category", htmlAttributes: new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
+                                        @Html.LabelFor(model => model.id_category, "id_category", htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-12">
                                             @Html.DropDownList("id_category", null, htmlAttributes: new { @class = "form-control" })
                                             @Html.ValidationMessageFor(model => model.id_category, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        @Html.LabelFor(model => model.id_brand, "id_brand", htmlAttributes: new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
+                                        @Html.LabelFor(model => model.id_brand, "id_brand", htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-12">
                                             @Html.DropDownList("id_brand", null, htmlAttributes: new { @class = "form-control" })
                                             @Html.ValidationMessageFor(model => model.id_brand, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        @Html.LabelFor(model => model.name_product, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
+                                        @Html.LabelFor(model => model.name_product, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-12">
                                             @Html.EditorFor(model => model.name_product, new { htmlAttributes = new { @class = "form-control" } })
                                             @Html.ValidationMessageFor(model => model.name_product, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
+                                        @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-12">
                                             @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
                                             @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        @Html.LabelFor(model => model.descibe, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
+                                        @Html.LabelFor(model => model.descibe, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-12">
                                             @Html.TextAreaFor(model => model.descibe, new { htmlAttributes = new { @class = "form-control" } })
+                                            <script>
+                                                CKEDITOR.replace("describle")
+                                            </script>
                                             @Html.ValidationMessageFor(model => model.descibe, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        @Html.LabelFor(model => model.images, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
+                                        @Html.LabelFor(model => model.images, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-12">
                                             @Html.TextBoxFor(model => model.images, null, new { type = "file", @class = "form-control" })
-                                            <img src="~/Content/Images/@Model.images" />
+                                            <img src="~/Content/Images/@Model.images" height="150" width="150" />
                                             @Html.Hidden("oldimage", Model.images)
-                                            @Html.ValidationMessageFor(model => model.images, "", new { @class = "text-danger" })
+                                            @Html.ValidationMessageFor(model => model.images, " ", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        @Html.LabelFor(model => model.images_size, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        <div class="col-md-10">
+                                        @Html.LabelFor(model => model.images_size, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-12">
                                             @Html.TextBoxFor(model => model.images_size, null, new { type = "file", @class = "form-control" })
-                                            <img src="~/Content/Images/@Model.images_size" />
+                                            <img src="~/Content/Images/@Model.images_size" height="150" width="150" />
                                             @Html.Hidden("oldimage", Model.images_size)
-                                            @Html.ValidationMessageFor(model => model.images_size, "", new { @class = "text-danger" })
+                                            @Html.ValidationMessageFor(model => model.images_size, " ", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <div class="col-md-offset-2 col-md-10">
+                                        <div class="col-md-offset-2 col-md-12">
                                             <input type="submit" value="Save" class="btn btn-default" />
                                         </div>
                                     </div>
@@ -105,3 +108,6 @@
         </div>
     </div>
 </section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

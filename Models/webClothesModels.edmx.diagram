@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ecff24f73c104af1a386bdffe91ffe67" Name="Diagram1">
-        <EntityTypeShape EntityType="webClothesModel.brand" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.category" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+      <Diagram DiagramId="bf8826bc57d94d5a8e8f364910a0c57b" Name="Diagram1">
+        <EntityTypeShape EntityType="webClothesModel.brand" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.category" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.customer_order" Width="1.5" PointX="5" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.customer" Width="1.5" PointX="2.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.details_order" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.details_order" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.report" Width="1.5" PointX="5" PointY="9.375" IsExpanded="true" />
         <AssociationConnector Association="webClothesModel.FK__products__id_bra__31EC6D26" ManuallyRouted="false" />

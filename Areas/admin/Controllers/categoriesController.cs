@@ -11,12 +11,15 @@ namespace do_an_web.Areas.admin.Controllers
         private webClothesEntities db = new webClothesEntities();
 
         // GET: admin/categories
+        // Lấy danh sách category
         public ActionResult Index()
         {
+            //trả về View của danh sách category
             return View(db.categories.ToList());
         }
 
         // GET: admin/categories/Details/5
+        // Lấy Chi Tiết sản phẩm
         public ActionResult Details(int? id)
         {
             if (id == null)

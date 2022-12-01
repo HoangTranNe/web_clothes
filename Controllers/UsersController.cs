@@ -63,26 +63,33 @@ namespace do_an_web.Controllers
             {
                 if (string.IsNullOrEmpty(kh.name_customer))
                     ModelState.AddModelError(string.Empty, "Tên đăng nhập không được để trống");
-            if (string.IsNullOrEmpty(kh.password_customer))
-                    ModelState.AddModelError(string.Empty, "Mật khẩu không được để trống");
-            if (ModelState.IsValid)
+                if (string.IsNullOrEmpty(kh.password_customer))
+                        ModelState.AddModelError(string.Empty, "Mật khẩu không được để trống");
+                if (ModelState.IsValid)
                 {
-                    //Tìm khách hàng có tên đăng nhập và password hợp lệ trong CSDL
-                    var khach = db.customers.FirstOrDefault(k => k.name_customer == kh.name_customer && k.password_customer == kh.password_customer);
-                    if (khach != null)
-                    {
-                        ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
-                        //Lưu vào session
-
-                        Session["TaiKhoan"] = khach;
-
-                    }
-                    else
-
-                        ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
+                        //Tìm khách hàng có tên đăng nhập và password hợp lệ trong CSDL
+                        /*var check = db.customers.FirstOrDefault()*/
+                        var khach = db.customers.FirstOrDefault(k => k.name_customer == kh.name_customer && k.password_customer == kh.password_customer);
+                        if (khach != null)
+                        {
+                            ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
+                            //Lưu vào session
+                            Session["name_customer"] = kh.name_customer;
+                            Session["user_id"] = kh.id_customer;
+                        }
+                        else
+                        {
+                            ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
+                        }
                 }
+                            
             }
-            return View();
+            return RedirectToAction("Index","Home");
+        }
+        public ActionResult LogOut()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

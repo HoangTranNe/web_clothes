@@ -1,19 +1,20 @@
-﻿@model IEnumerable<do_an_web.Models.product>
-
+﻿@*@model  IEnumerable<do_an_web.Models.product>*@
+@model PagedList.IPagedList<do_an_web.Models.product>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<section class="vh-100 bg-image"
-         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
-    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-        <div class="container h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+<section class="vh-a bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg'); font-family:'Times New Roman', Times, serif;">
+    <div class="mask d-flex align-items-center h-auto gradient-custom-3">
+        <div class="container h-auto">
+            <div class="row d-flex justify-content-center align-items-center h-auto">
+                <div class="col-auto col-md-auto col-lg-auto col-xl-auto">
                     <div class="card" style="border-radius: 15px;">
-                        <div class="card-body p-5">
+                        <div class="card-body p-md-5">
                             <h2>Index</h2>
 
                             <p>
@@ -22,25 +23,25 @@
                             <table class="table">
                                 <tr>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.name_product)
+                                        Tên Sản Phẩm
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.price)
+                                        Giá
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.descibe)
+                                        Miêu Tả
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.images)
+                                        Hình Sản Phẩm
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.images_size)
+                                        Hình Size
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.brand.name_brand)
+                                        Tên Hãng
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.category.name_category)
+                                        Tên Loại
                                     </th>
                                     <th></th>
                                 </tr>
@@ -56,7 +57,7 @@
                                         </td>
 
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.descibe)
+                                            @Html.Raw(item.descibe)
                                         </td>
                                         <td>
                                             <img src="~/Content/Images/@item.images" height="150" width="150" />
@@ -86,4 +87,26 @@
             </div>
         </div>
     </div>
+    <br />
+    <br />    
+    <br />
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
+            @using (Html.BeginForm("Index", "products", FormMethod.Get))
+            {
+                <p>
+                    Kích thước trang: @Html.DropDownList("size", (List<SelectListItem>)ViewBag.size, new { @onchange = "this.form.submit();" })
+                </p>
+            }
+        </div>
+        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6 text-right">
+            Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+            <div>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, size = ViewBag.currentSize}))
+            </div>
+        </div>        
+    </div>
 </section>
+
+
+

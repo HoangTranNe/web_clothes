@@ -21,7 +21,6 @@ namespace do_an_web.Models
         }
     
         public int id_products { get; set; }
-        public Nullable<int> id_warehouse { get; set; }
         public Nullable<int> id_category { get; set; }
         public Nullable<int> id_brand { get; set; }
         public string name_product { get; set; }

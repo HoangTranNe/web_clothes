@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/web_clothes.css")
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/web_clothes.css")  
     @Scripts.Render("~/bundles/modernizr")
     <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" />
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
@@ -30,15 +29,25 @@
             </div>
         }
         <ul class="nav-link">
-            <li class="nav-item">
-                <a href="@Url.Action("DangNhap","Users")">Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="@Url.Action("Register","Users")">Register</a>
-            </li>
-            <li class="nav-item">
-                <a href="@Url.Action("Contact_View", "Home")">Contact</a>
-            </li>
+            @if (Session["user_id"] != null)
+            {
+                <li class="nav-item">
+                    <a href="@Url.Action("Contact_View", "Home")">Contact</a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a href="@Url.Action("DangNhap","Users")">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Register","Users")">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="@Url.Action("Contact_View", "Home")">Contact</a>
+                </li>
+            }
+
         </ul>
         <div class="ml-auto">
             @*@Html.Action("cartpartial", "cart")*@
@@ -53,8 +62,11 @@
                         @if (Session["name_customer"] != null)
                         {
                             <p>Name: @Session["name_customer"].ToString()</p>
-                            <p>Email: @Session["email_customer"].ToString()</p>
-                            <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
+                            <a href="@Url.Action("LogOut","Users")" class="btn btn-warning">Logout</a>
+                        }
+                        else
+                        {
+                            <p>Hello Khách</p>                            
                         }
                     </div>
                 </div>
@@ -95,10 +107,11 @@
                     <li><a href="https://goo.gl/maps/hLsM1CTMYTTRULUy9">CN 2 <span style="font-weight: bold;">445 Sư Vạn Hạnh, P.12, Q.10</span></a></li>
                     <li><a href="https://goo.gl/maps/s86qZcmxQzWW3Kdn8">CN 3 <span style="font-weight: bold;">48 Trần Quang Diệu, P.14, Q.3</span></a></li>
                     <li><a href="https://goo.gl/maps/nYsG4nMUZvYAEgT57">CN 4 <span style="font-weight: bold;">463 Quang Trung, P.10, Q. Gò Vấp</span></a></li>
-                    <li><p>Điện Thoại: <span style="font-weight: bold;">0946253769</span></p></li>
-                    <li><p>Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></p> <span style="color: white">
-                        |</span> <p>Email: <span style="font-weight: bold;">tranbaohoang2003@gmail.com</span></p></li>
                 </ul>
+                <div style="color:white;">
+                    <p>Điện Thoại: <span style="font-weight: bold;">0946253769</span></p>
+                    <p>Email: <span style="font-weight: bold;">tranbaohoang70@gmail.com</span></p> <span style="color: white"> |</span> <p>Email: <span style="font-weight: bold;">tranbaohoang2003@gmail.com</span></p>
+                </div>
             </div>
         </div>
     </nav>

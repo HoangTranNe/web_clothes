@@ -13,18 +13,13 @@ namespace do_an_web
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                namespaces: new string[] { "web_clothes.Controllers" }
+                namespaces: new string[] { "do_an_web.Controllers" }
             );
             routes.MapRoute(
                 name: "admin",
                 url: "admin/homeAdmin/{action}/{id}",
                 defaults: new { controller = "homeAdmin", action = "Index", id = UrlParameter.Optional }
-            );
-            routes.MapRoute(
-                name: "user",
-                url: "user/home/{action}/{id}",
-                defaults: new { controller = "user", action = "Index", id = UrlParameter.Optional }
-            );
+            );            
         }
     }
 }

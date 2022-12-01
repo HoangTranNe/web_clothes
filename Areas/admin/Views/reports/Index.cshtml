@@ -5,42 +5,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.subject_customer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.contents_customer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.customer.name_customer)
-        </th>
-        <th></th>
-    </tr>
+<section class="vh-100 bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-auto col-md-auto col-lg-auto col-xl-auto">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2>Index</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.subject_customer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.contents_customer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.customer.name_customer)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_reports }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_reports }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_reports })
-        </td>
-    </tr>
-}
+                            <p>
+                                @Html.ActionLink("Create New", "Create")
+                            </p>
+                            <table class="table">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.subject_customer)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.contents_customer)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.customer.name_customer)
+                                    </th>
+                                    <th></th>
+                                </tr>
 
-</table>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.subject_customer)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.contents_customer)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.customer.name_customer)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.id_reports }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.id_reports }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.id_reports })
+                                        </td>
+                                    </tr>
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

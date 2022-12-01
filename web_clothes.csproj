@@ -343,13 +343,6 @@
     <Content Include="Areas\admin\Views\products\Details.cshtml" />
     <Content Include="Areas\admin\Views\products\Edit.cshtml" />
     <Content Include="Areas\admin\Views\products\Index.cshtml" />
-    <EntityDeploy Include="Models\webClothesModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\webClothesModels.edmx.diagram">
-      <DependentUpon>webClothesModels.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\admin\Views\customer_order\Create.cshtml" />
     <Content Include="Areas\admin\Views\customer_order\Delete.cshtml" />
     <Content Include="Areas\admin\Views\customer_order\Details.cshtml" />
@@ -360,6 +353,13 @@
     <Content Include="Areas\admin\Views\customers\Details.cshtml" />
     <Content Include="Areas\admin\Views\customers\Edit.cshtml" />
     <Content Include="Areas\admin\Views\customers\Index.cshtml" />
+    <EntityDeploy Include="Models\webClothesModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>webClothesModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\webClothesModels.edmx.diagram">
+      <DependentUpon>webClothesModels.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.min.js" />

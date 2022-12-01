@@ -4,66 +4,9 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@*<style>
-    .form-control{
-        margin-left:690px;
-        width:200px;
-    }
-    .row{
-        font-family:monospace;
-        font-size:20px;
-    }
-</style>
-<h2 style="text-align: center;
-           margin-top:20px;
-           font-family:monospace">ĐĂNG KÝ THÀNH VIÊN</h2>
-<br />
-<div class="row">
-    <div class="offset-md-1 col-md-10">
-        @using (Html.BeginForm("Register", "Users"))
-        {
-            @Html.ValidationSummary(true)
-            <div class="form-group">
-                <label for="name">Họ và Tên:</label>
-                @Html.TextBox("HoTenKH", null, new{@class = "form-control", @id = "name", required = "required"})
-            </div>
-            <div class="form-group">
-                <label for="dangnhap">Tên đăng nhập:</label>
-                @Html.TextBox("TenDN", null, new{@class = "form-control", @id = "dangnhap",required = "required"})
-            </div>
-            <div class="form-group">
-                <label for="matkhau">Mat khau:</label>
-                @Html.Password("Matkhau", null, new{@class = "form-control", @id = "matkhau", required = "required"})
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                @Html.TextBox("Email", null, new{ @class = "form-control", @id = "email", type = "email", required = "required"})
-            </div>
-            <div class="form-group">
-                <label for="diachi">Địa chỉ:</label>
-                @Html.TextBox("DiachiKH", null, new{ @class = "form-control", @id = "diachi"})
-            </div>
-            <div class="form-group">
-                <label for="dienthoai">Điện thoại:</label>
-                @Html.TextBox("DienthoaiKH", null, new{ @class = "form-control", @id = "dienthoai", required = "required"})
-            </div>
-            <div class="form-group">
-                <label for="ngaysinh">Ngày sinh:</label>
-                @Html.TextBox("Ngaysinh", null, new{ @class = "form-control", @id = "ngaysinh", type = "date", placeholder = "mm/dd/yyyy"})
-            </div>
-            <button type="submit" class="btn btn-primary">ĐĂNG KÝ</button>
-            <p>Nếu bạn đã có tải khoản hãy nhấn 
-                <button type="submit" class="btn btn-danger">
-                    <a href="@Url.Action("DangNhap","Users")" style="text-decoration:none; color:white;">ĐĂNG NHẬP</a>
-                </button>
-            </p>
-        }
-    </div>
-</div>*@
-
 
 <section class="vh-100 bg-image"
-         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -79,36 +22,28 @@
                             {
                                 @Html.ValidationSummary(true)
                                 <div class="form-group">
-                                    <label for="name">Họ và Tên:</label>
-                                    @Html.TextBox("name_customer", null, new { @class = "form-control", @id = "name", required = "required" })
-                                </div>
-                                <div class="form-group">
                                     <label for="dangnhap">Tên đăng nhập:</label>
-                                    @Html.TextBox("name_customer", null, new { @class = "form-control", @id = "dangnhap", required = "required" })
+                                    @Html.TextBoxFor(c => c.name_customer, " ", new { @class = "form-control", @id = "dangnhap", required = "required" })
                                 </div>
                                 <div class="form-group">
-                                    <label for="matkhau">Mat khau:</label>
-                                    @Html.Password("password_customer", null, new { @class = "form-control", @id = "matkhau", required = "required" })
+                                    <label for="matkhau">Mật Khẩu:</label>
+                                    @Html.PasswordFor(c => c.password_customer, new { @class = "form-control", @id = "matkhau", required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="comfirmmatkhau">Xác Nhận Mật Khẩu:</label>
+                                    @Html.PasswordFor(c => c.comfirm_password_customer, new { @class = "form-control", @id = "comfirmmatkhau", required = "required" })
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    @Html.TextBox("email_customer", null, new { @class = "form-control", @id = "email", type = "email", required = "required" })
+                                    @Html.TextBoxFor(c=>c.email_customer, " ", new { @class = "form-control", @id = "email", type = "email", required = "required" })
                                 </div>
                                 <div class="form-group">
                                     <label for="diachi">Địa chỉ:</label>
-                                    @Html.TextBox("address_customer", null, new { @class = "form-control", @id = "diachi" })
+                                    @Html.TextBoxFor(c=>c.address_customer, " " , new { @class = "form-control", @id = "diachi" })
                                 </div>
                                 <div class="form-group">
                                     <label for="dienthoai">Điện thoại:</label>
-                                    @Html.TextBox("phone_customer", null, new { @class = "form-control", @id = "dienthoai", required = "required" })
-                                </div>
-                                <div class="form-group">
-                                    <label for="ngaysinh">Ngày sinh:</label>
-                                    @Html.TextBox("age_customer", null, new { @class = "form-control", @id = "ngaysinh", type = "date", placeholder = "mm/dd/yyyy" })
-                                </div>
-                                <div class="form-group">
-                                    <label for="gioitinh">Giới Tính:</label>
-                                    @Html.Editor("gender_customer", new { @class = "form-control", @id = "gioitinh", type = "radio" })
+                                    @Html.TextBoxFor(c=>c.phone_customer, " ", new { @class = "form-control", @id = "dienthoai", required = "required" })
                                 </div>
                                 <button type="submit" class="btn btn-primary">ĐĂNG KÝ</button>
                             }

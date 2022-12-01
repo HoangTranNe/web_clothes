@@ -42,7 +42,7 @@
                                     </dt>
 
                                     <dd>
-                                        @Html.Raw(Model.descibe)
+                                        @Html.DisplayFor(model =>model.descibe)
                                     </dd>
 
                                     <dt>
@@ -81,11 +81,14 @@
                                 @using (Html.BeginForm())
                                 {
                                     @Html.AntiForgeryToken()
+                                    <div class="col-md-offset-2 col-md-12">
+                                        <input type="submit" value="Delete" class="btn btn-default" />
+                                    </div>
 
-                                    <div class="form-actions no-color">
-                                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                                    <div class="col-md-offset-2 col-md-12">
                                         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-success" })
                                     </div>
+
                                 }
                             </div>
                         </div>

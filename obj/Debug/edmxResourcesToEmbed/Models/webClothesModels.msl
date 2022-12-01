@@ -58,7 +58,6 @@
       <EntityTypeMapping TypeName="webClothesModel.product">
         <MappingFragment StoreEntitySet="products">
           <ScalarProperty Name="id_products" ColumnName="id_products" />
-          <ScalarProperty Name="id_warehouse" ColumnName="id_warehouse" />
           <ScalarProperty Name="id_category" ColumnName="id_category" />
           <ScalarProperty Name="id_brand" ColumnName="id_brand" />
           <ScalarProperty Name="name_product" ColumnName="name_product" />

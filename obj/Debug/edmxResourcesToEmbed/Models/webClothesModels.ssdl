@@ -53,12 +53,11 @@
       <PropertyRef Name="id_products" />
     </Key>
     <Property Name="id_products" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id_warehouse" Type="int" />
     <Property Name="id_category" Type="int" />
     <Property Name="id_brand" Type="int" />
     <Property Name="name_product" Type="nvarchar" MaxLength="255" />
     <Property Name="price" Type="real" />
-    <Property Name="descibe" Type="varchar" MaxLength="8000" />
+    <Property Name="descibe" Type="nvarchar" MaxLength="4000" />
     <Property Name="images" Type="nvarchar" MaxLength="255" />
     <Property Name="images_size" Type="nvarchar" MaxLength="255" />
   </EntityType>

@@ -1,14 +1,13 @@
 ﻿@using do_an_web.Models
-@model IEnumerable<category>
+@model  IEnumerable<category>
 <ul class="list-group">
     @foreach (var categories in Model)
     {
         <li>
-            <a href="@Url.Action("prowithcate", "category", new { id_products =categories.id_category })"
+            <a href="@Url.Action("prowithcate", new { id_products =categories.id_category })"
                class="list-group-item list-group-item-action">
                 @categories.name_category
             </a>
         </li>
     }
 </ul>
-<a href="~/Views/Home/takecategory.cshtml">~/Views/Home/takecategory.cshtml</a>

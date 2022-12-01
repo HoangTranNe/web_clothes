@@ -40,7 +40,7 @@
             </li>
         </ul>
         <div class="ml-auto">
-            @*@Html.Action("cartpartial", "cart")*@
+            @Html.Action("cartpartial", "cart")
         </div>
         <div class="row justify-content-md-start">
             <div class="col-md-15">
@@ -52,8 +52,11 @@
                         @if (Session["name_customer"] != null)
                         {
                             <p>Name: @Session["name_customer"].ToString()</p>
-                            <p>Email: @Session["email_customer"].ToString()</p>
-                            <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
+                            <a href="@Url.Action("LogOut","Users")" class="btn btn-warning">Logout</a>
+                        }
+                        else
+                        {
+                            <p>Hello Khách</p>
                         }
                     </div>
                 </div>
