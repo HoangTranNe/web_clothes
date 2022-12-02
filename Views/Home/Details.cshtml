@@ -11,33 +11,44 @@
         font-size:20px;
     }
 </style>
-<h2 style="font-family: 'Times New Roman', Times, serif;">THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
-<br />
-<div class="row">
-    <div class="offset-md-2 col-md-4">
-        <label>Hình Sản Phẩm</label>
-        <img style="width:550px; height:550px;" src="~/Content/Images/@Model.images" alt="">
-    </div>    
-    
-    <div class="col-md-6 details">
-        <h3>Tên sách: @Model.name_product</h3>
-        <p style="text-align: center">
-            <span style="font-weight: bold;">Mô tả:</span>
-            <div>
-                @Model.descibe
-            </div>
-            <div>
-                <label>Bảng Size</label>
-                <img style="width:550px; height:550px;" src="~/Content/Images/@Model.images_size" alt="">
-            </div>
-        </p>
-        <p class="price">
-            Giá bán: <span style="color:red; font-size:32px;">@Model.price VNĐ</span>
-        </p>
-        <button class="btn btn-primary">
-            <a href="@Url.Action("addtocart","Cart", new { id_product = Model.id_products })" 
-               style="text-decoration:none; color:white;">ĐẶT MUA</a>
-        </button>
-    </div>
-</div>
 
+<section class="vh-a bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg')">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-auto">
+            <div class="row d-flex justify-content-center align-items-center h-auto">
+                <div class="col-auto col-md-auto col-lg-auto col-xl-auto">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 style="font-family: 'Times New Roman', Times, serif; margin-top:20px;">THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
+                            <br />
+                            <div class="row">
+                                <div class="offset-md-2 col-md-8"
+                                     style="display:flex; justify-content:center; align-items:center;">
+                                    <img style="width:550px; height:550px;" src="~/Content/Images/@Model.images" alt="">
+                                </div>
+
+                                <div class="col-md-20 details">
+                                    <h3>Tên sách: @Model.name_product</h3>
+                                    <p style="text-align: center">
+                                        <span style="font-weight: bold;">Mô tả:</span>
+                                        <div>
+                                            @Model.descibe
+                                        </div>
+                                    </p>
+                                    <p class="price">
+                                        Giá bán: <span style="color:red; font-size:32px;">@Model.price VNĐ</span>
+                                    </p>
+                                    <button class="btn btn-primary">
+                                        <a href="@Url.Action("addtocart","Cart", new { id_product = Model.id_products })"
+                                           style="text-decoration:none; color:white;">ĐẶT MUA</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

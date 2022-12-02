@@ -42,12 +42,14 @@
           <Property Name="password_customer" Type="varchar" MaxLength="255" />
           <Property Name="comfirm_password_customer" Type="varchar" MaxLength="255" />
           <Property Name="address_customer" Type="nvarchar" MaxLength="255" />
+          <Property Name="role" Type="int" />
         </EntityType>
         <EntityType Name="details_order">
           <Key>
-            <PropertyRef Name="id_order" />
+            <PropertyRef Name="id_details_order" />
           </Key>
-          <Property Name="id_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_details_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_order" Type="int" />
           <Property Name="id_products" Type="int" />
           <Property Name="quantity_order" Type="int" />
           <Property Name="unit_price" Type="real" />
@@ -84,6 +86,18 @@
             </Principal>
             <Dependent Role="customer_order">
               <PropertyRef Name="id_customer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__details_o__id_or__34C8D9D1">
+          <End Role="customer_order" Type="Self.customer_order" Multiplicity="0..1" />
+          <End Role="details_order" Type="Self.details_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer_order">
+              <PropertyRef Name="id_order" />
+            </Principal>
+            <Dependent Role="details_order">
+              <PropertyRef Name="id_order" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -147,6 +161,10 @@
             <End Role="customers" EntitySet="customers" />
             <End Role="customer_order" EntitySet="customer_order" />
           </AssociationSet>
+          <AssociationSet Name="FK__details_o__id_or__34C8D9D1" Association="Self.FK__details_o__id_or__34C8D9D1">
+            <End Role="customer_order" EntitySet="customer_order" />
+            <End Role="details_order" EntitySet="details_order" />
+          </AssociationSet>
           <AssociationSet Name="FK__details_o__id_pr__32E0915F" Association="Self.FK__details_o__id_pr__32E0915F">
             <End Role="products" EntitySet="products" />
             <End Role="details_order" EntitySet="details_order" />
@@ -197,6 +215,7 @@
           <Property Name="address_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="phone_customer" Type="Int32" />
           <NavigationProperty Name="customer" Relationship="Self.FK__customer___id_cu__33D4B598" FromRole="customer_order" ToRole="customers" />
+          <NavigationProperty Name="details_order" Relationship="Self.FK__details_o__id_or__34C8D9D1" FromRole="customer_order" ToRole="details_order" />
         </EntityType>
         <EntityType Name="customer">
           <Key>
@@ -209,18 +228,21 @@
           <Property Name="password_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="comfirm_password_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="address_customer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="role" Type="Int32" />
           <NavigationProperty Name="customer_order" Relationship="Self.FK__customer___id_cu__33D4B598" FromRole="customers" ToRole="customer_order" />
           <NavigationProperty Name="reports" Relationship="Self.FK__reports__id_cust__300424B4" FromRole="customers" ToRole="reports" />
         </EntityType>
         <EntityType Name="details_order">
           <Key>
-            <PropertyRef Name="id_order" />
+            <PropertyRef Name="id_details_order" />
           </Key>
-          <Property Name="id_order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_details_order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_order" Type="Int32" />
           <Property Name="id_products" Type="Int32" />
           <Property Name="quantity_order" Type="Int32" />
           <Property Name="unit_price" Type="Single" />
           <Property Name="total" Type="Single" />
+          <NavigationProperty Name="customer_order" Relationship="Self.FK__details_o__id_or__34C8D9D1" FromRole="details_order" ToRole="customer_order" />
           <NavigationProperty Name="product" Relationship="Self.FK__details_o__id_pr__32E0915F" FromRole="details_order" ToRole="products" />
         </EntityType>
         <EntityType Name="product">
@@ -285,6 +307,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__details_o__id_or__34C8D9D1">
+          <End Role="customer_order" Type="Self.customer_order" Multiplicity="0..1" />
+          <End Role="details_order" Type="Self.details_order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer_order">
+              <PropertyRef Name="id_order" />
+            </Principal>
+            <Dependent Role="details_order">
+              <PropertyRef Name="id_order" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__reports__id_cust__300424B4">
           <End Role="customers" Type="Self.customer" Multiplicity="0..1" />
           <End Role="reports" Type="Self.report" Multiplicity="*" />
@@ -328,6 +362,10 @@
           <AssociationSet Name="FK__customer___id_cu__33D4B598" Association="Self.FK__customer___id_cu__33D4B598">
             <End Role="customers" EntitySet="customers" />
             <End Role="customer_order" EntitySet="customer_order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__details_o__id_or__34C8D9D1" Association="Self.FK__details_o__id_or__34C8D9D1">
+            <End Role="customer_order" EntitySet="customer_order" />
+            <End Role="details_order" EntitySet="details_order" />
           </AssociationSet>
           <AssociationSet Name="FK__reports__id_cust__300424B4" Association="Self.FK__reports__id_cust__300424B4">
             <End Role="customers" EntitySet="customers" />
@@ -383,12 +421,14 @@
                 <ScalarProperty Name="password_customer" ColumnName="password_customer" />
                 <ScalarProperty Name="comfirm_password_customer" ColumnName="comfirm_password_customer" />
                 <ScalarProperty Name="address_customer" ColumnName="address_customer" />
+                <ScalarProperty Name="role" ColumnName="role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="details_order">
             <EntityTypeMapping TypeName="webClothesModel.details_order">
               <MappingFragment StoreEntitySet="details_order">
+                <ScalarProperty Name="id_details_order" ColumnName="id_details_order" />
                 <ScalarProperty Name="id_order" ColumnName="id_order" />
                 <ScalarProperty Name="id_products" ColumnName="id_products" />
                 <ScalarProperty Name="quantity_order" ColumnName="quantity_order" />

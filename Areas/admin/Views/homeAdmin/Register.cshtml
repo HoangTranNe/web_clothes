@@ -1,0 +1,63 @@
+﻿@using do_an_web.Models
+@model customer
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+<section class="vh-100 bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 style="text-align: center;
+                                       margin-top:20px;
+                                       font-family:monospace">
+                                ĐĂNG KÝ THÀNH VIÊN
+                            </h2>
+                            @using (Html.BeginForm("Register", "Users"))
+                            {
+                                @Html.ValidationSummary(true)
+                                <div class="form-group">
+                                    <label for="dangnhap">Tên đăng nhập:</label>
+                                    @Html.TextBoxFor(c => c.name_customer, " ", new { @class = "form-control", @id = "dangnhap", required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="matkhau">Mật Khẩu:</label>
+                                    @Html.PasswordFor(c => c.password_customer, new { @class = "form-control", @id = "matkhau", required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="comfirmmatkhau">Xác Nhận Mật Khẩu:</label>
+                                    @Html.PasswordFor(c => c.comfirm_password_customer, new { @class = "form-control", @id = "comfirmmatkhau", required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    @Html.TextBoxFor(c => c.email_customer, " ", new { @class = "form-control", @id = "email", type = "email", required = "required" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="diachi">Địa chỉ:</label>
+                                    @Html.TextBoxFor(c => c.address_customer, " ", new { @class = "form-control", @id = "diachi" })
+                                </div>
+                                <div class="form-group">
+                                    <label for="dienthoai">Điện thoại:</label>
+                                    @Html.TextBoxFor(c => c.phone_customer, " ", new { @class = "form-control", @id = "dienthoai", required = "required" })
+                                </div>
+                                <button type="submit" class="btn btn-primary">ĐĂNG KÝ</button>
+                            }
+                            <p>
+                                Nếu bạn đã có tải khoản hãy nhấn
+                                <button type="submit" class="btn btn-danger">
+                                    <a href="@Url.Action("DangNhap","Users")" style="text-decoration:none; color:white;">ĐĂNG NHẬP</a>
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -7,6 +7,7 @@ namespace do_an_web.Models
 {
     public class cartController : Controller
     {
+        webClothesEntities database = new webClothesEntities();
         // GET: cart
         public ActionResult Index()
         {
@@ -106,24 +107,21 @@ namespace do_an_web.Models
 
         }
         public ActionResult DatHang()
-        {
-            if (Session["TaiKhoan"] == null) //Chưa đăng nhập
-                return RedirectToAction("DangNhap", "Users");
+        {           
             List<needtobuy> gioHang = makecart();
             if (gioHang == null || gioHang.Count == 0) //Chưa có giỏ hàng hoặc chưa có sp
                 return RedirectToAction("Index", "Home");
             ViewBag.TongSL = caculate_total_quantity();
             ViewBag.TongTien = caculate_total_price();
-            return View(gioHang); //Trả về View hiển thị thông tin giỏ hàng
+            return RedirectToAction("HoanThanhDonHang"); //Trả về View hiển thị thông tin giỏ hàng
         }
-        webClothesEntities database = new webClothesEntities();
         //Xác nhận đơn và lưu vào CSDL
         public ActionResult DongYDatHang()
         {
             customer khach = Session["TaiKhoan"] as customer; //Khách
             List<needtobuy> gioHang = makecart(); //Giỏ hàng
             customer_order DonHang = new customer_order(); //Tạo mới đơn đặt hàng
-            DonHang.id_customer = khach.id_customer;
+            DonHang.id_customer= khach.id_customer;
             DonHang.date_buy = DateTime.Now;
             DonHang.price = (float)caculate_total_price();
             DonHang.address_customer = khach.address_customer;

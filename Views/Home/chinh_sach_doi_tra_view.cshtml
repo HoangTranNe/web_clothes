@@ -1,8 +1,9 @@
 ﻿
 @{
     ViewBag.Title = "chinh_sach_doi_tra_view";
-    Layout = "~/Views/privacy/chinh_sach_doi_tra.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <nav class="trading">
     <div class="trade-title">
         <a href="@Url.Action("chinh_sach_doi_tra_view","Home", new {@class="title1"})">Chính Sách Đổi Trả</a>
@@ -20,7 +21,7 @@
             • Đối với mỗi hóa đơn, khách hàng được đổi hàng duy nhất 1 lần.<br /><br />
 
             • Không hỗ trợ đổi, trả các sản phẩm được khuyến mãi, giảm giá.<br /><br />
-            
+
             • Sản phẩm đã mua được đổi trong vòng 7 ngày (Tính từ ngày in trên hoá đơn).<br /><br />
 
             • Sản phẩm phải trong tình trạng mới, chưa giặt, chưa cắt tag và còn giữ hoá đơn thanh toán.<br /><br />
@@ -35,6 +36,4 @@
         </p>
     </div>
 </nav>
-
-
 

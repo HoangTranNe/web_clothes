@@ -14,6 +14,12 @@ namespace do_an_web.Models
     
     public partial class customer_order
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public customer_order()
+        {
+            this.details_order = new HashSet<details_order>();
+        }
+    
         public int id_order { get; set; }
         public Nullable<int> id_customer { get; set; }
         public Nullable<System.DateTime> date_buy { get; set; }
@@ -23,5 +29,7 @@ namespace do_an_web.Models
         public Nullable<int> phone_customer { get; set; }
     
         public virtual customer customer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<details_order> details_order { get; set; }
     }
 }

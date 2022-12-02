@@ -37,12 +37,14 @@
     <Property Name="password_customer" Type="varchar" MaxLength="255" />
     <Property Name="comfirm_password_customer" Type="varchar" MaxLength="255" />
     <Property Name="address_customer" Type="nvarchar" MaxLength="255" />
+    <Property Name="role" Type="int" />
   </EntityType>
   <EntityType Name="details_order">
     <Key>
-      <PropertyRef Name="id_order" />
+      <PropertyRef Name="id_details_order" />
     </Key>
-    <Property Name="id_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_details_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_order" Type="int" />
     <Property Name="id_products" Type="int" />
     <Property Name="quantity_order" Type="int" />
     <Property Name="unit_price" Type="real" />
@@ -79,6 +81,18 @@
       </Principal>
       <Dependent Role="customer_order">
         <PropertyRef Name="id_customer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__details_o__id_or__34C8D9D1">
+    <End Role="customer_order" Type="Self.customer_order" Multiplicity="0..1" />
+    <End Role="details_order" Type="Self.details_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer_order">
+        <PropertyRef Name="id_order" />
+      </Principal>
+      <Dependent Role="details_order">
+        <PropertyRef Name="id_order" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -141,6 +155,10 @@
     <AssociationSet Name="FK__customer___id_cu__33D4B598" Association="Self.FK__customer___id_cu__33D4B598">
       <End Role="customers" EntitySet="customers" />
       <End Role="customer_order" EntitySet="customer_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__details_o__id_or__34C8D9D1" Association="Self.FK__details_o__id_or__34C8D9D1">
+      <End Role="customer_order" EntitySet="customer_order" />
+      <End Role="details_order" EntitySet="details_order" />
     </AssociationSet>
     <AssociationSet Name="FK__details_o__id_pr__32E0915F" Association="Self.FK__details_o__id_pr__32E0915F">
       <End Role="products" EntitySet="products" />

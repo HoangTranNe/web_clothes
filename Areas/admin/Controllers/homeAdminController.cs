@@ -1,55 +1,23 @@
 ﻿using do_an_web.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace do_an_web.Controllers
+namespace do_an_web.Areas.admin.Controllers
 {
-    public class UsersController : Controller
+    public class homeAdminController : Controller
     {
         webClothesEntities db = new webClothesEntities();
-        // GET: Users
-        [HttpGet]
-        public ActionResult Register()
+        // GET: admin/homeAdmin
+        public ActionResult Index()
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult Register(customer kh)
-        {            
-            if (ModelState.IsValid)
-            {
-                if (string.IsNullOrEmpty(kh.name_customer))
-                    ModelState.AddModelError(string.Empty, "Họ tên không được để trống");
-                if (string.IsNullOrEmpty(kh.name_customer))
-                    ModelState.AddModelError(string.Empty, "Tên đăng nhập không được để trống");
-                if (string.IsNullOrEmpty(kh.password_customer))
-                    ModelState.AddModelError(string.Empty, "Mật khẩu không được để trống");
-                if (string.IsNullOrEmpty(kh.email_customer))
-                    ModelState.AddModelError(string.Empty, "Email không được để trống");
-                if (string.IsNullOrEmpty(kh.phone_customer.ToString()))
-                    ModelState.AddModelError(string.Empty, "Điện thoại không được để trống");
-                //Kiểm tra xem có người nào đã đăng kí với tên đăng nhập này hay chưa
-
-                var khachhang = db.customers.FirstOrDefault(k => k.name_customer == kh.name_customer);
-                if (khachhang != null)
-                    ModelState.AddModelError(string.Empty, "Đã có người đăng kí tên này");
-                if (ModelState.IsValid)
-                {
-                    db.customers.Add(kh);
-                    db.SaveChanges();
-
-                }
-                else
-                {
-                    return View();
-                }
-            }
-            return RedirectToAction("DangNhap");
+        public ActionResult Contact_View()
+        {
+            return View();
         }
         [HttpGet]
         public ActionResult DangNhap()
@@ -87,11 +55,14 @@ namespace do_an_web.Controllers
                     {
                         ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
                     }
-                }                
+                }
             }
 
+            return View();       
+        }
+        public ActionResult Register()
+        {
             return View();
-            
         }
         public ActionResult LogOut()
         {
@@ -99,6 +70,5 @@ namespace do_an_web.Controllers
             return Redirect("/");
         }
     }
+        
 }
-
-    

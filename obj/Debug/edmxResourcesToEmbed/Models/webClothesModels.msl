@@ -40,12 +40,14 @@
           <ScalarProperty Name="password_customer" ColumnName="password_customer" />
           <ScalarProperty Name="comfirm_password_customer" ColumnName="comfirm_password_customer" />
           <ScalarProperty Name="address_customer" ColumnName="address_customer" />
+          <ScalarProperty Name="role" ColumnName="role" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="details_order">
       <EntityTypeMapping TypeName="webClothesModel.details_order">
         <MappingFragment StoreEntitySet="details_order">
+          <ScalarProperty Name="id_details_order" ColumnName="id_details_order" />
           <ScalarProperty Name="id_order" ColumnName="id_order" />
           <ScalarProperty Name="id_products" ColumnName="id_products" />
           <ScalarProperty Name="quantity_order" ColumnName="quantity_order" />

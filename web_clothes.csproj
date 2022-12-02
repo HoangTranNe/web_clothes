@@ -192,6 +192,7 @@
     <Compile Include="Areas\admin\Controllers\categoriesController.cs" />
     <Compile Include="Areas\admin\Controllers\customersController.cs" />
     <Compile Include="Areas\admin\Controllers\customer_orderController.cs" />
+    <Compile Include="Areas\admin\Controllers\homeAdminController.cs" />
     <Compile Include="Areas\admin\Controllers\productsController.cs" />
     <Compile Include="Areas\admin\Controllers\reportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -365,6 +366,12 @@
     <Content Include="Models\webClothesModels.edmx.diagram">
       <DependentUpon>webClothesModels.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\admin\Views\Shared\admin_Layout.cshtml" />
+    <Content Include="Areas\admin\Views\homeAdmin\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Shared\Contact.cshtml" />
+    <Content Include="Areas\admin\Views\homeAdmin\Contact_View.cshtml" />
+    <Content Include="Areas\admin\Views\homeAdmin\DangNhap.cshtml" />
+    <Content Include="Areas\admin\Views\homeAdmin\Register.cshtml" />
     <None Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.js" />
     <Content Include="Scripts\Sctipts_Boostrap\jquery-3.6.1.min.js" />
@@ -433,11 +440,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Error.cshtml" />
-    <Content Include="Views\privacy\chinh_sach_bao_mat_thong_tin_view.cshtml" />
-    <Content Include="Views\privacy\chinh_sach_doi_tra_view.cshtml" />
-    <Content Include="Views\privacy\chinh_sach_thanh_toan_view.cshtml" />
-    <Content Include="Views\privacy\dieu_khoan_view.cshtml" />
-    <Content Include="Views\privacy\huong_dan_mua_hang_view.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\privacy\chinh_sach_bao_mat_thong_tin.cshtml" />
     <Content Include="Views\privacy\chinh_sach_doi_tra.cshtml" />
@@ -458,11 +460,15 @@
     <Content Include="Views\Users\DangNhap.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\search\Search.cshtml" />
+    <Content Include="Views\Home\dieu_khoan_view.cshtml" />
+    <Content Include="Views\Home\huong_dan_mua_hang_view.cshtml" />
+    <Content Include="Views\Home\chinh_sach_doi_tra_view.cshtml" />
+    <Content Include="Views\Home\chinh_sach_bao_mat_thong_tin_view.cshtml" />
+    <Content Include="Views\Home\chinh_sach_thanh_toan_view.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Data\" />
-    <Folder Include="Areas\admin\Views\Shared\" />
     <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>

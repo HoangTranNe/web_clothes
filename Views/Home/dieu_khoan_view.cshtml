@@ -1,12 +1,11 @@
 ﻿
 @{
     ViewBag.Title = "dieu_khoan_view";
-    Layout = "~/Views/privacy/dieu_khoan.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <nav class="dieu-khoan-tag">
-    <a href="@Url.Action("dieu_khoan_view","privacy", new {@class="dieu-khoan"})">Điều Khoản</a>
+    <a href="@Url.Action("dieu_khoan_view","Home", new {@class="dieu-khoan"})">Điều Khoản</a>
 </nav>
 <nav class="title-dieu-khoan">
     <div class="main-dieu-khoan">

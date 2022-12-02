@@ -4,12 +4,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="text-align:center">
-    <h2>
-        ĐƠN HÀNG CỦA QUÝ KHÁCH ĐÃ ĐƯỢC GHI NHẬN. CHÚNG TÔI SẼ LIÊN HỆ TRONG THỜI GIAN SỚM NHẤT
-    </h2>
-    <p>
-        @Html.ActionLink("Về trang chủ", "Index", "products", null, new {@class = "btn btn - primary" })
-    </p>
-</div>
 
+<section class="vh-100 bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg')">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-auto">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-auto col-md-auto col-lg-auto col-xl-auto">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <div style="text-align:center">
+                                <h2>
+                                    ĐƠN HÀNG CỦA QUÝ KHÁCH ĐÃ ĐƯỢC GHI NHẬN. <br />CHÚNG TÔI SẼ LIÊN HỆ TRONG THỜI GIAN SỚM NHẤT
+                                </h2>
+                                <p>
+                                    @Html.ActionLink("Về trang chủ", "Index", "Home", null, new { @class = "btn btn-primary" })
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

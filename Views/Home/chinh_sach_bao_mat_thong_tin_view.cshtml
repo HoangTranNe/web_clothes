@@ -1,11 +1,13 @@
 ﻿
 @{
     ViewBag.Title = "chinh_sach_bao_mat_thong_tin_view";
-    Layout = "~/Views/privacy/chinh_sach_bao_mat_thong_tin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <nav class="dieu-khoan-tag">
-    <a href="@Url.Action("chinh_sach_bao_mat_thong_tin_view","Home", new {@class="dieu-khoan"})">Bảo Mật Thông Tin Khách Hàng</a>
+    <div class="btn btn-primary">
+        <a href="@Url.Action("chinh_sach_bao_mat_thong_tin_view","Home", new {@class="dieu-khoan"})">Bảo Mật Thông Tin Khách Hàng</a>
+    </div>
 </nav>
 <nav class="title-dieu-khoan">
     <div class="main-dieu-khoan">
@@ -35,7 +37,7 @@
         - Chúng tôi có thể dùng thông tin cá nhân của bạn để nghiên cứu thị trường. mọi thông tin chi tiết sẽ được ẩn và chỉ được dùng để thống kê. Quý khách có thể từ chối không tham gia bất cứ lúc nào.
 
         <p style="font-weight:bold; font-size:20px">2. Bảo mật</p>
-        
+
         - Chúng tôi có biện pháp thích hợp về kỹ thuật và an ninh để ngăn chặn truy cập trái phép hoặc trái pháp luật hoặc mất mát hoặc tiêu hủy hoặc thiệt hại cho thông tin của bạn.
 
         - Chúng tôi khuyên quý khách không nên đưa thông tin chi tiết về việc thanh toán với bất kỳ ai bằng e-mail, chúng tôi không chịu trách nhiệm về những mất mát quý khách có thể gánh chịu trong việc trao đổi thông tin của quý khách qua internet hoặc email.
@@ -52,4 +54,3 @@
         </p>
     </div>
 </nav>
-

@@ -27,47 +27,45 @@
                 <td>@clothes.id_product</td>
                 <td>@clothes.name</td>
                 <td><img src="~/Content/Images/@clothes.images" style="height:200px; width:200px;" /></td>
-                @*@using (Html.BeginForm("CapNhatMatHang", "Cart", new { id_products = clothes.id_product }))
+                @using (Html.BeginForm("CapNhatMatHang", "Cart", new { id = clothes.id_product }))
                 {
                     <td>
                         <input type="number" min="1" value="@clothes.quantity" name="SoLuong" />
                     </td>
 
                     <td>@clothes.price</td>
-                    <td>@clothes.price</td>
+
                     <td>@clothes.total()</td>
                     <td>
-                        @Html.ActionLink("Chi tiết", "Details", "Home", new { id_products = clothes.id_product }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Chi tiết", "Details", "Home", new { id = clothes.id_product }, new { @class = "btn btn-success" })
                     </td>
                     <td>
                         <button type="submit" class="btn btn-primary">Cập nhật</button>
                     </td>
-                }*@
+                }
                 <td>@clothes.quantity</td>
                 <td>@clothes.price</td>
                 <td>@clothes.total()</td>
                 <td>
-                    @Html.ActionLink("Chi tiết", "Details","Home", new { id = clothes.id_product }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Chi tiết", "Details", "Home", new { id = clothes.id_product }, new { @class = "btn btn-success" })
                 </td>
                 <td>
-                    @Html.ActionLink("Cập nhật", "CapNhatMatHang","cart", new { id_product = clothes.id_product }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Cập nhật", "CapNhatMatHang", "Cart", new { id_product = clothes.id_product }, new { @class = "btn btn-primary" })
                 </td>
                 <td>
-                    @Html.ActionLink("Xóa", "deleteproduct","cart", new { id_product = clothes.id_product }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Xóa", "deleteproduct", "Cart", new { id_product = clothes.id_product }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+            <tr style="font-weight:bold; text-align:right; color:red;">
+                <td colspan="5">Tổng số lượng: @ViewBag.TongSL</td>
+                <td colspan="1">Tổng tiền: @ViewBag.TongTien</td>
+            </tr>
+            <tr style="font-weight:bold; display:flex; justify-content:center; align-items:center;">
+                <td colspan="9">
+                    @Html.ActionLink("ĐẶT HÀNG", "DatHang", "cart", null, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }
-        <tr style="font-weight:bold; text-align:right; color:red;">
-            <td colspan="5">Tổng số lượng: @ViewBag.TongSL</td>
-            <td colspan="1">Tổng tiền: @ViewBag.TongTien</td>
-        </tr>
-        <tr style="font-weight:bold; text-align:center;">
-            <td colspan="9">
 
-                @Html.ActionLink("ĐẶT HÀNG", "DatHang", null, new {@class = "btn btn-primary"})
-
-            </td>
-        </tr>
     </tbody>
 </table>
-

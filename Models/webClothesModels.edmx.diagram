@@ -4,17 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ef082e865f154641ac757bcc183b7335" Name="Diagram1">
+      <Diagram DiagramId="0d6c1ffb504c4d51a2c27baca898efae" Name="Diagram1">
         <EntityTypeShape EntityType="webClothesModel.brand" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.category" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.customer_order" Width="1.5" PointX="9.625" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.customer" Width="1.5" PointX="7.125" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.details_order" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.customer_order" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.customer" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.details_order" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="webClothesModel.product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="webClothesModel.report" Width="1.5" PointX="11.625" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="webClothesModel.report" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
         <AssociationConnector Association="webClothesModel.FK__products__id_bra__31EC6D26" ManuallyRouted="false" />
         <AssociationConnector Association="webClothesModel.FK__products__id_cat__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="webClothesModel.FK__customer___id_cu__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="webClothesModel.FK__details_o__id_or__34C8D9D1" ManuallyRouted="false" />
         <AssociationConnector Association="webClothesModel.FK__reports__id_cust__300424B4" ManuallyRouted="false" />
         <AssociationConnector Association="webClothesModel.FK__details_o__id_pr__32E0915F" ManuallyRouted="false" />
       </Diagram>

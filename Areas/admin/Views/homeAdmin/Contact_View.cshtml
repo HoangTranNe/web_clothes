@@ -1,0 +1,57 @@
+﻿@model do_an_web.Models.report
+@{
+    ViewBag.Title = "Contact_View";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+<section class="vh-100 bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg');">
+    <nav class="contact">
+        <div class="address">
+            <h2>Thông tin chi tiết</h2>
+            <p><strong>Cỏ Cháy Sài Gòn</strong><em>(Làm việc từ 9h-22h)</em></p>
+            <p><strong>Địa chỉ:</strong> 176 Đường Số 2, Phường 13, Quận 6, TP.HCM</p>
+            <p><strong>Số điện thoại:</strong> 0946253769</p>
+            <p><strong>Email:</strong> tranbaohoang70@gmail.com</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.796011001047!2d106.62259135092317!3d10.750198992301742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752c2b49b5a531%3A0xb5427e1cd921aff2!2zMTc2IMSQxrDhu51uZyBz4buRIDIsIFBoxrDhu51uZyAxMywgUXXhuq1uIDYsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1669826675499!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <div class="contact_inf">
+                                    @using (Html.BeginForm("Contact_View", "Home"))
+                                    {
+                                        <h2>Form Liên Hệ</h2>
+                                        <h4>
+                                            Chúng tôi muốn lắng nghe ý kiến từ quý khách hàng<br />
+                                            Vui lòng liên hệ với chúng tôi, <br />chúng tôi sẽ đảm bảo liên hệ lại với bạn trong khoảng thời gian sớm nhất có thể.
+                                        </h4>
+                                        <label>Họ và Tên</label>
+                                        <br>
+                                        @Html.TextBox("id_customer", null, new { @class = "form-control", @id = "name", required = "required" })
+                                        <br>
+                                        <label>Tiêu đề</label>
+                                        <br>
+                                        @Html.TextArea("subject_customer", null, new { @class = "form-control", @id = "subject", required = "required" })
+                                        <br>
+                                        <label>Nội Dung Phản Hồi</label>
+                                        <br />
+                                        @Html.TextArea("customer_report", null, new { @class = "form-control", @id = "main", required = "required" })
+                                        <br>
+                                        <button type="submit">Gửi Đi</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+

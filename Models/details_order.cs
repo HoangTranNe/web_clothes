@@ -14,12 +14,14 @@ namespace do_an_web.Models
     
     public partial class details_order
     {
-        public int id_order { get; set; }
+        public int id_details_order { get; set; }
+        public Nullable<int> id_order { get; set; }
         public Nullable<int> id_products { get; set; }
         public Nullable<int> quantity_order { get; set; }
         public Nullable<float> unit_price { get; set; }
         public Nullable<float> total { get; set; }
     
+        public virtual customer_order customer_order { get; set; }
         public virtual product product { get; set; }
     }
 }

@@ -73,18 +73,8 @@
 <br />
 <br />
 <br />
-<div class="row">
-    <div class="row">
-        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6">
-            <p style="font-weight:bold">CỎ CHÁY®</p>
-        </div>
-        <div class="col-md-6 col-lg-6 col-xs-6 col-sm-6 text-right">
-            Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
-            <div>
-                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, size = ViewBag.currentSize }))
-            </div>
-        </div>
-    </div>
+<div style="display:flex; justify-content:center; align-items:center;">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, size = ViewBag.currentSize }))    
 </div>
 
 

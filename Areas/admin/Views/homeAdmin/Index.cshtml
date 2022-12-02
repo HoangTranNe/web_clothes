@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+
+<section class="vh-100 bg-image"
+         style="background-image: url('https://previews.123rf.com/images/skunkeye/skunkeye1512/skunkeye151200169/49352963-ganja-weed-marijuana-seamless-vector-pattern-background.jpg')">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-auto col-md-auto col-lg-auto col-xl-auto">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <nav class="tab2">
+                                <div class="tab2-title">
+                                    <ul class="title">
+                                        <li class="home">
+                                            <a class="btn btn-default" href="@Url.Action("Index","homeAdmin")">Home</a>
+                                        </li>
+                                        <li class="home">
+                                            <a class="btn btn-default" href="@Url.Action("Index","categories")">Quản lý danh mục</a>
+                                        </li>
+                                        <li>
+                                            <a class="btn btn-default" href="@Url.Action("Index","products")">Quản lý sản phẩm</a>
+                                        </li>
+                                        <li>
+                                            <a class="btn btn-default" href="@Url.Action("Index","brands")">Quản lý hãng</a>
+                                        </li>
+                                        <li>
+                                            <a class="btn btn-default" href="@Url.Action("Index","customers")">Quản lý khách hàng </a>
+                                        </li>
+                                        <li>
+                                            <a class="btn btn-default" href="@Url.Action("Index","customer_order")">Quản lý đặt hàng</a>
+                                        </li>
+                                        <li>
+                                            <a class="btn btn-default" href="@Url.Action("Index","reports")">Quản lý phản hồi</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
